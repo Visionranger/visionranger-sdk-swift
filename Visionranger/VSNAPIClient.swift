@@ -56,7 +56,8 @@ extension VSNAPIClient {
     ///   This is used for convenience, when your application is performing multiple network requests at once.
     ///   - completion: This API request returns the JSON product object from the newly created product.
     public func createProduct(product: Product, session: URLSession, _ completion: @escaping(_ response: String?, _ error: VSNError?) -> Void) {
-        let endpoint = APIEndpoint(method: .post, path: .products)
+        var endpoint = APIEndpoint(method: .post, path: .products)
+//        endpoint.body = Data()
         
         let request = Request(session: session, endpoint: endpoint)
         request?.execute() { response in
@@ -117,20 +118,24 @@ extension VSNAPIClient {
             return
         }
     }
-    
-    public func updateProduct(id: String, session: URLSession, _ completion: @escaping(_ response: String?, _ error: VSNError?) -> Void) {
-        let endpoint = APIEndpoint(method: .update, path: .products)
-        endpoint.query = endpoint.queryBuilder((name: "id", value: id))
+
+    public func updateProduct(withParameters: [String: Any], using ephemeralKey: VSNEphemeralKey, completion: @escaping VSNProductCompletionBlock) {
         
-        let request = Request(session: session, endpoint: endpoint)
-        request?.execute() { response in
-            guard let _ = response.data else {
-                completion(nil, response.error)
-                return
-            }
-            let json = response.toJSONString()
-            completion(json, nil)
-            return
-        }
     }
+    
+//    public func updateProduct(id: String, session: URLSession, _ completion: @escaping(_ response: String?, _ error: VSNError?) -> Void) {
+//        let endpoint = APIEndpoint(method: .update, path: .products)
+//        endpoint.query = endpoint.queryBuilder((name: "id", value: id))
+//
+//        let request = Request(session: session, endpoint: endpoint)
+//        request?.execute() { response in
+//            guard let _ = response.data else {
+//                completion(nil, response.error)
+//                return
+//            }
+//            let json = response.toJSONString()
+//            completion(json, nil)
+//            return
+//        }
+//    }
 }
