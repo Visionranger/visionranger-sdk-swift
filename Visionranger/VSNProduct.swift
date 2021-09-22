@@ -12,8 +12,11 @@ public class VSNProduct: NSObject {
     /// The Visionranger ID of the product, e.g. `prod_1234`
     @objc public let productID: String
     
-    internal init(productID: String) {
+    @objc public var shippingAddress: VSNAddress?
+    
+    internal init(productID: String, shippingAddress: VSNAddress) {
         self.productID = productID
+        self.shippingAddress = shippingAddress
         super.init()
     }
 }
