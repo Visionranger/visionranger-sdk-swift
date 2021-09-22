@@ -7,16 +7,10 @@
 
 import Foundation
 
-public class VSNProduct: NSObject {
-    
-    /// The Visionranger ID of the product, e.g. `prod_1234`
-    @objc public let productID: String
-    
-    @objc public var shippingAddress: VSNAddress?
-    
-    internal init(productID: String, shippingAddress: VSNAddress) {
-        self.productID = productID
-        self.shippingAddress = shippingAddress
-        super.init()
-    }
+public struct VSNProduct: Codable {
+    let name: String
+    let category: String
+    let sub_category: String
+    let designer: String
+    let manufacturer: String
 }
