@@ -1,4 +1,4 @@
-![Swift SDK](./assets/repository-preview-sdk-swift.png)
+![Swift SDK](https://resources.visionranger.com/media/repository-preview-sdk-swift.png)
 
 # Visionranger-SDK-Swift
 
