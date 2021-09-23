@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct VSNProduct: Codable {
+public struct VSNProduct {
     let name: String
     let category: String
     let sub_category: String

@@ -7,7 +7,8 @@
 
 import Foundation
 
-public class VSNRequest: NSObject, VSNRequestDelegate {
+class VSNRequest<ResponseType: VSNAPIResponseDecodable>: NSObject, VSNRequestDelegate {
+    typealias VSNAPIResponseBlock = (ResponseType?, HTTPURLResponse?, Error?) -> Void
     
     public var parameter: VSNParameter?
     
@@ -97,6 +98,12 @@ public class VSNRequest: NSObject, VSNRequestDelegate {
             return
         }
         task.resume()
+    }
+    
+    class func post(with client: VSNAPIClient, endpoint: VSNAPIPath, parameters: [String: Any], _ completion: @escaping VSNAPIResponseBlock) {
+        let url = client.apiURL.appendingPathComponent(endpoint.rawValue)
+        let request = client.configuredRequest(for: url)
+        request.httpMethod = VSNHTTPMethod.post.rawValue
     }
 }
 
