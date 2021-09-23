@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A shared client, used to making network requests to the Visionranger API
 public class VSNAPIClient: NSObject {
     
     public static let shared: VSNAPIClient = {
@@ -17,8 +18,43 @@ public class VSNAPIClient: NSObject {
 
 // MARK: Products
 extension VSNAPIClient {
+    /// Retrieve a product object
+    /// - Parameters:
+    ///   - id: The unique identifier of the product
+    ///   - completion: Returns a product object when successful and an error when not
     public func retrieveProduct(id: String, _ completion: @escaping VSNProductCompletionBlock) {
-        let request = VSNRequest(method: .get, path: .products, session: URLSession.shared)
-        request.query = [URLQueryItem(name: "id", value: id)]
+        let request = VSNRequest(method: .get, path: .products, session: URLSession.shared)!
+        request.parameter = ["id": id, "mode": VisionrangerAPI.environment]
+        request.execute() { response, error in
+            guard let response = response, error == nil else {
+                completion(nil, error)
+                return
+            }
+            let jsonData = Data(response.utf8)
+            let decoder = JSONDecoder()
+            let product = try! decoder.decode(VSNProduct.self, from: jsonData)
+            completion(product, nil)
+            return
+        }
+    }
+    
+    /// List all products from a specified category
+    /// - Parameters:
+    ///   - category: The category the retrieved products belong to
+    ///   - completion: Returns an array of product objects when successful and an error when not
+    public func listProducts(forCategory category: String, _ completion: @escaping VSNProductsCompletionBlock) {
+        let request = VSNRequest(method: .get, path: .products, session: URLSession.shared)!
+        request.parameter = ["mode": VisionrangerAPI.environment, "category": category]
+        request.execute() { response, error in
+            guard let response = response, error == nil else {
+                completion(nil, error)
+                return
+            }
+            let jsonData = Data(response.utf8)
+            let decoder = JSONDecoder()
+            let products = try! decoder.decode([VSNProduct].self, from: jsonData)
+            completion(products, nil)
+            return
+        }
     }
 }
