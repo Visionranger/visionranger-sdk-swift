@@ -104,6 +104,7 @@ class VSNRequest<ResponseType: VSNAPIResponseDecodable>: NSObject, VSNRequestDel
         let url = client.apiURL.appendingPathComponent(endpoint.rawValue)
         let request = client.configuredRequest(for: url)
         request.httpMethod = VSNHTTPMethod.post.rawValue
+        request.vsn_setFormPayload(parameters)
     }
 }
 

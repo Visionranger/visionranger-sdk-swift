@@ -21,6 +21,8 @@ public class VSNAPIClient: NSObject {
         let request = NSMutableURLRequest(url: url)
         return request
     }
+    
+    let urlSession = URLSession(configuration: <#T##URLSessionConfiguration#>)
 }
 
 // MARK: Products

@@ -39,7 +39,7 @@ public class VSNProductConfiguration: NSObject {
     /// The weight of the product configuration, measured in kilogramm
     public var weight: Double?
     
-    public var allResponseFields: [AnyHashable: Any]
+    public var allResponseFields: [AnyHashable : Any]
     
     public convenience init(configID: String, associatedProductID: String, modelURL: String) {
         self.init(

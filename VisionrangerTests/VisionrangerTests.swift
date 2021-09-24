@@ -19,8 +19,7 @@ class VisionrangerTests: XCTestCase {
     }
 
     func testExample() throws {
-        let string = "Hello World"
-        XCTAssertEqual(string, "Hello World")
+        XCTAssertEqual(VSNDeliveryIndex.threeToFiveDays.rawValue, 0)
     }
 
     func testPerformanceExample() throws {

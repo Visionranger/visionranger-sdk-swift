@@ -1,6 +1,6 @@
 //
-//  NSMutableURLRequest.swift
-//  NSMutableURLRequest
+//  NSMutableURLRequest+Visionranger.swift
+//  NSMutableURLRequest+Visionranger
 //
 //  Created by Colin Tessarzick on 23.09.21.
 //
