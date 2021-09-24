@@ -5,6 +5,7 @@ The Visionranger SDK for Swift makes it easy to interact with the Visionranger A
 
 ## Requirements
 The Swift SDK is compatible with apps supporting iOS 11 and above.
+In order to use this SDK, you have to have an account-specific API access key, that be requested from your account manager.
 
 ## Installation
 We support CocoaPods and Swift Package Manager. If you prefer to install the library manually, please use the latest version from our [releases](https://github.com/visionranger/visionranger-sdk-swift/releases) page.
@@ -40,3 +41,13 @@ $ pod update Visionranger
 2. Drag `Visionranger.xcframework` to the Frameworks, Libraries, and Embedded Content section of your Xcode project's General settings. Make sure to select "Copy items if needed".
 
 When new versions of the SDK are released, repeat the above steps to update your installation.
+
+
+## Get started
+### Register your application
+Before using this SDK, you should register your application by contacting your account manager. Doing this, the account manager will create a record of your app on your behalf that will be associated with the API calls you make.
+
+### Obtain an OAuth 2.0 token
+All requests need to be made with an OAuth 2.0 access token. An OAuth token represents an authenticated link between a Visionranger app and a Visionranger partner account.
+
+Once you've created an app, you can go to the Business Hub and manually generate an access token to authorize your app to access your own Visionranger account.
