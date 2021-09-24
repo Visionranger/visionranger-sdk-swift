@@ -19,20 +19,20 @@ To install the SDK, follow these steps:
 1. If you haven't already, install the latest version of [CocoaPods](https://guides.cocoapods.org/using/getting-started.html).
 2. If you don't have an existing [Podfile](https://guides.cocoapods.org/syntax/podfile.html), run the following command to create one:
 ```shell
-pod init
+$ pod init
 ```
 3. Add this line to your Podfile:
 ```shell
-pod 'Visionranger'
+$ pod 'Visionranger'
 ```
 4. Run the following command:
 ```shell
-pod install
+$ pod install
 ```
 5. Don’t forget to use the `.xcworkspace` file to open your project in Xcode, instead of the `.xcodeproj` file, from here on out.
 6. In the future, to update to the latest version of the SDK, run:
 ```shell
-pod update Visionranger
+$ pod update Visionranger
 ```
 
 ### Manual
