@@ -116,7 +116,7 @@ URLSession+Retry.swift
 
 ### Function Names
 Like the file naming conventions, there are two different types of functions. The type of function is part of a custom class or global file scope. Those functions are written in `lowerCamelCase`.
-The second type of function is part of an extension for a third party library, as specified above. Those functions are written in `lowerCamelCase`as well + that they start with `vsn_`.
+The second type of function is part of an extension for a third party library, as specified above. Those functions are written in `lowerCamelCase` as well + that they start with `vsn_`.
 
 Default function example:
 ```swift
