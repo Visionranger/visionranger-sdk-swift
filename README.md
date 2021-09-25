@@ -44,13 +44,9 @@ When new versions of the SDK are released, repeat the above steps to update your
 
 
 ## Get started
-### Register your application
+### Obtain your API Key
 Before using this SDK, you should register your application by contacting your account manager. Doing this, the account manager will create a record of your app on your behalf that will be associated with the API calls you make.
-
-### Obtain an OAuth 2.0 token
-All requests need to be made with an OAuth 2.0 access token. An OAuth token represents an authenticated link between a Visionranger app and a Visionranger partner account.
-
-Once you've created an app, you can go to the Business Hub and manually generate an access token to authorize your app to access your own Visionranger account.
+All requests need to be made with an API Key specific to your app. The API Key represents an authenticated link between a Visionranger app and your Visionranger partner account.
 
 ## Naming conventions
 To provide a consistant developer experience, all names for classes, functions, file names, variables & constants have to meet the following guidelines:
