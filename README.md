@@ -51,3 +51,97 @@ Before using this SDK, you should register your application by contacting your a
 All requests need to be made with an OAuth 2.0 access token. An OAuth token represents an authenticated link between a Visionranger app and a Visionranger partner account.
 
 Once you've created an app, you can go to the Business Hub and manually generate an access token to authorize your app to access your own Visionranger account.
+
+## Contributing
+### Naming conventions
+To provide a consistant developer experience, all names for classes, functions, file names, variables & constants have to meet the following guidelines:
+
+#### Classes
+All classes that have at least `public` scope, need to start with the library identifier `VSN`, followed by the class name itself, written in `UpperCamelCase`, where the first letter is capitalized.
+
+Classes that have `internal` or lower scope, can ommit the library identifier, but have to still be written in `UpperCamelCase`.
+
+Example public class:
+```swift
+public class VSNAPIClient: NSObject {
+
+    public static let shared: VSNAPIClient = {
+        let client = VSNAPIClient()
+        return client
+    }()
+
+    var apiURL: URL! = URL(string: APIBaseURL)
+
+    func configuredRequest(for url: URL) -> NSMutableURLRequest {
+        let request = NSMutableURLRequest(url: url)
+        return request
+    }
+    ...
+}
+```
+Example internal class:
+```swift
+class APIRequest<ResponseType: VSNAPIResponseDecodable: NSObject {
+    typealias VSNAPIResponseBlock = (ResponseType?, HTTPURLResponse?, Error?) -> Void
+
+    class func someFunctionName() {
+        ...
+    }
+    ...
+}
+```
+#### File names
+The file name is defined according to it's content. If the primary content of the file is a custom class, the filename must match the name of the class. If the primary content is an extension of a third-party library, the filename is `third-party class name + Visionranger` (written without any whitespaces).
+
+Default file name example:
+```shell
+ClassName.swift
+```
+```shell
+VSNAPIClient.swift
+```
+
+Extension file name example:
+```shell
+ThirdPartyClassName+Visionranger.filetype
+```
+```shell
+URLEncoder+Visionranger.swift
+```
+
+There is one exception to the file naming conventions specified above. In case the file is meant as an extension and contains only one function or specific purpose, the file will be named according to that specific purpose instead of `+Visionranger`.
+
+Single purpose Extension example:
+```shell
+ThirdPartClassName+Purpose.filetype
+```
+```shell
+URLSession+Retry.swift
+```
+
+#### Functions
+Like the file naming conventions, there are two different types of functions. The type of function is part of a custom class or global file scope. Those functions are written in `lowerCamelCase`.
+The second type of function is part of an extension for a third party library, as specified above. Those functions are written in `lowerCamelCase`as well + that they start with `vsn_`.
+
+Default function example:
+```swift
+someFunctionName(parameter: DataType) { }
+```
+Function inside a third party library extension example:
+```swift
+vsn_someFunctionName(parameter: DataType) { }
+```
+
+#### Variables & Constants
+Variables and constants are always written in `lowerCamelCase`. The only exception are global constants at file level - those are written in `UpperCamelCase`.
+
+Default example:
+```swift
+var myGenericVariable: Int = 5
+let myGenericConstant: String = "This is a fixed string"
+```
+
+Global file scope example:
+```swift
+private let APIVersion = "2021-09-23
+```
