@@ -67,6 +67,9 @@ class VSNRequest<ResponseType: VSNAPIResponseDecodable>: NSObject {
 
         if let responseObject = ResponseType.decodedObject(fromAPIResponse: jsonDictionary) {
             safeCompletion(responseObject, nil)
+        } else {
+            let error: Error = NSError.vsn_genericFailedToParseReponseError()
+            safeCompletion(nil, error)
         }
     }
 }
