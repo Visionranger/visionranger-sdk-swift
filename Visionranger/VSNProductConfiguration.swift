@@ -31,7 +31,7 @@ public class VSNProductConfiguration: NSObject {
     
     /// The average time range in days, that this product configuration requires from ordering to delivery.
     /// This value represents the index of `VSNProductDeliveryRange
-    public var deliveryIndex: Int?
+    public var estimatedDelivery: Int?
     
     /// A 3 dimensional array of Doubles, defined as `[length, width, height]`
     public var dimensions: VSNProductDimensions?
@@ -87,7 +87,7 @@ public class VSNProductConfiguration: NSObject {
 
 extension VSNProductConfiguration: VSNAPIResponseDecodable {
     
-    public class func decodeObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
+    public class func decodedObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
         guard let dict = response,
         let configID = dict["id"] as? String,
         let productID = dict["product_id"] as? String
@@ -98,7 +98,7 @@ extension VSNProductConfiguration: VSNAPIResponseDecodable {
         let productDimensions: VSNProductDimensions?
         
         if let dimensionsDict = dict["dimensions"] as? [AnyHashable: Any],
-           let dimensions = VSNProductDimensions.decodeObject(fromAPIResponse: dimensionsDict) {
+           let dimensions = VSNProductDimensions.decodedObject(fromAPIResponse: dimensionsDict) {
             dimensions.length = dimensionsDict["length"] as? Double
             dimensions.width = dimensionsDict["width"] as? Double
             dimensions.height = dimensionsDict["height"] as? Double

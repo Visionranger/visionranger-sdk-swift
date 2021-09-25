@@ -9,7 +9,7 @@ import Foundation
 
 @objc public protocol VSNAPIResponseDecodable: NSObjectProtocol {
     
-    static func decodeObject(fromAPIResponse response: [AnyHashable: Any]?) -> Self?
+    static func decodedObject(fromAPIResponse response: [AnyHashable: Any]?) -> Self?
     
     var allResponseFields: [AnyHashable: Any] { get }
 }

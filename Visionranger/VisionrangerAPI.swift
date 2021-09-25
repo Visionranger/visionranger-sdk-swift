@@ -21,4 +21,6 @@ public class VisionrangerAPI: NSObject {
     public func setCurrentEnvironment(_ environment: VSNDevelopmentEnvironment) {
         VisionrangerAPI.environment = environment
     }
+    
+    @objc public static var maxRetries: Int = 3
 }
