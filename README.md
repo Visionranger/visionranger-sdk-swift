@@ -52,11 +52,10 @@ All requests need to be made with an OAuth 2.0 access token. An OAuth token repr
 
 Once you've created an app, you can go to the Business Hub and manually generate an access token to authorize your app to access your own Visionranger account.
 
-## Contributing
-### Naming conventions
+## Naming conventions
 To provide a consistant developer experience, all names for classes, functions, file names, variables & constants have to meet the following guidelines:
 
-#### Classes
+### Class Names
 All classes that have at least `public` scope, need to start with the library identifier `VSN`, followed by the class name itself, written in `UpperCamelCase`, where the first letter is capitalized.
 
 Classes that have `internal` or lower scope, can ommit the library identifier, but have to still be written in `UpperCamelCase`.
@@ -90,7 +89,7 @@ class APIRequest<ResponseType: VSNAPIResponseDecodable: NSObject {
     ...
 }
 ```
-#### File names
+### File Names
 The file name is defined according to it's content. If the primary content of the file is a custom class, the filename must match the name of the class. If the primary content is an extension of a third-party library, the filename is `third-party class name + Visionranger` (written without any whitespaces).
 
 Default file name example:
@@ -119,7 +118,7 @@ ThirdPartClassName+Purpose.filetype
 URLSession+Retry.swift
 ```
 
-#### Functions
+### Function Names
 Like the file naming conventions, there are two different types of functions. The type of function is part of a custom class or global file scope. Those functions are written in `lowerCamelCase`.
 The second type of function is part of an extension for a third party library, as specified above. Those functions are written in `lowerCamelCase`as well + that they start with `vsn_`.
 
@@ -132,7 +131,7 @@ Function inside a third party library extension example:
 vsn_someFunctionName(parameter: DataType) { }
 ```
 
-#### Variables & Constants
+### Variable & Constant Names
 Variables and constants are always written in `lowerCamelCase`. The only exception are global constants at file level - those are written in `UpperCamelCase`.
 
 Default example:
