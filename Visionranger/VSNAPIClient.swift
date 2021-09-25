@@ -22,7 +22,7 @@ public class VSNAPIClient: NSObject {
         return request
     }
     
-    let urlSession = URLSession(configuration: <#T##URLSessionConfiguration#>)
+    let urlSession = URLSession(configuration: VisionrangerAPIConfiguration.sharedURLSessionConfiguration)
 }
 
 // MARK: Products
@@ -44,7 +44,10 @@ extension VSNAPIClient {
     }
     
     public func updateProduct(withParameters paramters: VSNParameter, _ completion: @escaping VSNProductCompletionBlock) {
-
+        let endpoint = VSNAPIPath.products
+        VSNRequest<VSNProduct>.post(with: self, endpoint: endpoint, parameters: paramters) { product, _, error in
+            completion(product, error)
+        }
     }
 }
 

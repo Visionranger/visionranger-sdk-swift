@@ -54,7 +54,6 @@ public class VSNProductDimensions: NSObject {
 
 extension VSNProductDimensions: VSNAPIResponseDecodable {
     
-    
     public class func decodedObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
         guard let dict = response else {
             return nil
@@ -62,7 +61,7 @@ extension VSNProductDimensions: VSNAPIResponseDecodable {
         
         let dimensions = VSNProductDimensions()
         dimensions.allResponseFields = dict
-        /// All propertes are nullable
+        // All propertes are nullable
         dimensions.length = dict["length"] as? Double
         dimensions.width = dict["width"] as? Double
         dimensions.height = dict["height"] as? Double

@@ -15,9 +15,6 @@ public class VSNProductConfiguration: NSObject {
     /// The unique identifier of the product, this configuration belongs to
     public let associatedProductID: String?
     
-    /// The price of the product in this configuration
-    public var price: Double?
-    
     /// The global index of the main material, associated to this product configuration
     ///
     /// The main material is defined as the material that covers at least 50% of the visual surface of a product.
@@ -29,15 +26,7 @@ public class VSNProductConfiguration: NSObject {
     /// The URL that leads to this product's configuration
     public var modelURL: String?
     
-    /// The average time range in days, that this product configuration requires from ordering to delivery.
-    /// This value represents the index of `VSNProductDeliveryRange
-    public var estimatedDelivery: Int?
-    
-    /// A 3 dimensional array of Doubles, defined as `[length, width, height]`
-    public var dimensions: VSNProductDimensions?
-    
-    /// The weight of the product configuration, measured in kilogramm
-    public var weight: Double?
+    public var orderDetails: VSNProductOrderDetails?
     
     public var allResponseFields: [AnyHashable : Any]
     
@@ -47,8 +36,7 @@ public class VSNProductConfiguration: NSObject {
             associatedProductID: associatedProductID,
             material: 0,
             modelURL: modelURL,
-            dimensions: VSNProductDimensions(),
-            weight: 0,
+            orderDetails: nil,
             allResponseFields: [:]
         )
     }
@@ -58,16 +46,14 @@ public class VSNProductConfiguration: NSObject {
         associatedProductID: String,
         material: Int,
         modelURL: String,
-        dimensions: VSNProductDimensions?,
-        weight: Double,
+        orderDetails: VSNProductOrderDetails?,
         allResponseFields: [AnyHashable: Any]
     ) {
         self.configID = configID
         self.associatedProductID = associatedProductID
         self.material = material
         self.modelURL = modelURL
-        self.dimensions = dimensions
-        self.weight = weight
+        self.orderDetails = orderDetails
         self.allResponseFields = allResponseFields
         super.init()
     }
@@ -78,8 +64,7 @@ public class VSNProductConfiguration: NSObject {
             associatedProductID: "",
             material: 0,
             modelURL: "",
-            dimensions: VSNProductDimensions(),
-            weight: 0,
+            orderDetails: nil,
             allResponseFields: [:]
         )
     }
@@ -95,16 +80,18 @@ extension VSNProductConfiguration: VSNAPIResponseDecodable {
             return nil
         }
         
-        let productDimensions: VSNProductDimensions?
+        let orderDetails: VSNProductOrderDetails?
         
-        if let dimensionsDict = dict["dimensions"] as? [AnyHashable: Any],
-           let dimensions = VSNProductDimensions.decodedObject(fromAPIResponse: dimensionsDict) {
-            dimensions.length = dimensionsDict["length"] as? Double
-            dimensions.width = dimensionsDict["width"] as? Double
-            dimensions.height = dimensionsDict["height"] as? Double
-            productDimensions = dimensions
+        if let orderDict = dict["order_details"] as? [AnyHashable : Any],
+           let order = VSNProductOrderDetails.decodedObject(fromAPIResponse: orderDict) {
+            order.price = orderDict["price"] as? Double
+            order.weight = orderDict["weight"] as? Double
+            order.estimatedDelivery = orderDict["estimated_delivery_index"] as? VSNProductDeliveryRange
+            order.dimensions = orderDict["dimensions"] as? VSNProductDimensions
+            order.allResponseFields = orderDict
+            orderDetails = order
         } else {
-            productDimensions = nil
+            orderDetails = nil
         }
         
         return VSNProductConfiguration(
@@ -112,8 +99,7 @@ extension VSNProductConfiguration: VSNAPIResponseDecodable {
             associatedProductID: productID,
             material: dict["material"] as! Int,
             modelURL: dict["model_url"] as! String,
-            dimensions: productDimensions,
-            weight: dict["weight"] as! Double,
+            orderDetails: orderDetails,
             allResponseFields: dict
         ) as? Self
     }
