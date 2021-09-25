@@ -5,7 +5,7 @@ The Visionranger SDK for Swift makes it easy to interact with the Visionranger A
 
 ## Requirements
 The Swift SDK is compatible with apps supporting iOS 11 and above.
-In order to use this SDK, you have to have an account-specific API access key, that be requested from your account manager.
+In order to use this SDK, you have to have an account-specific API access key, that needs to be requested from your account manager.
 
 ## Installation
 We support CocoaPods and Swift Package Manager. If you prefer to install the library manually, please use the latest version from our [releases](https://github.com/visionranger/visionranger-sdk-swift/releases) page.
