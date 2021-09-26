@@ -51,6 +51,44 @@ class VSNRequest<ResponseType: VSNAPIResponseDecodable>: NSObject {
         })
     }
     
+    class func getWith(
+        _ client: VSNAPIClient,
+        endpoint: VSNAPIPath,
+        parameters: [String: Any],
+        _ completion: @escaping VSNAPIResponseBlock
+    ) {
+        let url = client.apiURL.appendingPathComponent(endpoint.rawValue)
+        
+        let request = client.configuredRequest(for: url)
+        request.httpMethod = VSNHTTPMethod.get.rawValue
+        request.vsn_addParameters(toURL: parameters)
+        
+        client.urlSession.vsn_performDataTask(
+            with: request as URLRequest,
+            completionHandler: { body, response, error in
+                self.parseResponse(response, body: body, error: error, completion: completion)
+        })
+    }
+    
+    class func delete(
+        with client: VSNAPIClient,
+        endpoint: VSNAPIPath,
+        parameters: [String: Any],
+        completion: @escaping VSNAPIResponseBlock
+    ) {
+        let url = client.apiURL.appendingPathComponent(endpoint.rawValue)
+        
+        let request = client.configuredRequest(for: url)
+        request.httpMethod = VSNHTTPMethod.delete.rawValue
+        request.vsn_addParameters(toURL: parameters)
+        
+        client.urlSession.vsn_performDataTask(
+            with: request as URLRequest,
+            completionHandler: { body, response, error in
+                self.parseResponse(response, body: body, error: error, completion: completion)
+        })
+    }
+    
     class func parseResponse<ResponseType: VSNAPIResponseDecodable>(
         _ response: URLResponse?,
         body: Data?,

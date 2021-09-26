@@ -27,6 +27,11 @@
 import Foundation
 
 extension URLSession {
+    /// The default method to use, when performing any network requests to the Visionranger API
+    /// - Parameters:
+    ///   - request: The `URLRequest` to be used to perform the network task
+    ///   - completionHandler: Returns the default set of network outputs (body, headers and error)
+    ///   - retryCount: How many times the network request should retry before returning a `429` error
     func vsn_performDataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void, retryCount: Int = VisionrangerAPI.maxRetries) {
         let task = dataTask(with: request) { data, response, error in
             if let httpResponse = response as? HTTPURLResponse,

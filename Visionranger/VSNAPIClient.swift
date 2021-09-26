@@ -29,18 +29,26 @@ import Foundation
 /// A shared client, used to making network requests to the Visionranger API
 public class VSNAPIClient: NSObject {
     
+    /// A shared instance of the API client. Useful for upcoming usecases with extensive monitoring and computer vision network tasks
     public static let shared: VSNAPIClient = {
         let client = VSNAPIClient()
         return client
     }()
     
+    /// Constructing a `URL` from the API host
     var apiURL: URL! = URL(string: APIBaseURL)
     
+    /// A default `URLRequest` to set the default headers
+    /// - Parameter url: The `URL` path that should be used for this task
+    /// - Returns: Returns a mutable `URLRequest`
+    ///
+    /// Used on all networking requests to let users change request if necessary
     func configuredRequest(for url: URL) -> NSMutableURLRequest {
         let request = NSMutableURLRequest(url: url)
         return request
     }
     
+    /// A `URLSession` that uses a shared configuration for all network requests to the Visinoranger API
     let urlSession = URLSession(configuration: VisionrangerAPIConfiguration.sharedURLSessionConfiguration)
 }
 
@@ -51,7 +59,13 @@ extension VSNAPIClient {
     ///   - id: The unique identifier of the product
     ///   - completion: Returns a product object when successful and an error when not
     public func retrieveProduct(id: String, _ completion: @escaping VSNProductCompletionBlock) {
-
+        VSNRequest<VSNProduct>.getWith(
+            self,
+            endpoint: .products,
+            parameters: ["mode": VisionrangerAPI.environment, "id": id]
+        ) { object, _, error in
+            completion(object, error)
+        }
     }
     
     /// List all products from a specified category
@@ -62,9 +76,17 @@ extension VSNAPIClient {
 
     }
     
+    /// Updates a product object with the specified parameters
+    /// - Parameters:
+    ///   - paramters: The object's properties that should be changed
+    ///   - completion: Return the updated product object when successful and an error when not
     public func updateProduct(withParameters paramters: VSNParameter, _ completion: @escaping VSNProductCompletionBlock) {
         let endpoint = VSNAPIPath.products
-        VSNRequest<VSNProduct>.post(with: self, endpoint: endpoint, parameters: paramters) { product, _, error in
+        VSNRequest<VSNProduct>.post(
+            with: self,
+            endpoint: endpoint,
+            parameters: paramters
+        ) { product, _, error in
             completion(product, error)
         }
     }

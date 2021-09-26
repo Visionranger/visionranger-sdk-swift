@@ -28,6 +28,10 @@ import Foundation
 
 extension NSMutableURLRequest {
     
+    /// Adds the specified parameters to a network request
+    /// - Parameter parameters: Array of key-value pairs to be added
+    ///
+    /// This function is used on HTTP `GET` and `DELETE requests
     public func vsn_addParameters(toURL parameters: [String: Any]) {
         guard let url = url else {
             assertionFailure()
@@ -38,6 +42,8 @@ extension NSMutableURLRequest {
         self.url = URL(string: urlString + (url.query != nil ? "&\(query)" : "?\(query)"))
     }
     
+    /// Creates a set of key-value pairs for an HTTP `POST` request
+    /// - Parameter formPayload: A set of `x-www-form-urlencoded` key-value pairs, that update or create a specific object
     public func vsn_setFormPayload(_ formPayload: [String: Any]) {
         let formData = URLEncoder.queryString(from: formPayload).data(using: .utf8)
         httpBody = formData

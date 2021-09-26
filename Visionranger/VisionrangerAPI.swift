@@ -41,5 +41,6 @@ public class VisionrangerAPI: NSObject {
         VisionrangerAPI.environment = environment
     }
     
+    /// The number of times a network request will retry before returning a 429 error code
     @objc public static var maxRetries: Int = 3
 }
