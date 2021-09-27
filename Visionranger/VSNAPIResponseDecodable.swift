@@ -1,8 +1,8 @@
 //
-//  VSNBlocks.swift
+//  VSNAPIResponseDecodable.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 22.09.21.
+//  Created by Colin Tessarzick on 23.09.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -26,14 +26,9 @@
 
 import Foundation
 
-public typealias VSNVoidBlock = () -> Void
-
-public typealias VSNErrorBlock = (Error?) -> Void
-
-public typealias VSNBooleanSuccessBlock = (Bool?, Error?) -> Void
-
-public typealias VSNJSONResponseCompletionBlock = (String?, Error?) -> Void
-
-public typealias VSNProductCompletionBlock = (VSNProduct?, Error?) -> Void
-
-public typealias VSNProductsCompletionBlock = ([VSNProduct]?, Error?) -> Void
+@objc public protocol VSNAPIResponseDecodable: NSObjectProtocol {
+    
+    static func decodedObject(fromAPIResponse response: [AnyHashable: Any]?) -> Self?
+    
+    var allResponseFields: [AnyHashable: Any] { get }
+}

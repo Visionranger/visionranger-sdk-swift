@@ -1,8 +1,8 @@
 //
-//  VSNBlocks.swift
+//  NSError+Visionranger.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 22.09.21.
+//  Created by Colin Tessarzick on 25.09.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -26,14 +26,15 @@
 
 import Foundation
 
-public typealias VSNVoidBlock = () -> Void
-
-public typealias VSNErrorBlock = (Error?) -> Void
-
-public typealias VSNBooleanSuccessBlock = (Bool?, Error?) -> Void
-
-public typealias VSNJSONResponseCompletionBlock = (String?, Error?) -> Void
-
-public typealias VSNProductCompletionBlock = (VSNProduct?, Error?) -> Void
-
-public typealias VSNProductsCompletionBlock = ([VSNProduct]?, Error?) -> Void
+public extension NSError {
+    class func vsn_unexpectedErrorMessage() -> String {
+        return "There was an unexpected error. Try again in a few seconds."
+    }
+    
+    class func vsn_genericFailedToParseReponseError() -> NSError {
+        let userInfo = [
+            NSLocalizedDescriptionKey: self.vsn_unexpectedErrorMessage()
+        ]
+        return NSError(domain: "com.visionranger.lib", code: 60, userInfo: userInfo)
+    }
+}

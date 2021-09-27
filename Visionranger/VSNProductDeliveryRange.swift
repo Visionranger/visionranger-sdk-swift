@@ -1,8 +1,8 @@
 //
-//  VSNBlocks.swift
+//  VSNProductDeliveryRange.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 22.09.21.
+//  Created by Colin Tessarzick on 24.09.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -26,14 +26,17 @@
 
 import Foundation
 
-public typealias VSNVoidBlock = () -> Void
-
-public typealias VSNErrorBlock = (Error?) -> Void
-
-public typealias VSNBooleanSuccessBlock = (Bool?, Error?) -> Void
-
-public typealias VSNJSONResponseCompletionBlock = (String?, Error?) -> Void
-
-public typealias VSNProductCompletionBlock = (VSNProduct?, Error?) -> Void
-
-public typealias VSNProductsCompletionBlock = ([VSNProduct]?, Error?) -> Void
+public enum VSNProductDeliveryRange: Int {
+    case threeToFiveDays
+    case upToOneWeek
+    case oneToTwoWeeks
+    case twoWeeks
+    case twoToThreeWeeks
+    case threeWeeks
+    case threeToFourWeeks
+    case fourToSixWeeks
+    case sixWeeksToTwoMonths
+    case twoMonths
+    case twoToThreeMonths
+    case moreThanThreeMonths
+}
