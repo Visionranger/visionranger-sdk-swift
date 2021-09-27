@@ -29,6 +29,9 @@ import Foundation
 /// A shared client, used to making network requests to the Visionranger API
 public class VSNAPIClient: NSObject {
     
+    /// The current version of this library
+    @objc public static let VSNSDKVersion = VisionrangerAPIConfiguration.VSNSDKVersion
+    
     /// A shared instance of the API client. Useful for upcoming usecases with extensive monitoring and computer vision network tasks
     public static let shared: VSNAPIClient = {
         let client = VSNAPIClient()
@@ -43,13 +46,27 @@ public class VSNAPIClient: NSObject {
     /// - Returns: Returns a mutable `URLRequest`
     ///
     /// Used on all networking requests to let users change request if necessary
-    func configuredRequest(for url: URL) -> NSMutableURLRequest {
+    func configuredRequest(for url: URL, additionalHeaders: [String : String]) -> NSMutableURLRequest {
         let request = NSMutableURLRequest(url: url)
+        var headers = defaultheaders
+        for (k, v) in additionalHeaders { headers[k] = v }
+        headers.forEach { key, value in
+            request.setValue(value, forHTTPHeaderField: key)
+        }
         return request
     }
     
     /// A `URLSession` that uses a shared configuration for all network requests to the Visinoranger API
     let urlSession = URLSession(configuration: VisionrangerAPIConfiguration.sharedURLSessionConfiguration)
+    
+    @objc var defaultheaders: [String : String] {
+        var defaultHeaders: [String : String] = [:]
+        defaultHeaders["Visionranger-Version"] = APIVersion
+        defaultHeaders["Visionranger-SDK-Version"] = "swift-ios/\(VSNAPIClient.VSNSDKVersion)"
+        defaultHeaders["Visionranger-Mode"] = VisionrangerAPI.environment.rawValue
+        defaultHeaders["Authorization"] = VisionrangerAPI.defaultAccessKey
+        return defaultHeaders
+    }
 }
 
 // MARK: Products
@@ -62,9 +79,9 @@ extension VSNAPIClient {
         VSNRequest<VSNProduct>.getWith(
             self,
             endpoint: .products,
-            parameters: ["mode": VisionrangerAPI.environment, "id": id]
-        ) { object, _, error in
-            completion(object, error)
+            parameters: ["id": id]
+        ) { product, _, error in
+            completion(product, error)
         }
     }
     
@@ -81,13 +98,26 @@ extension VSNAPIClient {
     ///   - paramters: The object's properties that should be changed
     ///   - completion: Return the updated product object when successful and an error when not
     public func updateProduct(withParameters paramters: VSNParameter, _ completion: @escaping VSNProductCompletionBlock) {
-        let endpoint = VSNAPIPath.products
         VSNRequest<VSNProduct>.post(
             with: self,
-            endpoint: endpoint,
+            endpoint: .products,
             parameters: paramters
-        ) { product, _, error in
-            completion(product, error)
+        ) { products, _, error in
+            completion(products, error)
+        }
+    }
+    
+    /// Deletes a product object with the specified ID
+    /// - Parameters:
+    ///   - id: The unique identifier of the object to be deleted
+    ///   - completion: Returns an empty body with the HTTP statuscode 204 when successful and an error when not
+    public func deleteProduct(id: String, _ completion: @escaping VSNProductCompletionBlock) {
+        VSNRequest<VSNProduct>.delete(
+            with: self,
+            endpoint: .products,
+            parameters: ["id": id]
+        ) { response, _, error in
+            completion(response, error)
         }
     }
 }

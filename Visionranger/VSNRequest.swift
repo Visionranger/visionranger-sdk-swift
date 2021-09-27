@@ -33,13 +33,14 @@ class VSNRequest<ResponseType: VSNAPIResponseDecodable>: NSObject {
         with client: VSNAPIClient,
         endpoint: VSNAPIPath,
         parameters: [String: Any],
+        additionalHeaders: [String : String] = [:],
         _ completion: @escaping VSNAPIResponseBlock
     ) {
         // Construct URL
         let url = client.apiURL.appendingPathComponent(endpoint.rawValue)
         
         // Setup URLRequest
-        let request = client.configuredRequest(for: url)
+        let request = client.configuredRequest(for: url, additionalHeaders: additionalHeaders)
         request.httpMethod = VSNHTTPMethod.post.rawValue
         request.vsn_setFormPayload(parameters)
         
@@ -54,12 +55,28 @@ class VSNRequest<ResponseType: VSNAPIResponseDecodable>: NSObject {
     class func getWith(
         _ client: VSNAPIClient,
         endpoint: VSNAPIPath,
+        parameters: [String : Any],
+        _ completion: @escaping VSNAPIResponseBlock
+    ) {
+        self.getWith(
+            client,
+            endpoint: endpoint,
+            parameters: parameters,
+            additionalHeaders: [:],
+            completion
+        )
+    }
+    
+    class func getWith(
+        _ client: VSNAPIClient,
+        endpoint: VSNAPIPath,
         parameters: [String: Any],
+        additionalHeaders: [String : String],
         _ completion: @escaping VSNAPIResponseBlock
     ) {
         let url = client.apiURL.appendingPathComponent(endpoint.rawValue)
         
-        let request = client.configuredRequest(for: url)
+        let request = client.configuredRequest(for: url, additionalHeaders: additionalHeaders)
         request.httpMethod = VSNHTTPMethod.get.rawValue
         request.vsn_addParameters(toURL: parameters)
         
@@ -73,12 +90,28 @@ class VSNRequest<ResponseType: VSNAPIResponseDecodable>: NSObject {
     class func delete(
         with client: VSNAPIClient,
         endpoint: VSNAPIPath,
+        parameters: [String : Any],
+        completion: @escaping VSNAPIResponseBlock
+    ) {
+        self.delete(
+            with: client,
+            endpoint: endpoint,
+            parameters: parameters,
+            additionalHeaders: [:],
+            completion: completion
+        )
+    }
+    
+    class func delete(
+        with client: VSNAPIClient,
+        endpoint: VSNAPIPath,
         parameters: [String: Any],
+        additionalHeaders: [String : String],
         completion: @escaping VSNAPIResponseBlock
     ) {
         let url = client.apiURL.appendingPathComponent(endpoint.rawValue)
         
-        let request = client.configuredRequest(for: url)
+        let request = client.configuredRequest(for: url, additionalHeaders: additionalHeaders)
         request.httpMethod = VSNHTTPMethod.delete.rawValue
         request.vsn_addParameters(toURL: parameters)
         
