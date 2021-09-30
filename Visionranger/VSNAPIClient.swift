@@ -87,9 +87,9 @@ extension VSNAPIClient {
     
     /// List all products from a specified category
     /// - Parameters:
-    ///   - category: The category the retrieved products belong to
+    ///   - paramters: The object's properties that should be changed
     ///   - completion: Returns an array of product objects when successful and an error when not
-    public func listProducts(forCategory category: String, _ completion: @escaping VSNProductsCompletionBlock) {
+    public func listProducts(withParameters paramters: VSNParameters, _ completion: @escaping VSNProductsCompletionBlock) {
 
     }
     
@@ -97,7 +97,7 @@ extension VSNAPIClient {
     /// - Parameters:
     ///   - paramters: The object's properties that should be changed
     ///   - completion: Return the updated product object when successful and an error when not
-    public func updateProduct(withParameters paramters: VSNParameter, _ completion: @escaping VSNProductCompletionBlock) {
+    public func updateProduct(withParameters paramters: VSNParameters, _ completion: @escaping VSNProductCompletionBlock) {
         VSNRequest<VSNProduct>.post(
             with: self,
             endpoint: .products,

@@ -1,8 +1,8 @@
 //
-//  VSNParameter.swift
+//  VSNProductListDeserializer.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 23.09.21.
+//  Created by Colin Tessarzick on 30.09.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -26,6 +26,20 @@
 
 import Foundation
 
-public typealias VSNParameter = [String: Any]
-
-
+class VSNProductListDeserializer: NSObject, VSNAPIResponseDecodable {
+    private(set) var products: [VSNProduct]?
+    private(set) var allResponseFields: [AnyHashable : Any] = [:]
+    
+    override required init() {
+        super.init()
+    }
+    
+    class func decodedObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
+        guard let response = response else {
+            return nil
+        }
+        let dict = (response as NSDictionary).vsn_dictionaryByRemovingNulls() as NSDictionary
+        
+//        guard let data = dict
+    }
+}
