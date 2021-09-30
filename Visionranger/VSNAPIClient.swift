@@ -64,7 +64,7 @@ public class VSNAPIClient: NSObject {
         defaultHeaders["Visionranger-Version"] = APIVersion
         defaultHeaders["Visionranger-SDK-Version"] = "swift-ios/\(VSNAPIClient.VSNSDKVersion)"
         defaultHeaders["Visionranger-Mode"] = VisionrangerAPI.environment.rawValue
-        defaultHeaders["Authorization"] = VisionrangerAPI.defaultAccessKey
+        defaultHeaders["X-API-Key"] = VisionrangerAPI.defaultAccessKey
         return defaultHeaders
     }
 }
@@ -148,4 +148,4 @@ extension VSNAPIClient {
 }
 
 private let APIVersion = "2021-09-23"
-private let APIBaseURL: String = "https://api.visionranger.com"
+private let APIBaseURL: String = "https://k9abld85t0.execute-api.eu-central-1.amazonaws.com/dev"

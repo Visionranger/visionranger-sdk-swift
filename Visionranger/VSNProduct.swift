@@ -28,7 +28,7 @@ import Foundation
 
 public class VSNProduct: NSObject {
     
-    public var productID: String?
+    public let productID: String?
     
     public var name: String?
     
@@ -67,7 +67,7 @@ extension VSNProduct: VSNAPIResponseDecodable {
            let catalogDetails = VSNProductCatalogization.decodedObject(fromAPIResponse: catalogDict) {
             catalogDetails.room = catalogDict["room"] as? Int
             catalogDetails.houseArea = catalogDict["house_area"] as? Int
-            catalogDetails.designStyle = catalogDict["interior_design_style"] as? Int
+            catalogDetails.designStyle = catalogDict["design_style"] as? Int
             catalogDetails.category = catalogDict["category"] as? Int
             catalogDetails.subCategory = catalogDict["sub_category"] as? Int
             catalogization = catalogDetails

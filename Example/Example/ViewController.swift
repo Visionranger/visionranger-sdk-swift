@@ -13,14 +13,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let client = VSNAPIClient()
+        let client = VSNAPIClient.shared
+        
+        print(VisionrangerAPI.maxRetries)
         
         client.retrieveProduct(id: "1") { product, error in
-            guard let product = product, error != nil else {
-                print(error?.localizedDescription ?? "No data available")
+            guard let product = product, error == nil else {
+                print(error?.localizedDescription ?? "Some error occured")
                 return
             }
-            print(product)
+            let item = product.self
+            print(item)
         }
     }
 }
