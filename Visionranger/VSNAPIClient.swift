@@ -87,17 +87,42 @@ extension VSNAPIClient {
     
     /// List all products from a specified category
     /// - Parameters:
-    ///   - category: The category the retrieved products belong to
+    ///   - paramters: The object's properties that should be changed
     ///   - completion: Returns an array of product objects when successful and an error when not
-    public func listProducts(forCategory category: String, _ completion: @escaping VSNProductsCompletionBlock) {
-
+    public func listProducts(withParameters parameters: VSNParameters, _ completion: @escaping VSNProductsCompletionBlock) {
+        var shared_Products = [VSNProduct]()
+        var shared_lastError: Error? = nil
+        let group = DispatchGroup()
+        
+        group.enter()
+        
+        VSNRequest<VSNProductListDeserializer>.getWith(
+            self,
+            endpoint: .products,
+            parameters: parameters
+        ) { deserializer, _, error in
+            DispatchQueue.global(qos: .userInteractive).async(flags: .barrier) {
+                // .barrier ensures we're the only thing writing to shared_ vars
+                if let error = error {
+                    shared_lastError = error
+                }
+                if let products = deserializer?.products {
+                    shared_Products.append(contentsOf: products)
+                }
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            completion(shared_Products, shared_lastError)
+        }
     }
     
     /// Updates a product object with the specified parameters
     /// - Parameters:
     ///   - paramters: The object's properties that should be changed
     ///   - completion: Return the updated product object when successful and an error when not
-    public func updateProduct(withParameters paramters: VSNParameter, _ completion: @escaping VSNProductCompletionBlock) {
+    public func updateProduct(withParameters paramters: VSNParameters, _ completion: @escaping VSNProductCompletionBlock) {
         VSNRequest<VSNProduct>.post(
             with: self,
             endpoint: .products,

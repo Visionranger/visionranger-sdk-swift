@@ -1,8 +1,8 @@
 //
-//  VSNProductDeliveryRange.swift
+//  VSNProductListDeserializer.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 24.09.21.
+//  Created by Colin Tessarzick on 30.09.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -26,17 +26,32 @@
 
 import Foundation
 
-public enum VSNProductDeliveryRange: Int {
-    case threeToFiveDays
-    case upToOneWeek
-    case oneToTwoWeeks
-    case twoWeeks
-    case twoToThreeWeeks
-    case threeWeeks
-    case threeToFourWeeks
-    case fourToSixWeeks
-    case sixWeeksToTwoMonths
-    case twoMonths
-    case twoToThreeMonths
-    case moreThanThreeMonths
+class VSNProductListDeserializer: NSObject, VSNAPIResponseDecodable {
+    private(set) var products: [VSNProduct]?
+    private(set) var allResponseFields: [AnyHashable : Any] = [:]
+    
+    override required init() {
+        super.init()
+    }
+    
+    class func decodedObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
+        guard let response = response else {
+            return nil
+        }
+        let dict = (response as NSDictionary).vsn_dictionaryByRemovingNulls() as NSDictionary
+        // Required fields
+        guard let data = dict.vsn_array(forKey: "data") as? [[AnyHashable : Any]] else {
+            return nil
+        }
+        let productsDeserializer = self.init()
+        var products: [VSNProduct] = []
+        for productJSON in data {
+            let product = VSNProduct.decodedObject(fromAPIResponse: productJSON)
+            if let product = product {
+                products.append(product)
+            }
+        }
+        productsDeserializer.products = products
+        return productsDeserializer
+    }
 }

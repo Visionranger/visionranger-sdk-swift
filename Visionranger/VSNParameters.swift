@@ -26,6 +26,6 @@
 
 import Foundation
 
-public typealias VSNParameter = [String: Any]
+public typealias VSNParameters = [String: Any]
 
 

@@ -1,5 +1,5 @@
 //
-//  VSNProductDimensions.swift
+//  VSNConfigurationDimensions.swift
 //  Visionranger
 //
 //  Created by Colin Tessarzick on 23.09.21.
@@ -26,10 +26,10 @@
 
 import Foundation
 
-/// Product dimensions and volume are important values for determining the product size category.
+/// Configuration dimensions and volume are important values for determining the product size category.
 ///
 /// In addition to product weight, dimensions are used to calculate a variety of fees for shipping through Visionranger's verified panrter businesses, including storage fees, shipping fees, assembly fees and handling fees for merchandise returns.
-public class VSNProductDimensions: NSObject {
+public class VSNConfigurationDimensions: NSObject {
     
     /// The length of the product in centimeter
     public var length: Double?
@@ -71,14 +71,14 @@ public class VSNProductDimensions: NSObject {
     }
 }
 
-extension VSNProductDimensions: VSNAPIResponseDecodable {
+extension VSNConfigurationDimensions: VSNAPIResponseDecodable {
     
     public class func decodedObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
         guard let dict = response else {
             return nil
         }
         
-        let dimensions = VSNProductDimensions()
+        let dimensions = VSNConfigurationDimensions()
         dimensions.allResponseFields = dict
         // All propertes are nullable
         dimensions.length = dict["length"] as? Double
