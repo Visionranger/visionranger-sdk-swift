@@ -37,12 +37,12 @@ extension NSDictionary {
             }
             if let obj = obj as? [Any] {
                 // Save array after removing any null values
-                let stp = obj.vsn_arrayByRemovingNulls()
-                result[key] = stp
+                let vsn = obj.vsn_arrayByRemovingNulls()
+                result[key] = vsn
             } else if let obj = obj as? NSDictionary {
                 // Save dictionary after removing any null values
-                let stp = obj.vsn_dictionaryByRemovingNulls() as NSDictionary
-                result[key] = stp
+                let vsn = obj.vsn_dictionaryByRemovingNulls() as NSDictionary
+                result[key] = vsn
             } else if obj is NSNull {
                 // Skip null value
             } else {

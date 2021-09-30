@@ -1,5 +1,5 @@
 //
-//  VSNProductOrderDetails.swift
+//  VSNConfigurationOrderDetails.swift
 //  Visionranger
 //
 //  Created by Colin Tessarzick on 25.09.21.
@@ -26,24 +26,24 @@
 
 import Foundation
 
-public class VSNProductOrderDetails: NSObject {
+public class VSNConfigurationOrderDetails: NSObject {
     
     /// The price of the product in a specified configuration
     public var price: Double?
     
     /// The average time range in days, that this product configuration requires from ordering to delivery.
     /// This value represents the index of `VSNProductDeliveryRange
-    public var estimatedDelivery: VSNProductDeliveryRange?
+    public var estimatedDelivery: VSNConfigurationDeliveryRange?
     
     /// The weight of the product configuration, measured in kilogramm
     public var weight: Double?
     
-    /// A 3 dimensional array of Doubles, defined as `[length, width, height]`
-    public var dimensions: VSNProductDimensions?
+    /// An array of Doubles, defined as `[length, width, height]`
+    public var dimensions: VSNConfigurationDimensions?
     
     public var allResponseFields: [AnyHashable : Any]
     
-    public convenience init(price: Double, weight: Double, dimensions: VSNProductDimensions) {
+    public convenience init(price: Double, weight: Double, dimensions: VSNConfigurationDimensions) {
         self.init(
             price: price,
             weight: weight,
@@ -56,8 +56,8 @@ public class VSNProductOrderDetails: NSObject {
     internal init(
         price: Double,
         weight: Double,
-        estimatedDelivery: VSNProductDeliveryRange?,
-        dimensions: VSNProductDimensions?,
+        estimatedDelivery: VSNConfigurationDeliveryRange?,
+        dimensions: VSNConfigurationDimensions?,
         allResponseFields: [AnyHashable : Any]
     ) {
         self.price = price
@@ -72,16 +72,16 @@ public class VSNProductOrderDetails: NSObject {
     }
 }
 
-extension VSNProductOrderDetails: VSNAPIResponseDecodable {
+extension VSNConfigurationOrderDetails: VSNAPIResponseDecodable {
     
     public class func decodedObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
         guard let dict = response else {
             return nil
         }
         
-        let dimensionsObject: VSNProductDimensions?
+        let dimensionsObject: VSNConfigurationDimensions?
         if let dimensionsDict = dict["dimensions"] as? [AnyHashable : Any],
-           let dimensions = VSNProductDimensions.decodedObject(fromAPIResponse: dimensionsDict) {
+           let dimensions = VSNConfigurationDimensions.decodedObject(fromAPIResponse: dimensionsDict) {
             dimensions.length = dimensionsDict["length"] as? Double
             dimensions.height = dimensionsDict["height"] as? Double
             dimensions.width = dimensionsDict["width"] as? Double
@@ -91,9 +91,9 @@ extension VSNProductOrderDetails: VSNAPIResponseDecodable {
         }
         let price = dict["price"] as? Double ?? 0
         let weight = dict["weight"] as? Double ?? 0
-        let estimatedDelivery = dict["estimated_delivery_index"] as? VSNProductDeliveryRange
+        let estimatedDelivery = dict["estimated_delivery_index"] as? VSNConfigurationDeliveryRange
         
-        return VSNProductOrderDetails(
+        return VSNConfigurationOrderDetails(
             price: price,
             weight: weight,
             estimatedDelivery: estimatedDelivery,

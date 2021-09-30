@@ -39,7 +39,19 @@ class VSNProductListDeserializer: NSObject, VSNAPIResponseDecodable {
             return nil
         }
         let dict = (response as NSDictionary).vsn_dictionaryByRemovingNulls() as NSDictionary
-        
-//        guard let data = dict
+        // Required fields
+        guard let data = dict.vsn_array(forKey: "data") as? [[AnyHashable : Any]] else {
+            return nil
+        }
+        let productsDeserializer = self.init()
+        var products: [VSNProduct] = []
+        for productJSON in data {
+            let product = VSNProduct.decodedObject(fromAPIResponse: productJSON)
+            if let product = product {
+                products.append(product)
+            }
+        }
+        productsDeserializer.products = products
+        return productsDeserializer
     }
 }

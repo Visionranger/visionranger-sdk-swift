@@ -1,5 +1,5 @@
 //
-//  VSNProductConfiguration.swift
+//  VSNConfiguration.swift
 //  Visionranger
 //
 //  Created by Colin Tessarzick on 23.09.21.
@@ -26,7 +26,7 @@
 
 import Foundation
 
-public class VSNProductConfiguration: NSObject {
+public class VSNConfiguration: NSObject {
     
     /// The unique identifier of the product's configuration from the Visionranger API
     public let configID: String?
@@ -45,7 +45,7 @@ public class VSNProductConfiguration: NSObject {
     /// The URL that leads to this product's configuration
     public var modelURL: String?
     
-    public var orderDetails: VSNProductOrderDetails?
+    public var orderDetails: VSNConfigurationOrderDetails?
     
     public var allResponseFields: [AnyHashable : Any]
     
@@ -65,7 +65,7 @@ public class VSNProductConfiguration: NSObject {
         associatedProductID: String,
         material: Int,
         modelURL: String,
-        orderDetails: VSNProductOrderDetails?,
+        orderDetails: VSNConfigurationOrderDetails?,
         allResponseFields: [AnyHashable: Any]
     ) {
         self.configID = configID
@@ -89,7 +89,7 @@ public class VSNProductConfiguration: NSObject {
     }
 }
 
-extension VSNProductConfiguration: VSNAPIResponseDecodable {
+extension VSNConfiguration: VSNAPIResponseDecodable {
     
     public class func decodedObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
         guard let dict = response,
@@ -99,21 +99,21 @@ extension VSNProductConfiguration: VSNAPIResponseDecodable {
             return nil
         }
         
-        let orderDetails: VSNProductOrderDetails?
+        let orderDetails: VSNConfigurationOrderDetails?
         
         if let orderDict = dict["order_details"] as? [AnyHashable : Any],
-           let order = VSNProductOrderDetails.decodedObject(fromAPIResponse: orderDict) {
+           let order = VSNConfigurationOrderDetails.decodedObject(fromAPIResponse: orderDict) {
             order.price = orderDict["price"] as? Double
             order.weight = orderDict["weight"] as? Double
-            order.estimatedDelivery = orderDict["estimated_delivery_index"] as? VSNProductDeliveryRange
-            order.dimensions = orderDict["dimensions"] as? VSNProductDimensions
+            order.estimatedDelivery = orderDict["estimated_delivery_index"] as? VSNConfigurationDeliveryRange
+            order.dimensions = orderDict["dimensions"] as? VSNConfigurationDimensions
             order.allResponseFields = orderDict
             orderDetails = order
         } else {
             orderDetails = nil
         }
         
-        return VSNProductConfiguration(
+        return VSNConfiguration(
             configID: configID,
             associatedProductID: productID,
             material: dict["material"] as! Int,
