@@ -54,10 +54,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "509CCF3E270616D500A5AF14"
-            BuildableName = "Example.app"
-            BlueprintName = "Example"
-            ReferencedContainer = "container:Example/Example.xcodeproj">
+            BlueprintIdentifier = "50DA32DB27071F8300444C29"
+            BuildableName = "Basic Integration.app"
+            BlueprintName = "Basic Integration"
+            ReferencedContainer = "container:Basic Integration/Basic Integration.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
