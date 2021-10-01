@@ -34,6 +34,7 @@
 		50AD2B8326FBC5E400E03205 /* VSNBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2B8226FBC5E400E03205 /* VSNBlocks.swift */; };
 		50AD2B8526FBC71D00E03205 /* VSNProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2B8426FBC71D00E03205 /* VSNProduct.swift */; };
 		50AD2B8726FBCE2E00E03205 /* VSNAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2B8626FBCE2E00E03205 /* VSNAPIClient.swift */; };
+		50F8FFD9270725A300FAE7D5 /* VSNCatalogizationEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F8FFD8270725A300FAE7D5 /* VSNCatalogizationEnums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		50AD2B8226FBC5E400E03205 /* VSNBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNBlocks.swift; sourceTree = "<group>"; };
 		50AD2B8426FBC71D00E03205 /* VSNProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNProduct.swift; sourceTree = "<group>"; };
 		50AD2B8626FBCE2E00E03205 /* VSNAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAPIClient.swift; sourceTree = "<group>"; };
+		50F8FFD8270725A300FAE7D5 /* VSNCatalogizationEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNCatalogizationEnums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				5099D9DC2705F3F400EBC08A /* Product */,
 				5099D9DD2705F51500EBC08A /* Configuration */,
+				50F8FFD8270725A300FAE7D5 /* VSNCatalogizationEnums.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				5078115926FCF95900323EE4 /* VSNConfiguration.swift in Sources */,
 				50AD2B7F26FBC10200E03205 /* VisionrangerAPI.swift in Sources */,
 				508B279026FC9AAA007CBCF3 /* VSNDevelopmentEnvironment.swift in Sources */,
+				50F8FFD9270725A300FAE7D5 /* VSNCatalogizationEnums.swift in Sources */,
 				504C11AC2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift in Sources */,
 				5096B88F26FF6DDB0064B603 /* NSError+Visionranger.swift in Sources */,
 				5099D9D92705ED8900EBC08A /* NSDictionary+Visionranger.swift in Sources */,
