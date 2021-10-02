@@ -29,30 +29,30 @@ import Foundation
 public class VSNProductCatalogization: NSObject {
     
     /// The index of the associated room from the Visionranger API
-    public var room: Int?
+    public var room: VSNRoom?
     
     /// The index of the preferred area of the house from the Visionranger API
-    public var houseArea: Int?
+    public var houseArea: VSNHouseArea?
     
     /// The index of the associated interior design style from the Visionranger API
-    public var designStyle: Int?
+    public var designStyle: VSNDesignStyle?
     
     /// The index of the associated category from the Visionranger API
-    public var category: Int?
+    public var category: VSNFurnitureType?
     
     /// The index of the associated sub-category from the Visionranger API
-    public var subCategory: Int?
+    public var subCategory: VSNFurnitureCategory?
     
     public var allResponseFields: [AnyHashable : Any]
     
     public convenience init(
-        designStyle: Int,
-        category: Int,
-        subCategory: Int
+        designStyle: VSNDesignStyle,
+        category: VSNFurnitureType,
+        subCategory: VSNFurnitureCategory
     ) {
         self.init(
-            room: 0,
-            houseArea: 0,
+            room: VSNRoom.unknown,
+            houseArea: VSNHouseArea.unknown,
             designStyle: designStyle,
             category: category,
             subCategory: subCategory,
@@ -61,11 +61,11 @@ public class VSNProductCatalogization: NSObject {
     }
     
     internal init(
-        room: Int,
-        houseArea: Int,
-        designStyle: Int,
-        category: Int,
-        subCategory: Int,
+        room: VSNRoom,
+        houseArea: VSNHouseArea,
+        designStyle: VSNDesignStyle,
+        category: VSNFurnitureType,
+        subCategory: VSNFurnitureCategory,
         allResponsefields: [AnyHashable : Any]
     ) {
         self.room = room
@@ -78,11 +78,11 @@ public class VSNProductCatalogization: NSObject {
     
     convenience override init() {
         self.init(
-            room: 0,
-            houseArea: 0,
-            designStyle: 0,
-            category: 0,
-            subCategory: 0,
+            room: VSNRoom.unknown,
+            houseArea: VSNHouseArea.unknown,
+            designStyle: VSNDesignStyle.unknown,
+            category: VSNFurnitureType.unknown,
+            subCategory: VSNFurnitureCategory.unknown,
             allResponsefields: [:]
         )
     }
@@ -98,11 +98,21 @@ extension VSNProductCatalogization: VSNAPIResponseDecodable {
         let details = VSNProductCatalogization()
         details.allResponseFields = dict
         // All properties are nullable
-        details.room = dict["room"] as? Int
-        details.houseArea = dict["house_area"] as? Int
-        details.designStyle = dict["design_style"] as? Int
-        details.category = dict["category"] as? Int
-        details.subCategory = dict["sub_category"] as? Int
+        if let room = dict["room"] as? Int {
+            details.room = VSNRoom(rawValue: room)
+        }
+        if let houseArea = dict["house_area"] as? Int {
+            details.houseArea = VSNHouseArea(rawValue: houseArea)
+        }
+        if let designStyle = dict["design_style"] as? Int {
+            details.designStyle = VSNDesignStyle(rawValue: designStyle)
+        }
+        if let type = dict["category"] as? Int {
+            details.category = VSNFurnitureType(rawValue: type)
+        }
+        if let category = dict["sub_category"] as? Int {
+            details.subCategory = VSNFurnitureCategory(rawValue: category)
+        }
         
         return details as? Self
     }

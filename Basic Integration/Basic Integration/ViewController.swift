@@ -44,11 +44,10 @@ class ViewController: UIViewController {
                 return
             }
             print(name)
-            if let room = product.catalogization?.room {
-                let item = VSNRoom(rawValue: room)!
-                print(item.name)
+            if let room = details.room {
+                print(room)
             }
-            print(VSNHouseArea(rawValue: details.houseArea!)!.name)
+            print(details.houseArea.name)
         }
     }
 }
