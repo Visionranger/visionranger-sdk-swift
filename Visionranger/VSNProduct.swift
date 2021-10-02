@@ -80,11 +80,11 @@ extension VSNProduct: VSNAPIResponseDecodable {
         
         if let catalogDict = dict["catalogization_details"] as? [AnyHashable : Any],
            let catalogDetails = VSNProductCatalogization.decodedObject(fromAPIResponse: catalogDict) {
-            catalogDetails.room = catalogDict["room"] as? Int
-            catalogDetails.houseArea = catalogDict["house_area"] as? Int
-            catalogDetails.designStyle = catalogDict["design_style"] as? Int
-            catalogDetails.category = catalogDict["category"] as? Int
-            catalogDetails.subCategory = catalogDict["sub_category"] as? Int
+            catalogDetails.room = catalogDict["room"] as? VSNRoom
+            catalogDetails.houseArea = catalogDict["house_area"] as? VSNHouseArea
+            catalogDetails.designStyle = catalogDict["design_style"] as? VSNDesignStyle
+            catalogDetails.category = catalogDict["category"] as? VSNFurnitureType
+            catalogDetails.subCategory = catalogDict["sub_category"] as? VSNFurnitureCategory
             catalogization = catalogDetails
         } else {
             catalogization = nil
