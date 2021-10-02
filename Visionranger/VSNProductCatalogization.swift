@@ -45,11 +45,29 @@ public class VSNProductCatalogization: NSObject {
     
     public var allResponseFields: [AnyHashable : Any]
     
-    public convenience init(designStyle: Int, category: Int, subCategory: Int) {
-        self.init(room: 0, houseArea: 0, designStyle: designStyle, category: category, subCategory: subCategory, allResponsefields: [:])
+    public convenience init(
+        designStyle: Int,
+        category: Int,
+        subCategory: Int
+    ) {
+        self.init(
+            room: 0,
+            houseArea: 0,
+            designStyle: designStyle,
+            category: category,
+            subCategory: subCategory,
+            allResponsefields: [:]
+        )
     }
     
-    internal init(room: Int, houseArea: Int, designStyle: Int, category: Int, subCategory: Int, allResponsefields: [AnyHashable : Any]) {
+    internal init(
+        room: Int,
+        houseArea: Int,
+        designStyle: Int,
+        category: Int,
+        subCategory: Int,
+        allResponsefields: [AnyHashable : Any]
+    ) {
         self.room = room
         self.houseArea = houseArea
         self.designStyle = designStyle
@@ -59,7 +77,14 @@ public class VSNProductCatalogization: NSObject {
     }
     
     convenience override init() {
-        self.init(room: 0, houseArea: 0, designStyle: 0, category: 0, subCategory: 0, allResponsefields: [:])
+        self.init(
+            room: 0,
+            houseArea: 0,
+            designStyle: 0,
+            category: 0,
+            subCategory: 0,
+            allResponsefields: [:]
+        )
     }
 }
 

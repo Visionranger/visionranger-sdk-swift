@@ -37,10 +37,20 @@ public class VSNProduct: NSObject {
     public var allResponseFields: [AnyHashable : Any]
     
     public convenience init(id: String, name: String) {
-        self.init(productID: id, name: name, catalogization: nil, allResponseFields: [:])
+        self.init(
+            productID: id,
+            name: name,
+            catalogization: nil,
+            allResponseFields: [:]
+        )
     }
     
-    internal init(productID: String, name: String, catalogization: VSNProductCatalogization?, allResponseFields: [AnyHashable : Any]) {
+    internal init(
+        productID: String,
+        name: String,
+        catalogization: VSNProductCatalogization?,
+        allResponseFields: [AnyHashable : Any]
+    ) {
         self.productID = productID
         self.name = name
         self.catalogization = catalogization
@@ -48,7 +58,12 @@ public class VSNProduct: NSObject {
     }
     
     convenience override init() {
-        self.init(productID: "", name: "", catalogization: nil, allResponseFields: [:])
+        self.init(
+            productID: "",
+            name: "",
+            catalogization: nil,
+            allResponseFields: [:]
+        )
     }
 }
 

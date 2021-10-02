@@ -37,15 +37,17 @@ class ViewController: UIViewController {
         
         client.retrieveProduct(id: "1") { product, error in
             guard let product = product,
-                    let name = product.name,
-                    error == nil else {
+                  let name = product.name,
+                  error == nil else {
                 print(error?.localizedDescription ?? "Unexpected error occured")
                 return
             }
             print(name)
+            if let details = product.catalogization {
+                print(details.room ?? "Not found")
+                print(details.houseArea ?? "Not found")
+            }
         }
     }
-
-
 }
 
