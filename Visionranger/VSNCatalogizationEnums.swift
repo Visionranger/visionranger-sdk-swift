@@ -74,7 +74,7 @@ public enum VSNRoom: Int {
     /// A product's associated room is not specified or the value is unknown
     case unknown
     
-    var name: String {
+    public var name: String {
         switch self {
         case .balcony:
             return NSLocalizedString("Balcony", comment: "Associated Room to a product")
@@ -173,7 +173,7 @@ public enum VSNDesignStyle: Int {
     /// A product's associated design style is not specified or the value is unknown
     case unknown
     
-    var name: String {
+    public var name: String {
         switch self {
         case .japandi:
             return NSLocalizedString("Japandi", comment: "Interior Design Style associated to a product")
@@ -242,7 +242,7 @@ public enum VSNHouseArea: Int {
     /// A product's associated house area is not specified or the value is unknown
     case unknown
     
-    var name: String {
+    public var name: String {
         switch self {
         case .dining_area:
             return NSLocalizedString("Dining Area", comment: "Associated group of furnitre or purpose specific area")
@@ -284,7 +284,7 @@ public enum VSNFurnitureType: Int {
     /// A product's associated furniture type is not specified or the value is unknown
     case unknown
     
-    var name: String {
+    public var name: String {
         switch self {
         case .sofa:
             return NSLocalizedString("Sofa", comment: "A distinct type of furniture or decor")
@@ -487,7 +487,7 @@ public enum VSNFurnitureCategory: Int {
     /// A product's category is not specified or the value is unknown
     case unknown
     
-    var name: String {
+    public var name: String {
         switch self {
         case .sofa_bed:
             return NSLocalizedString("Sofa Bed", comment: "A product's category")
@@ -810,7 +810,7 @@ public enum VSNFurnitureMaterial: Int {
     /// A product's component major material is not specified or the value is unknown
     case unknown
     
-    var name: String {
+    public var name: String {
         switch self {
         case .alcantara:
             return NSLocalizedString("Alcantara", comment: "Product component's major material")

@@ -44,8 +44,7 @@ class ViewController: UIViewController {
             }
             print(name)
             if let details = product.catalogization {
-                print(details.room ?? "Not found")
-                print(details.houseArea ?? "Not found")
+                print(details.room)
             }
         }
     }
