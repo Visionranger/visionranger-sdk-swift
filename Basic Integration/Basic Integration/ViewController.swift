@@ -47,7 +47,7 @@ class ViewController: UIViewController {
             if let room = details.room {
                 print(room)
             }
-            print(details.houseArea.name)
+            print(details.houseArea!.name)
         }
     }
 }
