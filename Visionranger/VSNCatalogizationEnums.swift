@@ -247,7 +247,7 @@ public enum VSNHouseArea: Int {
         case .dining_area:
             return NSLocalizedString("Dining Area", comment: "Associated group of furnitre or purpose specific area")
         case .living_area:
-            return NSLocalizedString("Living Arae", comment: "Associated group of furnitre or purpose specific area")
+            return NSLocalizedString("Living Area", comment: "Associated group of furnitre or purpose specific area")
         case .kitchen:
             return NSLocalizedString("Kitchen", comment: "Associated group of furnitre or purpose specific area")
         case .bedroom:
@@ -494,7 +494,7 @@ public enum VSNFurnitureCategory: Int {
         case .coffee_table:
             return NSLocalizedString("Coffee Table", comment: "A product's category")
         case .nightstand:
-            return NSLocalizedString("Bedside table", comment: "A product's category")
+            return NSLocalizedString("Nightstand", comment: "A product's category")
         case .chest:
             return NSLocalizedString("Chest", comment: "A product's category")
         case .beanbag:
@@ -548,7 +548,7 @@ public enum VSNFurnitureCategory: Int {
         case .futon:
             return NSLocalizedString("Futon Bed", comment: "A product's category")
         case .metal_bed:
-            return NSLocalizedString("Metal Med", comment: "A product's category")
+            return NSLocalizedString("Metal Bed", comment: "A product's category")
         case .functional_bed:
             return NSLocalizedString("Functional Bed", comment: "A product's category")
         case .floating_door_wardrobe:
@@ -829,7 +829,7 @@ public enum VSNFurnitureMaterial: Int {
         case .chintz:
             return NSLocalizedString("Chintz", comment: "Product component's major material")
         case .corduroy:
-            return NSLocalizedString("Cord", comment: "Product component's major material")
+            return NSLocalizedString("Corduroy", comment: "Product component's major material")
         case .dralon:
             return NSLocalizedString("Dralon", comment: "Product component's major material")
         case .drell:
@@ -877,7 +877,7 @@ public enum VSNFurnitureMaterial: Int {
         case .polyester:
             return NSLocalizedString("Polyester", comment: "Product component's major material")
         case .ripstop:
-            return NSLocalizedString("Rips", comment: "Product component's major material")
+            return NSLocalizedString("Ripstop", comment: "Product component's major material")
         case .velvet:
             return NSLocalizedString("Velvet", comment: "Product component's major material")
         case .satin:
@@ -939,9 +939,9 @@ public enum VSNFurnitureMaterial: Int {
         case .larch:
             return NSLocalizedString("Larch", comment: "Product component's major material")
         case .mahogany:
-            return NSLocalizedString("Mahagony", comment: "Product component's major material")
+            return NSLocalizedString("Mahogany", comment: "Product component's major material")
         case .heartwood_beech:
-            return NSLocalizedString("Heartweed Beech", comment: "Product component's major material")
+            return NSLocalizedString("Heartwood Beech", comment: "Product component's major material")
         case .wild_oak:
             return NSLocalizedString("Wild Oak", comment: "Product component's major material")
         case .ash:

@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         client.retrieveProduct(id: "1") { product, error in
             guard let product = product,
                   let name = product.name,
+                  let details = product.catalogization,
                   error == nil else {
                 print(error?.localizedDescription ?? "Unexpected error occured")
                 return
@@ -45,8 +46,9 @@ class ViewController: UIViewController {
             print(name)
             if let room = product.catalogization?.room {
                 let item = VSNRoom(rawValue: room)!
-                print(item)
+                print(item.name)
             }
+            print(VSNHouseArea(rawValue: details.houseArea!)!.name)
         }
     }
 }

@@ -46,3 +46,410 @@
 "Laundry Room" = "Waschküche";
 /* Default missing room index label */
 "Unknown" = "Unbekannt";
+
+// MARK: VSNDesignStyle
+
+/* Interior Design Style associated to a product */
+"Japandi" = "Japandi";
+/* Interior Design Style associated to a product */
+"Lagom" = "Lagom";
+/* Interior Design Style associated to a product */
+"Wabi Sabi" = "Wabi Sabi";
+/* Interior Design Style associated to a product */
+"Minimalism" = "Minimalismus";
+/* Interior Design Style associated to a product */
+"Modern Country" = "Modern Country";
+/* Interior Design Style associated to a product */
+"Scandinavian" = "Skandinavisch";
+/* Interior Design Style associated to a product */
+"Shabby Chic" = "Shabby Chic";
+/* Interior Design Style associated to a product */
+"Hygge" = "Hygge";
+/* Interior Design Style associated to a product */
+"Modern" = "Modern";
+/* Interior Design Style associated to a product */
+"Colonial" = "Kolonialstil";
+/* Interior Design Style associated to a product */
+"Retro" = "Retro";
+/* Interior Design Style associated to a product */
+"Maritime" = "Maritim";
+/* Interior Design Style associated to a product */
+"Mid-Century Modern" = "Jahrhundert-Mitte-Modern";
+/* Interior Design Style associated to a product */
+"Mediterranean" = "Mittelmeer";
+/* Interior Design Style associated to a product */
+"Bohemian" = "Bohemian";
+/* Interior Design Style associated to a product */
+"Urban Modern" = "Urbanes Modernes";
+/* Interior Design Style associated to a product */
+"Modern Glamour" = "Moderner Glanz";
+/* Interior Design Style associated to a product */
+"Industrial" = "Industriell";
+/* Interior Design Style associated to a product */
+"Chalet Chic" = "Chalet-Chic";
+/* Default missing design style index label */
+"Unknown" = "Unbekannt";
+
+// MARK: VSNHouseArea
+
+/* Associated group of furnitre or purpose specific area */
+"Dining Area" = "Essbereich";
+/* Associated group of furnitre or purpose specific area */
+"Living Area" = "Wohnbereich";
+/* Associated group of furnitre or purpose specific area */
+"Kitchen" = "Küche";
+/* Associated group of furnitre or purpose specific area */
+"Bedroom" = "Schlafzimmer";
+/* Associated group of furnitre or purpose specific area */
+"Bathroom" = "Badezimmer";
+/* Associated group of furnitre or purpose specific area */
+"Corridor" = "Flur";
+/* Associated group of furnitre or purpose specific area */
+"Entrance" = "Eingang";
+/* Default missing product type index label */
+"Unknown" = "Unbekannt";
+
+// MARK: VSNFurnitureType
+
+/* A distinct type of furniture or decor */
+"Sofa" = "Sofa";
+/* A distinct type of furniture or decor */
+"Seating" = "Sitzgelegenheit";
+/* A distinct type of furniture or decor */
+"Shelf" = "Regal";
+/* A distinct type of furniture or decor */
+"Cabinet" = "Schrank";
+/* A distinct type of furniture or decor */
+"Table" = "Tisch";
+/* A distinct type of furniture or decor */
+"Side Table" = "Beistelltisch";
+/* A distinct type of furniture or decor */
+"Bed" = "Bett";
+/* A distinct type of furniture or decor */
+"Rug" = "Teppich";
+/* A distinct type of furniture or decor */
+"Commode" = "Kommode";
+/* A distinct type of furniture or decor */
+"Lamp" = "Beleuchtung";
+/* A distinct type of furniture or decor */
+"Mirror" = "Spiegel";
+/* A distinct type of furniture or decor */
+"Wardrobe" = "Garderobe";
+/* A distinct type of furniture or decor */
+"Baby Furniture" = "Baby-Möbel";
+/* Default missing product type index label */
+"Unknown" = "Unbekannt";
+
+// MARK: VSNFurnitureCategory
+
+/* A product's category */
+"Sofa Bed" = "Schlafsofa";
+/* A product's category */
+"Coffee Table" = "Couchtisch";
+/* A product's category */
+"Nightstand" = "Nachttisch";
+/* A product's category */
+"Chest" = "Kiste";
+/* A product's category */
+"Beanbag" = "Sitzsack";
+/* A product's category */
+"Couch" = "Couch";
+/* A product's category */
+"Bigsofa" = "Bigsofa";
+/* A product's category */
+"Living Landscape" = "Wohnlandschaft";
+/* A product's category */
+"Sofa Element" = "Sofa Element";
+/* A product's category */
+"Wall Unit" = "Oberschrank";
+/* A product's category */
+"Lowboard" = "Lowboard";
+/* A product's category */
+"Armchair with sleep function" = "Sessel mit Schlaffunktion";
+/* A product's category */
+"Corner Sofa with sleep function" = "Ecksofa mit Schlaffunktion";
+/* A product's category */
+"Lounger" = "Liegestuhl";
+/* A product's category */
+"Relax Armchair" = "Relax Sessel";
+/* A product's category */
+"Armchair" = "Sessel";
+/* A product's category */
+"Bench" = "Bank";
+/* A product's category */
+"Stool" = "Hocker";
+/* A product's category */
+"Bookshelf" = "Bücherregal";
+/* A product's category */
+"Wall Shelf" = "Wandregal";
+/* A product's category */
+"Room Divider" = "Raumtrenner";
+/* A product's category */
+"Shelf" = "Regal";
+/* A product's category */
+"Sideboard" = "Sideboard";
+/* A product's category */
+"Cabinet" = "Schrank";
+/* A product's category */
+"Highboard" = "Highboard";
+/* A product's category */
+"Boxspring Bed" = "Boxspring-Bett";
+/* A product's category */
+"Solid Wood Bed" = "Massivholzbett";
+/* A product's category */
+"Upholstered Bed" = "Gepolstertes Bett";
+/* A product's category */
+"Futon Bed" = "Futon-Bett";
+/* A product's category */
+"Metal Bed" = "Metallbett";
+/* A product's category */
+"Functional Bed" = "Funktionsbett";
+/* A product's category */
+"Floating-Door Wardrobe" = "Schwebetüren-Kleiderschrank";
+/* A product's category */
+"Hinged-Door Wardrobe" = "Flügeltüriger Kleiderschrank";
+/* A product's category */
+"Dressing Table" = "Schminktisch";
+/* A product's category */
+"Closet" = "Kleiderschrank";
+/* A product's category */
+"Bassinet" = "Stubenwagen";
+/* A product's category */
+"Changing Table" = "Wickeltisch";
+/* A product's category */
+"Baby Crib" = "Baby-Krippe";
+/* A product's category */
+"Wardrobe Bench" = "Garderobenbank";
+/* A product's category */
+"Doormat" = "Fußmatte";
+/* A product's category */
+"Coat Mirror" = "Garderobenspiegel";
+/* A product's category */
+"Console Table" = "Konsolentisch";
+/* A product's category */
+"Coat Rack" = "Kleiderständer";
+/* A product's category */
+"Shoe Cabinet" = "Schuhschrank";
+/* A product's category */
+"Wardrobe Cabinet" = "Garderobenschrank";
+/* A product's category */
+"Dining Table" = "Esstisch";
+/* A product's category */
+"Chair" = "Stuhl";
+/* A product's category */
+"Plate-Foot Chair" = "Tellerfuß-Stuhl";
+/* A product's category */
+"4 Feet Chair" = "4-Fuß-Stuhl";
+/* A product's category */
+"Cantilever" = "Freischwinger";
+/* A product's category */
+"Chair Armchair" = "Stuhl Armlehnstuhl";
+/* A product's category */
+"Skid Chair" = "Kufenstuhl";
+/* A product's category */
+"Bar Stool" = "Barhocker";
+/* A product's category */
+"Bar Table" = "Stehtisch";
+/* A product's category */
+"Serving Trolley" = "Servierwagen";
+/* A product's category */
+"Bunk Bed" = "Etagenbett";
+/* A product's category */
+"Children's Bed" = "Kinderbett";
+/* A product's category */
+"Desk" = "Schreibtisch";
+/* A product's category */
+"Desk Chair" = "Schreibtischstuhl";
+/* A product's category */
+"Secretary" = "Sekretär";
+/* A product's category */
+"Office Chair" = "Bürostuhl";
+/* A product's category */
+"Filing Cabinet" = "Aktenschrank";
+/* A product's category */
+"Office Shelf" = "Büro-Regal";
+/* A product's category */
+"Office Wall" = "Büro-Wand";
+/* A product's category */
+"High Pile Rug" = "Hochflor-Teppich";
+/* A product's category */
+"Velour Rug" = "Velours-Teppich";
+/* A product's category */
+"Flokati Rug" = "Flokati-Teppich";
+/* A product's category */
+"Sisal Rug" = "Sisalteppich";
+/* A product's category */
+"Tufted Rug" = "Getufteter Teppich";
+/* A product's category */
+"Shaggy Rug" = "Zottelteppich";
+/* A product's category */
+"Country Pile Rug" = "Landflor-Teppich";
+/* A product's category */
+"Mudflap Rug" = "Schlammfangteppich";
+/* A product's category */
+"Oriental Rug" = "Orientteppich";
+/* A product's category */
+"Berber Carpet" = "Berberteppich";
+/* A product's category */
+"Nepal/Tibet Rug" = "Nepal/Tibet-Teppich";
+/* A product's category */
+"Design Rug" = "Design-Teppich";
+/* A product's category */
+"Sheepskin Rug" = "Schafsfell-Teppich";
+/* A product's category */
+"Lampskin Rug" = "Lammfell-Teppich";
+/* A product's category */
+"Art Silk Rug" = "Kunstseidenteppich";
+/* A product's category */
+"Silk Rug" = "Seidenteppich";
+/* Default missing product category index label */
+"Unknown" = "Unbekannt";
+
+// MARK: VSNFurnitureMaterial
+
+/* Product component's major material */
+"Alcantara" = "Alcantara";
+/* Product component's major material */
+"Aniline Leather" = "Anilinleder";
+/* Product component's major material */
+"Cotton" = "Baumwolle";
+/* Product component's major material */
+"Bouclé Robusta" = "Bouclé Robusta";
+/* Product component's major material */
+"Brocade" = "Brocade";
+/* Product component's major material */
+"Canvas" = "Segeltuch";
+/* Product component's major material */
+"Chenille" = "Chenille";
+/* Product component's major material */
+"Chintz" = "Chintz";
+/* Product component's major material */
+"Corduroy" = "Kord";
+/* Product component's major material */
+"Dralon" = "Dralon";
+/* Product component's major material */
+"Drell" = "Drell";
+/* Product component's major material */
+"Ecru" = "Ecru";
+/* Product component's major material */
+"Epinglé" = "Epinglé";
+/* Product component's major material */
+"Flat Fabric" = "Flachgewebe";
+/* Product component's major material */
+"Flat Knitted Fabric" = "Flachgestricktes Gewebe";
+/* Product component's major material */
+"Flor" = "Flor";
+/* Product component's major material */
+"Goblin" = "Goblin";
+/* Product component's major material */
+"Jacquard" = "Jacquard";
+/* Product component's major material */
+"Denim" = "Denim";
+/* Product component's major material */
+"Freton" = "Freton";
+/* Product component's major material */
+"Faux Leather" = "Kunstleder";
+/* Product component's major material */
+"Nappa Leather" = "Nappaleder";
+/* Product component's major material */
+"Linen" = "Leinen";
+/* Product component's major material */
+"Microfiber" = "Mikrofaser";
+/* Product component's major material */
+"Mohair" = "Mohair";
+/* Product component's major material */
+"Moiré" = "Moiré";
+/* Product component's major material */
+"Nanova" = "Nanova";
+/* Product component's major material */
+"Nylon" = "Nylon";
+/* Product component's major material */
+"Oxford Fabric" = "Oxford-Gewebe";
+/* Product component's major material */
+"Piqué" = "Piqué";
+/* Product component's major material */
+"Plush" = "Plüsch";
+/* Product component's major material */
+"Polyester" = "Polyester";
+/* Product component's major material */
+"Ripstop" = "Reißverschluss";
+/* Product component's major material */
+"Velvet" = "Samt";
+/* Product component's major material */
+"Satin" = "Satin";
+/* Product component's major material */
+"Silk" = "Seide";
+/* Product component's major material */
+"Velour" = "Velours";
+/* Product component's major material */
+"Suede Leather" = "Wildleder";
+/* Product component's major material */
+"Viscose" = "Viskose";
+/* Product component's major material */
+"Knitted Velour" = "Gestrickter Velours";
+/* Product component's major material */
+"Nubuck" = "Nubuk";
+/* Product component's major material */
+"Buffalo Leather" = "Büffelleder";
+/* Product component's major material */
+"Brushed Aluminum" = "Gebürstetes Aluminium";
+/* Product component's major material */
+"Polished Aluminum" = "Poliertes Aluminium";
+/* Product component's major material */
+"Bronze" = "Bronze";
+/* Product component's major material */
+"Chrome" = "Chrom";
+/* Product component's major material */
+"Stainless Steel" = "Rostfreier Stahl";
+/* Product component's major material */
+"Iron" = "Eisen";
+/* Product component's major material */
+"Gold" = "Gold";
+/* Product component's major material */
+"Copper" = "Kupfer";
+/* Product component's major material */
+"Brass" = "Messing";
+/* Product component's major material */
+"Nickel" = "Nickel";
+/* Product component's major material */
+"Silver" = "Silber";
+/* Product component's major material */
+"Oak" = "Eiche";
+/* Product component's major material */
+"Beech" = "Buche";
+/* Product component's major material */
+"European Walnut" = "Europäischer Nussbaum";
+/* Product component's major material */
+"Maple" = "Ahorn";
+/* Product component's major material */
+"Birch" = "Birke";
+/* Product component's major material */
+"Pine" = "Kiefer";
+/* Product component's major material */
+"Spruce" = "Fichte";
+/* Product component's major material */
+"Alder" = "Erle";
+/* Product component's major material */
+"Cherry Tree" = "Kirschbaum";
+/* Product component's major material */
+"Larch" = "Lärche";
+/* Product component's major material */
+"Mahogany" = "Mahagoni";
+/* Product component's major material */
+"Heartwood Beech" = "Kernbuche";
+/* Product component's major material */
+"Wild Oak" = "Wildeiche";
+/* Product component's major material */
+"Ash" = "Esche";
+/* Product component's major material */
+"Heartwood Ash" = "Kernholz Esche";
+/* Product component's major material */
+"Heartwood Walnut" = "Kernholz Nussbaum";
+/* Product component's major material */
+"Satin Walnut" = "Satin Walnuss";
+/* Product component's major material */
+"Red Heart Beech" = "Rotkernbuche";
+/* Product component's major material */
+"Structure Ash" = "Struktur Esche";
+/* Product component's major material */
+"Unknown" = "Unbekannt";
