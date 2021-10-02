@@ -5,10 +5,10 @@
       location = "container:Visionranger.xcodeproj">
    </FileRef>
    <Group
-      location = "group:Example"
+      location = "group:"
       name = "Examples">
       <FileRef
-         location = "group:../Basic Integration/Basic Integration.xcodeproj">
+         location = "group:Basic Integration/Basic Integration.xcodeproj">
       </FileRef>
    </Group>
 </Workspace>
