@@ -43,8 +43,9 @@ class ViewController: UIViewController {
                 return
             }
             print(name)
-            if let details = product.catalogization {
-                print(details.room)
+            if let room = product.catalogization?.room {
+                let item = VSNRoom(rawValue: room)!
+                print(item)
             }
         }
     }

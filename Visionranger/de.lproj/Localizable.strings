@@ -1,0 +1,48 @@
+/* 
+  Localizable.strings
+  Visionranger
+
+  Created by Colin Tessarzick on 02.10.21.
+  
+*/
+
+/* Associated Room to a product */
+"Balcony" = "Balkon";
+/* Associated Room to a product */
+"Basement" = "Untergeschoss";
+/* Associated Room to a product */
+"Bathroom" = "Badezimmer";
+/* Associated Room to a product */
+"Powder Room" = "Damentoilette";
+/* Associated Room to a product */
+"Hallway" = "Flur";
+/* Associated Room to a product */
+"Garden" = "Garten";
+/* Associated Room to a product */
+"Guest Room" = "Gästezimmer";
+/* Associated Room to a product */
+"Entrance Hall" = "Eingangsbereich";
+/* Associated Room to a product */
+"Kitchen" = "Küche";
+/* Associated Room to a product */
+"Library" = "Bibliothek";
+/* Associated Room to a product */
+"Childrens Room" = "Kinderzimmer";
+/* Associated Room to a product */
+"Dining Room" = "Esszimmer";
+/* Associated Room to a product */
+"Wine Cellar" = "Weinkeller";
+/* Associated Room to a product */
+"Bedroom" = "Schlafzimmer";
+/* Associated Room to a product */
+"Pantry" = "Speisekammer";
+/* Associated Room to a product */
+"Study Room" = "Arbeitszimmer";
+/* Associated Room to a product */
+"Wardrobe" = "Garderobe";
+/* Associated Room to a product */
+"Attic" = "Dachboden";
+/* Associated Room to a product */
+"Laundry Room" = "Waschküche";
+/* Default missing room index label */
+"Unknown" = "Unbekannt";

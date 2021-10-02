@@ -34,6 +34,7 @@
 		50AD2B8326FBC5E400E03205 /* VSNBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2B8226FBC5E400E03205 /* VSNBlocks.swift */; };
 		50AD2B8526FBC71D00E03205 /* VSNProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2B8426FBC71D00E03205 /* VSNProduct.swift */; };
 		50AD2B8726FBCE2E00E03205 /* VSNAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2B8626FBCE2E00E03205 /* VSNAPIClient.swift */; };
+		50D5BF3F27086E180000BE52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50D5BF4127086E180000BE52 /* Localizable.strings */; };
 		50F8FFD9270725A300FAE7D5 /* VSNCatalogizationEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F8FFD8270725A300FAE7D5 /* VSNCatalogizationEnums.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,8 @@
 		50AD2B8226FBC5E400E03205 /* VSNBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNBlocks.swift; sourceTree = "<group>"; };
 		50AD2B8426FBC71D00E03205 /* VSNProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNProduct.swift; sourceTree = "<group>"; };
 		50AD2B8626FBCE2E00E03205 /* VSNAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAPIClient.swift; sourceTree = "<group>"; };
+		50D5BF4027086E180000BE52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		50D5BF4227086E1D0000BE52 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50F8FFD8270725A300FAE7D5 /* VSNCatalogizationEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNCatalogizationEnums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +209,7 @@
 		50AAC5FB26FB377B0084E41B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				50D5BF4127086E180000BE52 /* Localizable.strings */,
 				5096B88B26FF4DA40064B603 /* Networking */,
 				5096B88C26FF4DD80064B603 /* Helpers */,
 				5096B88A26FF4D420064B603 /* Internal */,
@@ -288,6 +292,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 5016A5DE26FA8A0200CC731B;
 			productRefGroup = 5016A5E926FA8A0200CC731B /* Products */;
@@ -305,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D5BF3F27086E180000BE52 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +373,18 @@
 			targetProxy = 5016A5F426FA8A0200CC731B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		50D5BF4127086E180000BE52 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50D5BF4027086E180000BE52 /* en */,
+				50D5BF4227086E1D0000BE52 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5016A5FA26FA8A0200CC731B /* Debug */ = {
