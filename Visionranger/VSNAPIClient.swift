@@ -98,7 +98,7 @@ extension VSNAPIClient {
         
         VSNRequest<VSNProductListDeserializer>.getWith(
             self,
-            endpoint: .products,
+            endpoint: .listProducts,
             parameters: parameters
         ) { deserializer, _, error in
             DispatchQueue.global(qos: .userInteractive).async(flags: .barrier) {
