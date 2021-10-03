@@ -31,7 +31,7 @@ public extension NSError {
         return "There was an unexpected error. Try again in a few seconds."
     }
     
-    class func vsn_genericFailedToParseReponseError() -> NSError {
+    class func vsn_genericFailedToParseResponseError() -> NSError {
         let userInfo = [
             NSLocalizedDescriptionKey: self.vsn_unexpectedErrorMessage()
         ]
