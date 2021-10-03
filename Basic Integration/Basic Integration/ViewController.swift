@@ -37,17 +37,29 @@ class ViewController: UIViewController {
         
         client.retrieveProduct(id: "1") { product, error in
             guard let product = product,
-                  let name = product.name,
                   let details = product.catalogization,
                   error == nil else {
                 print(error?.localizedDescription ?? "Unexpected error occured")
                 return
             }
-            print(name)
             if let room = details.room {
                 print(room)
             }
             print(details.houseArea!.name)
+        }
+        
+        client.listProducts(withParameters: ["type": 1, "category": 47]) { products, error in
+            guard let products = products, error == nil else {
+                print(error?.localizedDescription ?? "Unexpected error occured")
+                return
+            }
+            var names: [String] = []
+            for product in products {
+                if let name = product.name {
+                    names.append(name)
+                }
+            }
+            print(names)
         }
     }
 }

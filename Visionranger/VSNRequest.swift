@@ -174,5 +174,6 @@ public enum VSNHTTPMethod: String {
 
 public enum VSNAPIPath: String {
     case products = "/products"
+    case listProducts = "/products/list"
     case configurations = "/configurations"
 }
