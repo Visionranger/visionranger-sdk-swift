@@ -87,6 +87,41 @@ class VSNRequest<ResponseType: VSNAPIResponseDecodable>: NSObject {
         })
     }
     
+    class func put(
+        with client: VSNAPIClient,
+        endpoint: VSNAPIPath,
+        parameters: [String : Any],
+        completion: @escaping VSNAPIResponseBlock
+    ) {
+        self.put(
+            with: client,
+            endpoint: endpoint,
+            parameters: parameters,
+            additionalHeaders: [:],
+            completion: completion
+        )
+    }
+    
+    class func put(
+        with client: VSNAPIClient,
+        endpoint: VSNAPIPath,
+        parameters: [String : Any],
+        additionalHeaders: [String : String],
+        completion: @escaping VSNAPIResponseBlock
+    ) {
+        let url = client.apiURL.appendingPathComponent(endpoint.rawValue)
+        
+        let request = client.configuredRequest(for: url, additionalHeaders: additionalHeaders)
+        request.httpMethod = VSNHTTPMethod.put.rawValue
+        request.vsn_setFormPayload(parameters)
+        
+        client.urlSession.vsn_performDataTask(
+            with: request as URLRequest,
+            completionHandler: { body, response, error in
+                self.parseResponse(response, body: body, error: error, completion: completion)
+        })
+    }
+    
     class func delete(
         with client: VSNAPIClient,
         endpoint: VSNAPIPath,
@@ -167,7 +202,7 @@ class VSNRequest<ResponseType: VSNAPIResponseDecodable>: NSObject {
 public enum VSNHTTPMethod: String {
     case get = "GET"
     case post = "POST"
-    case update = "PATCH"
+    case put = "PUT"
     case delete = "DELETE"
 }
 

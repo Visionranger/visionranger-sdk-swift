@@ -61,6 +61,14 @@ class ViewController: UIViewController {
             }
             print(names)
         }
+        
+        client.deleteProduct(id: "5") { error in
+            if let error = error {
+                print(error.localizedDescription ?? "Unexpected error occured")
+            } else {
+                print("Successfully deleted")
+            }
+        }
     }
 }
 
