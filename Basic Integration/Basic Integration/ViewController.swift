@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let client = VSNAPIClient.shared
-        
+
         client.retrieveProduct(id: "1") { product, error in
             guard let product = product,
                   let details = product.catalogization,
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
             print(details.houseArea!.name)
         }
         
-        client.listProducts(withParameters: ["type": 1, "category": 47]) { products, error in
+        client.listProducts(withParameters: ["type": 1]) { products, error in
             guard let products = products, error == nil else {
                 print(error?.localizedDescription ?? "Unexpected error occured")
                 return
