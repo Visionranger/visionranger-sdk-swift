@@ -136,13 +136,13 @@ extension VSNAPIClient {
     /// - Parameters:
     ///   - id: The unique identifier of the object to be deleted
     ///   - completion: Returns an empty body with the HTTP statuscode 204 when successful and an error when not
-    public func deleteProduct(id: String, _ completion: @escaping VSNErrorBlock) {
-        VSNRequest<VSNProduct>.delete(
+    public func deleteProduct(id: String, _ completion: @escaping VSNDeleteCompletionBlock) {
+        VSNRequest<VSNDeletion>.delete(
             with: self,
             endpoint: .products,
             parameters: ["id": id]
         ) { response, _, error in
-            completion(error)
+            completion(response, error)
         }
     }
 }

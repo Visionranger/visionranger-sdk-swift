@@ -47,7 +47,7 @@ class ViewController: UIViewController {
             }
             print(details.houseArea!.name)
         }
-        
+
         client.listProducts(withParameters: ["type": 1]) { products, error in
             guard let products = products, error == nil else {
                 print(error?.localizedDescription ?? "Unexpected error occured")
@@ -61,12 +61,14 @@ class ViewController: UIViewController {
             }
             print(names)
         }
-        
-        client.deleteProduct(id: "5") { error in
-            if let error = error {
-                print(error.localizedDescription ?? "Unexpected error occured")
-            } else {
-                print("Successfully deleted")
+
+        client.deleteProduct(id: "11") { response, error in
+            guard let response = response, error == nil else {
+                print(error?.localizedDescription ?? "Unknown error occured")
+                return
+            }
+            if let value = response.deleted {
+                print(value)
             }
         }
     }
