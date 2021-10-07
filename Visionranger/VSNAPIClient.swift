@@ -127,8 +127,8 @@ extension VSNAPIClient {
             with: self,
             endpoint: .products,
             parameters: paramters
-        ) { products, _, error in
-            completion(products, error)
+        ) { product, _, error in
+            completion(product, error)
         }
     }
     
