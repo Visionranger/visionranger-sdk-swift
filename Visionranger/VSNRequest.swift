@@ -42,7 +42,7 @@ class VSNRequest<ResponseType: VSNAPIResponseDecodable>: NSObject {
         // Setup URLRequest
         let request = client.configuredRequest(for: url, additionalHeaders: additionalHeaders)
         request.httpMethod = VSNHTTPMethod.post.rawValue
-        request.vsn_setFormPayload(parameters)
+        request.vsn_addParameters(toURL: parameters)
         
         // Perform network task
         client.urlSession.vsn_performDataTask(
