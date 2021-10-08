@@ -118,6 +118,20 @@ extension VSNAPIClient {
         }
     }
     
+    /// Create a new product object with the specified parameters
+    /// - Parameters:
+    ///   - parameters: The object's properties
+    ///   - completion: Return the newly created product object when successful and an error when not.
+    public func createProduct(withParameters parameters: VSNParameters, _ completion: @escaping VSNProductCompletionBlock) {
+        VSNRequest<VSNProduct>.post(
+            with: self,
+            endpoint: .products,
+            parameters: parameters
+        ) { product, _, error in
+            completion(product, error)
+        }
+    }
+    
     /// Updates a product object with the specified parameters
     /// - Parameters:
     ///   - paramters: The object's properties that should be changed
