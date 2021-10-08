@@ -3,7 +3,7 @@
 # Visionranger SDK for Swift (Beta)
 The Visionranger SDK for Swift makes it easy to interact with the Visionranger API. It exposes the low-level APIs that power our business workflows so that you can build fully customizable experiences for team mates, employees or customers.
 
-Although the Visionranger SDK is an open source project, it is not intended for general use, as OpenSSL is. We don't recommend that third parties depend upon it. Doing so is likely to be frustrating because there are no guarantees of API or ABI stability.
+Although the Visionranger SDK is an open source project, it is not intended for general use. We don't recommend that third parties depend upon it. Doing so is likely to be frustrating because there are no guarantees of API or ABI stability.
 
 ## Requirements
 The Swift SDK is compatible with apps supporting iOS 11 and above.
