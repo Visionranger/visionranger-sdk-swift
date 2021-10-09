@@ -152,7 +152,7 @@ let myGenericConstant: String = "This is a fixed string"
 
 Global file scope example:
 ```swift
-private let APIVersion = "2021-09-23
+private let APIVersion = "2021-09-23"
 ```
 
 ### Commit Conventions
