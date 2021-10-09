@@ -42,16 +42,9 @@ extension URLSession {
                     pow(Double(1 + VisionrangerAPI.maxRetries - retryCount), Double(2)) + .random(in: 0..<0.5)
                 )
                 
-                if #available(iOS 13.0, *) {
-                    let fireDate = Date() + delayTime
-                    self.delegateQueue.schedule(after: .init(fireDate)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delayTime) {
+                    self.delegateQueue.addOperation {
                         self.vsn_performDataTask(with: request, completionHandler: completionHandler, retryCount: retryCount - 1)
-                    }
-                } else {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + delayTime) {
-                        self.delegateQueue.addOperation {
-                            self.vsn_performDataTask(with: request, completionHandler: completionHandler, retryCount: retryCount - 1)
-                        }
                     }
                 }
             } else {
