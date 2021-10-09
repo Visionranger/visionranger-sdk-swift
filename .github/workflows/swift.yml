@@ -1,0 +1,17 @@
+name: Swift
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  macOS:
+    name: Test macOS
+    runs-on: macOS-10.15
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: swift build -v
+    - name: Run tests
+      run: swift test -v
