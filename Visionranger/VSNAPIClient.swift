@@ -161,5 +161,20 @@ extension VSNAPIClient {
     }
 }
 
+// MARK: Announcements
+extension VSNAPIClient {
+    /// Retrieves the latest announcement.
+    /// - Parameter completion: Returns an announcement object when successful and an error when not
+    public func retrieveAnnouncement(_ completion: @escaping VSNAnnouncementCompletionBlock) {
+        VSNRequest<VSNAnnouncement>.getWith(
+            self,
+            endpoint: .announcements,
+            parameters: [:]
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+}
+
 private let APIVersion = "2021-09-23"
 private let APIBaseURL: String = "https://api.visionranger.com"

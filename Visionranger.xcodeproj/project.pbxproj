@@ -109,14 +109,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		50140FBA2715D89C00C6ED9B /* Announcement */ = {
-			isa = PBXGroup;
-			children = (
-				50140FBB2715D8B600C6ED9B /* VSNAnnouncement.swift */,
-			);
-			name = Announcement;
-			sourceTree = "<group>";
-		};
 		5016A5DE26FA8A0200CC731B = {
 			isa = PBXGroup;
 			children = (
@@ -195,10 +187,10 @@
 		5096B88D26FF4E0E0064B603 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				50140FBA2715D89C00C6ED9B /* Announcement */,
 				5099D9DC2705F3F400EBC08A /* Product */,
 				5099D9DD2705F51500EBC08A /* Configuration */,
 				50F8FFD8270725A300FAE7D5 /* VSNCatalogizationEnums.swift */,
+				50140FBB2715D8B600C6ED9B /* VSNAnnouncement.swift */,
 				5092169A270B0CFE00B260DD /* VSNDeletion.swift */,
 				50140FBD2715EB1600C6ED9B /* VSNCollectionFilter.swift */,
 			);
