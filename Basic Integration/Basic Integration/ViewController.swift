@@ -35,23 +35,25 @@ class ViewController: UIViewController {
         
         let client = VSNAPIClient.shared
 
-//        client.retrieveProduct(id: "1") { product, error in
-//            guard let product = product,
-//                  let details = product.catalogization,
-//                  error == nil else {
-//                print(error?.localizedDescription ?? "Unexpected error occured")
-//                return
-//            }
-//            if let room = details.room {
-//                print(room)
-//            }
-//            print(details.houseArea!.name)
-//        }
-        
-        client.retrieveAnnouncement() { object, error in
-            guard let object = object, error == nil else {
+        client.retrieveProduct(id: "1") { product, error in
+            guard let product = product,
+                  let details = product.catalogization,
+                  error == nil else {
                 print(error?.localizedDescription ?? "Unexpected error occured")
                 return
+            }
+            if let room = details.room {
+                print(room)
+            }
+            print(details.houseArea!.name)
+        }
+        
+        client.retrieveAnnouncement() { object, error in
+            guard let object = object else {
+                return
+            }
+            if let error = error {
+                print(error.localizedDescription)
             }
             if let title = object.title {
                 print(title)
