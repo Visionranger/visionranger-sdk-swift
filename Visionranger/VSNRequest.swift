@@ -78,7 +78,9 @@ class VSNRequest<ResponseType: VSNAPIResponseDecodable>: NSObject {
         
         let request = client.configuredRequest(for: url, additionalHeaders: additionalHeaders)
         request.httpMethod = VSNHTTPMethod.get.rawValue
-        request.vsn_addParameters(toURL: parameters)
+        if !parameters.isEmpty {
+            request.vsn_addParameters(toURL: parameters)
+        }
         
         client.urlSession.vsn_performDataTask(
             with: request as URLRequest,

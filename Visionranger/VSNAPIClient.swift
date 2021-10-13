@@ -163,13 +163,27 @@ extension VSNAPIClient {
 
 // MARK: Announcements
 extension VSNAPIClient {
-    /// Retrieves the latest announcement.
-    /// - Parameter completion: Returns an announcement object when successful and an error when not
+    /// Retrieves the latest ``VSNAnnouncement`` object.
+    /// - Parameter completion: Returns a ``VSNAnnouncement`` object when successful and an error when not
     public func retrieveAnnouncement(_ completion: @escaping VSNAnnouncementCompletionBlock) {
         VSNRequest<VSNAnnouncement>.getWith(
             self,
             endpoint: .announcements,
             parameters: [:]
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+    
+    /// Creates a new ``VSNAnnouncement`` object. Will be displayed on top of the Catalog.
+    /// - Parameters:
+    ///   - parameters: The object's properties
+    ///   - completion: Returns the newly created object when successful and an error when not
+    public func createAnnouncement(withParameters parameters: [String: Any], _ completion: @escaping VSNAnnouncementCompletionBlock) {
+        VSNRequest<VSNAnnouncement>.post(
+            with: self,
+            endpoint: .announcements,
+            parameters: parameters
         ) { response, _, error in
             completion(response, error)
         }
