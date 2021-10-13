@@ -179,11 +179,38 @@ extension VSNAPIClient {
     /// - Parameters:
     ///   - parameters: The object's properties
     ///   - completion: Returns the newly created object when successful and an error when not
+    ///
+    ///   - Bug: Currently, this function does not return the newly created object, but the most applicable for In-App usage.
+    ///   If you create a new announcement, that looses its validity before an existing object, that object will be returned.
+    ///   For reference look at ``retrieveAnnouncement(_:)``
+    ///
+    ///   - Precondition: The `valid_until` property must be a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time), not of type ``Date``.
+    ///
+    ///   - SeeAlso: ``VSNAnnouncement``
     public func createAnnouncement(withParameters parameters: [String: Any], _ completion: @escaping VSNAnnouncementCompletionBlock) {
         VSNRequest<VSNAnnouncement>.post(
             with: self,
             endpoint: .announcements,
             parameters: parameters
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+    
+    /// Deletes a specified ``VSNAnnouncement`` object. Can only be processed by **selected users**.
+    /// - Parameters:
+    ///   - id: The unique identifier of the object
+    ///   - completion: Returns a ``VSNDeletion`` object when successful and an error when not
+    ///
+    /// - Attention: This function does not actually delete the announcement, but archives it.
+    ///
+    /// When an announcement looses its validity, the object is automatically archived.
+    /// This process allows selected users to post new announcements at a faster pace and distribute them just-in-time.
+    public func deleteAnnouncement(id: String, _ completion: @escaping VSNDeleteCompletionBlock) {
+        VSNRequest<VSNDeletion>.delete(
+            with: self,
+            endpoint: .announcements,
+            parameters: ["id": id]
         ) { response, _, error in
             completion(response, error)
         }
