@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50140FBC2715D8B600C6ED9B /* VSNAnnouncement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50140FBB2715D8B600C6ED9B /* VSNAnnouncement.swift */; };
+		50140FBE2715EB1600C6ED9B /* VSNCollectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50140FBD2715EB1600C6ED9B /* VSNCollectionFilter.swift */; };
 		5016A5ED26FA8A0200CC731B /* Visionranger.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5016A5EC26FA8A0200CC731B /* Visionranger.docc */; };
 		5016A5F326FA8A0200CC731B /* Visionranger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5016A5E826FA8A0200CC731B /* Visionranger.framework */; };
 		5016A5F826FA8A0200CC731B /* VisionrangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016A5F726FA8A0200CC731B /* VisionrangerTests.swift */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50140FBB2715D8B600C6ED9B /* VSNAnnouncement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAnnouncement.swift; sourceTree = "<group>"; };
+		50140FBD2715EB1600C6ED9B /* VSNCollectionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNCollectionFilter.swift; sourceTree = "<group>"; };
 		5016A5E826FA8A0200CC731B /* Visionranger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Visionranger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5016A5EB26FA8A0200CC731B /* Visionranger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Visionranger.h; sourceTree = "<group>"; };
 		5016A5EC26FA8A0200CC731B /* Visionranger.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Visionranger.docc; sourceTree = "<group>"; };
@@ -186,7 +190,9 @@
 				5099D9DC2705F3F400EBC08A /* Product */,
 				5099D9DD2705F51500EBC08A /* Configuration */,
 				50F8FFD8270725A300FAE7D5 /* VSNCatalogizationEnums.swift */,
+				50140FBB2715D8B600C6ED9B /* VSNAnnouncement.swift */,
 				5092169A270B0CFE00B260DD /* VSNDeletion.swift */,
+				50140FBD2715EB1600C6ED9B /* VSNCollectionFilter.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -336,8 +342,10 @@
 			files = (
 				5018405026FD298100342BE4 /* VSNConfigurationDimensions.swift in Sources */,
 				5016A5ED26FA8A0200CC731B /* Visionranger.docc in Sources */,
+				50140FBC2715D8B600C6ED9B /* VSNAnnouncement.swift in Sources */,
 				5078115326FCBDE600323EE4 /* VSNAPIResponseDecodable.swift in Sources */,
 				5096B88926FF447B0064B603 /* VSNDispatchFunctions.swift in Sources */,
+				50140FBE2715EB1600C6ED9B /* VSNCollectionFilter.swift in Sources */,
 				50AD2B8526FBC71D00E03205 /* VSNProduct.swift in Sources */,
 				50A0B97326FDC5C4001A6782 /* VSNConfigurationDeliveryRange.swift in Sources */,
 				5078115926FCF95900323EE4 /* VSNConfiguration.swift in Sources */,

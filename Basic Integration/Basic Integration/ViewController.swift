@@ -47,6 +47,18 @@ class ViewController: UIViewController {
             }
             print(details.houseArea!.name)
         }
+
+        client.retrieveAnnouncement() { object, error in
+            guard let object = object else {
+                return
+            }
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            if let title = object.title {
+                print(title)
+            }
+        }
     }
 }
 
