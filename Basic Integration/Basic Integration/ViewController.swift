@@ -47,7 +47,7 @@ class ViewController: UIViewController {
             }
             print(details.houseArea!.name)
         }
-        
+
         client.retrieveAnnouncement() { object, error in
             guard let object = object else {
                 return

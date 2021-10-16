@@ -180,13 +180,22 @@ extension VSNAPIClient {
     ///   - parameters: The object's properties
     ///   - completion: Returns the newly created object when successful and an error when not
     ///
-    ///   - Bug: Currently, this function does not return the newly created object, but the most applicable for In-App usage.
-    ///   If you create a new announcement, that looses its validity before an existing object, that object will be returned.
-    ///   For reference look at ``retrieveAnnouncement(_:)``
+    /// - Note: Creating a new announcement will make it visible to the general audience.
+    ///   If you **later decide to remove or deactive** the announcement, call ``updateAnnouncement(withParameters:_:)`` and set
+    ///  ```
+    ///   active = false
+    ///  ```
+    /// - Requires: The following parameters must be provided:
+    ///  ```
+    ///   title: String
+    ///   description: String
+    ///   short_description: String
+    ///   thumbnail: String // URL of the resource
+    ///   valid_until: Double
+    ///  ```
+    /// - Attention: For practical use, specify at least one filter parameter. If none is provided the list will contain all available products - this is neither recommended nor practical.
     ///
-    ///   - Precondition: The `valid_until` property must be a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time), not of type ``Date``.
-    ///
-    ///   - SeeAlso: ``VSNAnnouncement``
+    /// - Precondition: The `valid_until` property must be a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time), not of type ``Date``.
     public func createAnnouncement(withParameters parameters: [String: Any], _ completion: @escaping VSNAnnouncementCompletionBlock) {
         VSNRequest<VSNAnnouncement>.post(
             with: self,
@@ -205,12 +214,31 @@ extension VSNAPIClient {
     /// - Attention: This function does not actually delete the announcement, but archives it.
     ///
     /// When an announcement looses its validity, the object is automatically archived.
-    /// This process allows selected users to post new announcements at a faster pace and distribute them just-in-time.
+    /// This process allows selected users to post new announcements at a faster pace and distribute them just-in-time
     public func deleteAnnouncement(id: String, _ completion: @escaping VSNDeleteCompletionBlock) {
         VSNRequest<VSNDeletion>.delete(
             with: self,
             endpoint: .announcements,
             parameters: ["id": id]
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+    
+    /// Updates a specified ``VSNAnnouncement`` object. Can only be processed by **selected users**.
+    /// - Parameters:
+    ///   - parameters: The object's properties
+    ///   - completion: Returns the updated ``VSNAnnouncement`` object when successful or an error when not.
+    ///
+    /// - Requires: `id` of the announcement
+    ///
+    /// This function takes the same properties as optional input parameters as ``createAnnouncement(withParameters:_:)`` does.
+    /// In addition, you can also set the `active` property of the object. This value is `true` by default, but can be changed by **selected users**.
+    public func updateAnnouncement(withParameters parameters: [String: Any], _ completion: @escaping VSNAnnouncementCompletionBlock) {
+        VSNRequest<VSNAnnouncement>.put(
+            with: self,
+            endpoint: .announcements,
+            parameters: parameters
         ) { response, _, error in
             completion(response, error)
         }
