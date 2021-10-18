@@ -23,6 +23,6 @@ class VisionrangerTests: XCTestCase {
     }
 
     func testExample() throws {
-        XCTAssertEqual(VSNConfigurationDeliveryRange.threeToFiveDays.rawValue, 0)
+        XCTAssertEqual(VSNEstimatedDelivery.threeToFiveDays.rawValue, 0)
     }
 }

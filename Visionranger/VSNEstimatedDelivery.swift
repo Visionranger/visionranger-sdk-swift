@@ -26,7 +26,7 @@
 
 import Foundation
 
-public enum VSNConfigurationDeliveryRange: Int {
+public enum VSNEstimatedDelivery: Int {
     case threeToFiveDays
     case upToOneWeek
     case oneToTwoWeeks
@@ -39,4 +39,5 @@ public enum VSNConfigurationDeliveryRange: Int {
     case twoMonths
     case twoToThreeMonths
     case moreThanThreeMonths
+    case unknown
 }
