@@ -35,15 +35,15 @@ class ViewController: UIViewController {
         
         let client = VSNAPIClient.shared
 
-        client.retrieveConfiguration(with: "1") { object, error in
+        client.listConfigurations(forProduct: "3") { object, error in
             guard let object = object else {
                 return
             }
             if let error = error {
                 print(error.localizedDescription)
             }
-            if let value = object.estimatedDelivery {
-                print(value.localizedDescription)
+            if let value = object[0].price {
+                print(value)
             }
         }
     }

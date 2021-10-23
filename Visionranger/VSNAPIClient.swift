@@ -262,6 +262,49 @@ extension VSNAPIClient {
             completion(response, error)
         }
     }
+    
+    /// Lists all ``VSNConfiguration`` objects for a specified product.
+    /// - Parameters:
+    ///   - id: The unique identifier of the ``VSNProduct``
+    ///   - completion: Returns metadata and an array of ``VSNConfiguration`` objects when successful or an error when not.
+    ///
+    /// - Requires: `id` of the product
+    ///
+    /// The output of this function depends on your application's current environment.
+    /// When your app is in **test Mode**, this function will return only those configurations whose `active` property is set to `false`.
+    /// This function returns the following structure:
+    /// ```
+    ///   "count": Int
+    ///   "data": [VSNConfiguration]
+    /// ```
+    public func listConfigurations(forProduct id: String, _ completion: @escaping VSNConfigurationsCompletionBlock) {
+        var shared_Configurations = [VSNConfiguration]()
+        var shared_lastError: Error? = nil
+        let group = DispatchGroup()
+        
+        group.enter()
+        
+        VSNRequest<VSNConfigurationListDeserializer>.getWith(
+            self,
+            endpoint: .listConfigurations,
+            parameters: ["id": id]
+        ) { deserializer, _, error in
+            DispatchQueue.global(qos: .userInteractive).async(flags: .barrier) {
+                // .barrier ensures we're the only thing writing to shared_ vars
+                if let error = error {
+                    shared_lastError = error
+                }
+                if let configurations = deserializer?.configurations {
+                    shared_Configurations.append(contentsOf: configurations)
+                }
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            completion(shared_Configurations, shared_lastError)
+        }
+    }
 }
 
 private let APIVersion = "2021-09-23"
