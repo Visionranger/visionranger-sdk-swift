@@ -245,5 +245,24 @@ extension VSNAPIClient {
     }
 }
 
+// MARK: Configurations
+extension VSNAPIClient {
+    /// Returns a ``VSNConfiguration`` object with the specified unique identifier.
+    /// - Parameters:
+    ///   - id: The object's unique identifier
+    ///   - completion: Returns the ``VSNConfiguration`` object when successful or an error when not.
+    ///
+    /// - Requires: `id` of the configuration
+    public func retrieveConfiguration(with id: String, _ completion: @escaping VSNConfigurationCompletionBlock) {
+        VSNRequest<VSNConfiguration>.getWith(
+            self,
+            endpoint: .configurations,
+            parameters: ["id": id]
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+}
+
 private let APIVersion = "2021-09-23"
 private let APIBaseURL: String = "https://api.visionranger.com"

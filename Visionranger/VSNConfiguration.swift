@@ -53,7 +53,7 @@ public class VSNConfiguration: NSObject {
     /// An estimate of how long it takes from ordering to delivering the product in this configuration
     public var estimatedDelivery: VSNEstimatedDelivery?
     /// Boolean value indicating whether this configuration is visible to the general public
-    public var live: Bool?
+    public var active: Bool?
     
     public var allResponseFields: [AnyHashable : Any]
     
@@ -64,26 +64,34 @@ public class VSNConfiguration: NSObject {
     ) {
         self.init(
             configID: configID,
+            material: .unknown,
+            colorCode: "",
+            color: "",
             productID: productID,
+            specific: "",
             modelURL: modelURL,
+            imageURL: "",
             dimensions: nil,
             price: 0,
-            material: .unknown,
             estimatedDelivery: .unknown,
-            live: false,
+            active: false,
             allResponseFields: [:]
         )
     }
     
     internal init(
         configID: String,
+        material: VSNFurnitureMaterial?,
+        colorCode: String,
+        color: String,
         productID: String,
+        specific: String?,
         modelURL: String,
+        imageURL: String,
         dimensions: VSNConfigurationDimensions?,
         price: Double,
-        material: VSNFurnitureMaterial?,
         estimatedDelivery: VSNEstimatedDelivery?,
-        live: Bool,
+        active: Bool,
         allResponseFields: [AnyHashable: Any]
     ) {
         self.configID = configID
@@ -93,20 +101,24 @@ public class VSNConfiguration: NSObject {
         self.price = price
         self.material = material
         self.estimatedDelivery = estimatedDelivery
-        self.live = live
+        self.active = active
         self.allResponseFields = allResponseFields
     }
     
     convenience override init() {
         self.init(
             configID: "",
+            material: .unknown,
+            colorCode: "",
+            color: "",
             productID: "",
+            specific: "",
             modelURL: "",
+            imageURL: "",
             dimensions: nil,
             price: 0,
-            material: .unknown,
             estimatedDelivery: .unknown,
-            live: false,
+            active: false,
             allResponseFields: [:]
         )
     }
@@ -123,13 +135,15 @@ extension VSNConfiguration: VSNAPIResponseDecodable {
         }
         
         let dimensions: VSNConfigurationDimensions?
+        var material: VSNFurnitureMaterial = .unknown
+        var delivery: VSNEstimatedDelivery = .unknown
         
         if let dimensionsDict = dict["dimensions"] as? [AnyHashable: Any],
            let details = VSNConfigurationDimensions.decodedObject(fromAPIResponse: dimensionsDict) {
             if let height = dict["height"] as? Double {
                 details.height = height
             }
-            if let length = dict["length"] as? Double {
+            if let length = dict["depth"] as? Double {
                 details.length = length
             }
             if let width = dict["width"] as? Double {
@@ -139,16 +153,26 @@ extension VSNConfiguration: VSNAPIResponseDecodable {
         } else {
             dimensions = nil
         }
+        if let index = dict["material"] as? Int {
+            material = VSNFurnitureMaterial(rawValue: index)!
+        }
+        if let index = dict["delivery_index"] as? Int {
+            delivery = VSNEstimatedDelivery(rawValue: index)!
+        }
         
         return VSNConfiguration(
             configID: configID,
+            material: material,
+            colorCode: dict["color_code"] as! String,
+            color: dict["color"] as! String,
             productID: productID,
+            specific: dict["category_specific"] as? String,
             modelURL: dict["model_url"] as! String,
+            imageURL: dict["image_url"] as! String,
             dimensions: dimensions,
-            price: dict["price"] as? Double ?? 0,
-            material: dict["material"] as? VSNFurnitureMaterial ?? .unknown,
-            estimatedDelivery: dict["estimated_delivery_index"] as? VSNEstimatedDelivery,
-            live: dict["live"] as! Bool,
+            price: dict["price"] as! Double,
+            estimatedDelivery: delivery,
+            active: dict["active"] as! Bool,
             allResponseFields: dict
         ) as? Self
     }

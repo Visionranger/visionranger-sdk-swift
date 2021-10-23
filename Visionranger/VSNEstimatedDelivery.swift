@@ -41,7 +41,7 @@ public enum VSNEstimatedDelivery: Int {
     case moreThanThreeMonths
     case unknown
     
-    public var string: String {
+    public var localizedDescription: String {
         switch self {
         case .threeToFiveDays:
             return NSLocalizedString("3 - 5 days", comment: "Estimated time between order and delivery")
