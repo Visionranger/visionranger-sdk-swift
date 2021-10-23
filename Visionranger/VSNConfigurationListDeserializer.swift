@@ -1,8 +1,8 @@
 //
-//  VSNBlocks.swift
+//  VSNConfigurationListDeserializer.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 22.09.21.
+//  Created by Colin Tessarzick on 23.10.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -23,25 +23,36 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+//
 
 import Foundation
 
-public typealias VSNVoidBlock = () -> Void
-
-public typealias VSNErrorBlock = (Error?) -> Void
-
-public typealias VSNBooleanSuccessBlock = (Bool?, Error?) -> Void
-
-public typealias VSNJSONResponseCompletionBlock = (String?, Error?) -> Void
-
-public typealias VSNDeleteCompletionBlock = (VSNDeletion?, Error?) -> Void
-
-public typealias VSNProductCompletionBlock = (VSNProduct?, Error?) -> Void
-
-public typealias VSNProductsCompletionBlock = ([VSNProduct]?, Error?) -> Void
-
-public typealias VSNAnnouncementCompletionBlock = (VSNAnnouncement?, Error?) -> Void
-
-public typealias VSNConfigurationCompletionBlock = (VSNConfiguration?, Error?) -> Void
-
-public typealias VSNConfigurationsCompletionBlock = ([VSNConfiguration]?, Error?) -> Void
+class VSNConfigurationListDeserializer: NSObject, VSNAPIResponseDecodable {
+    private(set) var configurations: [VSNConfiguration]?
+    private(set) var allResponseFields: [AnyHashable : Any] = [:]
+    
+    override required init() {
+        super.init()
+    }
+    
+    class func decodedObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
+        guard let response = response else {
+            return nil
+        }
+        let dict = (response as NSDictionary).vsn_dictionaryByRemovingNulls() as NSDictionary
+        
+        guard let data = dict.vsn_array(forKey: "data") as? [[AnyHashable: Any]] else {
+            return nil
+        }
+        let configurationsDeserializer = self.init()
+        var configurations: [VSNConfiguration] = []
+        for confiJSON in data {
+            let config = VSNConfiguration.decodedObject(fromAPIResponse: confiJSON)
+            if let config = config {
+                configurations.append(config)
+            }
+        }
+        configurationsDeserializer.configurations = configurations
+        return configurationsDeserializer
+    }
+}

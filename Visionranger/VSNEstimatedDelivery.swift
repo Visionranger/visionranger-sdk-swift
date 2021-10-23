@@ -1,5 +1,5 @@
 //
-//  VSNConfigurationDeliveryRange.swift
+//  VSNEstimatedDelivery.swift
 //  Visionranger
 //
 //  Created by Colin Tessarzick on 24.09.21.
@@ -40,4 +40,37 @@ public enum VSNEstimatedDelivery: Int {
     case twoToThreeMonths
     case moreThanThreeMonths
     case unknown
+    
+    public var string: String {
+        switch self {
+        case .threeToFiveDays:
+            return NSLocalizedString("3 - 5 days", comment: "Estimated time between order and delivery")
+        case .upToOneWeek:
+            return NSLocalizedString("1 week", comment: "Estimated time between order and delivery")
+        case .oneToTwoWeeks:
+            return NSLocalizedString("1 - 2 weeks", comment: "Estimated time between order and delivery")
+        case .twoWeeks:
+            return NSLocalizedString("2 weeks", comment: "Estimated time between order and delivery")
+        case .twoToThreeWeeks:
+            return NSLocalizedString("2 - 3 weeks", comment: "Estimated time between order and delivery")
+        case .threeWeeks:
+            return NSLocalizedString("3 weeks", comment: "Estimated time between order and delivery")
+        case .threeToFourWeeks:
+            return NSLocalizedString("3 - 4 weeks", comment: "Estimated time between order and delivery")
+        case .fourToSixWeeks:
+            return NSLocalizedString("4 - 6 weeks", comment: "Estimated time between order and delivery")
+        case .sixWeeksToTwoMonths:
+            return NSLocalizedString("6 - 8 weeks", comment: "Estimated time between order and delivery")
+        case .twoMonths:
+            return NSLocalizedString("2 months", comment: "Estimated time between order and delivery")
+        case .twoToThreeMonths:
+            return NSLocalizedString("2 - 3 months", comment: "Estimated time between order and delivery")
+        case .moreThanThreeMonths:
+            return NSLocalizedString("more than 3 months", comment: "Estimated time between order and delivery")
+        case .unknown:
+            fallthrough
+        default:
+            return NSLocalizedString("Unknown", comment: "Default missing delivery estimate index label")
+        }
+    }
 }

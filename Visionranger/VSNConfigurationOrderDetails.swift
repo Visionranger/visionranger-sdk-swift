@@ -42,7 +42,6 @@ public class VSNConfigurationOrderDetails: NSObject {
     
     public convenience init(price: Double, weight: Double, dimensions: VSNConfigurationDimensions) {
         self.init(
-            price: price,
             weight: weight,
             estimatedDelivery: nil,
             dimensions: dimensions,
@@ -51,13 +50,11 @@ public class VSNConfigurationOrderDetails: NSObject {
     }
     
     internal init(
-        price: Double,
         weight: Double,
         estimatedDelivery: VSNEstimatedDelivery?,
         dimensions: VSNConfigurationDimensions?,
         allResponseFields: [AnyHashable : Any]
     ) {
-        self.price = price
         self.weight = weight
         self.estimatedDelivery = estimatedDelivery
         self.dimensions = dimensions
@@ -65,7 +62,7 @@ public class VSNConfigurationOrderDetails: NSObject {
     }
     
     convenience override init() {
-        self.init(price: 0, weight: 0, estimatedDelivery: nil, dimensions: nil, allResponseFields: [:])
+        self.init(weight: 0, estimatedDelivery: nil, dimensions: nil, allResponseFields: [:])
     }
 }
 
@@ -86,12 +83,10 @@ extension VSNConfigurationOrderDetails: VSNAPIResponseDecodable {
         } else {
             dimensionsObject = nil
         }
-        let price = dict["price"] as? Double ?? 0
         let weight = dict["weight"] as? Double ?? 0
         let estimatedDelivery = dict["estimated_delivery_index"] as? VSNEstimatedDelivery
         
         return VSNConfigurationOrderDetails(
-            price: price,
             weight: weight,
             estimatedDelivery: estimatedDelivery,
             dimensions: dimensionsObject,

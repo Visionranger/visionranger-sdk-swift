@@ -30,57 +30,47 @@ public class VSNConfiguration: NSObject {
     
     /// The unique identifier of the product's configuration from the Visionranger API
     public let configID: String?
-    
-    /// The unique identifier of the product, this configuration belongs to
-    public let productID: String?
-    
-    public let manufacturerID: String?
-    
-    public var live: Bool?
-    
-    public var SKU: String?
-    
-    /// The URL that leads to this product's configuration
-    public var modelURL: String?
-    
-    public var dimensions: VSNConfigurationDimensions?
-    
-    /// The price of the product in a specified configuration
-    public var price: Double?
-    
     /// The global index of the main material, associated to this product configuration
     ///
     /// The main material is defined as the material that covers at least 50% of the visual surface of a product.
     public var material: VSNFurnitureMaterial?
-    
-    /// The unique identifier of the finish object, associated with this configuration
-    public var finish: String?
-    
+    /// HEX code of the main materials surface color
+    public var colorCode: String?
+    /// The name of the main materials surface color
+    public var color: String?
+    /// The unique identifier of the product, this configuration belongs to
+    public let productID: String?
+    /// Generic string providing information about the main component of the product category
+    public var specific: String?
+    /// The URL that leads to this product's configuration
+    public var modelURL: String?
+    /// The URL that leads to a rendered image of the configuration.
+    public var imageURL: String?
+    /// Provides information about height, length and width of this configuration
+    public var dimensions: VSNConfigurationDimensions?
+    /// The price of the product in a specified configuration
+    public var price: Double?
+    /// An estimate of how long it takes from ordering to delivering the product in this configuration
     public var estimatedDelivery: VSNEstimatedDelivery?
-    
-    public var packageDetails: [AnyHashable: Any]?
+    /// Boolean value indicating whether this configuration is visible to the general public
+    public var live: Bool?
     
     public var allResponseFields: [AnyHashable : Any]
     
     public convenience init(
         configID: String,
         productID: String,
-        manufacturerID: String,
         modelURL: String
     ) {
         self.init(
             configID: configID,
             productID: productID,
-            manufacturerID: manufacturerID,
-            live: false,
-            sku: "",
             modelURL: modelURL,
             dimensions: nil,
             price: 0,
             material: .unknown,
-            finish: "",
             estimatedDelivery: .unknown,
-            packageDetails: nil,
+            live: false,
             allResponseFields: [:]
         )
     }
@@ -88,48 +78,35 @@ public class VSNConfiguration: NSObject {
     internal init(
         configID: String,
         productID: String,
-        manufacturerID: String,
-        live: Bool,
-        sku: String,
         modelURL: String,
         dimensions: VSNConfigurationDimensions?,
         price: Double,
-        material: VSNFurnitureMaterial,
-        finish: String,
-        estimatedDelivery: VSNEstimatedDelivery,
-        packageDetails: [AnyHashable: Any]?,
+        material: VSNFurnitureMaterial?,
+        estimatedDelivery: VSNEstimatedDelivery?,
+        live: Bool,
         allResponseFields: [AnyHashable: Any]
     ) {
         self.configID = configID
         self.productID = productID
-        self.manufacturerID = manufacturerID
-        self.live = live
-        self.SKU = sku
         self.modelURL = modelURL
         self.dimensions = dimensions
         self.price = price
         self.material = material
-        self.finish = finish
         self.estimatedDelivery = estimatedDelivery
-        self.packageDetails = packageDetails
+        self.live = live
         self.allResponseFields = allResponseFields
-        super.init()
     }
     
     convenience override init() {
         self.init(
             configID: "",
             productID: "",
-            manufacturerID: "",
-            live: false,
-            sku: "",
             modelURL: "",
             dimensions: nil,
             price: 0,
             material: .unknown,
-            finish: "",
             estimatedDelivery: .unknown,
-            packageDetails: nil,
+            live: false,
             allResponseFields: [:]
         )
     }
@@ -145,26 +122,33 @@ extension VSNConfiguration: VSNAPIResponseDecodable {
             return nil
         }
         
-        let orderDetails: VSNConfigurationOrderDetails?
+        let dimensions: VSNConfigurationDimensions?
         
-        if let orderDict = dict["order_details"] as? [AnyHashable : Any],
-           let order = VSNConfigurationOrderDetails.decodedObject(fromAPIResponse: orderDict) {
-            order.price = orderDict["price"] as? Double
-            order.weight = orderDict["weight"] as? Double
-            order.estimatedDelivery = orderDict["estimated_delivery_index"] as? VSNEstimatedDelivery
-            order.dimensions = orderDict["dimensions"] as? VSNConfigurationDimensions
-            order.allResponseFields = orderDict
-            orderDetails = order
+        if let dimensionsDict = dict["dimensions"] as? [AnyHashable: Any],
+           let details = VSNConfigurationDimensions.decodedObject(fromAPIResponse: dimensionsDict) {
+            if let height = dict["height"] as? Double {
+                details.height = height
+            }
+            if let length = dict["length"] as? Double {
+                details.length = length
+            }
+            if let width = dict["width"] as? Double {
+                details.width = width
+            }
+            dimensions = details
         } else {
-            orderDetails = nil
+            dimensions = nil
         }
         
         return VSNConfiguration(
             configID: configID,
-            associatedProductID: productID,
-            material: dict["material"] as! Int,
+            productID: productID,
             modelURL: dict["model_url"] as! String,
-            orderDetails: orderDetails,
+            dimensions: dimensions,
+            price: dict["price"] as? Double ?? 0,
+            material: dict["material"] as? VSNFurnitureMaterial ?? .unknown,
+            estimatedDelivery: dict["estimated_delivery_index"] as? VSNEstimatedDelivery,
+            live: dict["live"] as! Bool,
             allResponseFields: dict
         ) as? Self
     }
