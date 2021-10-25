@@ -82,8 +82,8 @@ public class VSNConfiguration: NSObject {
     internal init(
         configID: String,
         material: VSNFurnitureMaterial?,
-        colorCode: String,
-        color: String,
+        colorCode: String?,
+        color: String?,
         productID: String,
         specific: String?,
         modelURL: String,
@@ -163,8 +163,8 @@ extension VSNConfiguration: VSNAPIResponseDecodable {
         return VSNConfiguration(
             configID: configID,
             material: material,
-            colorCode: dict["color_code"] as! String,
-            color: dict["color"] as! String,
+            colorCode: dict["color_code"] as? String,
+            color: dict["color"] as? String,
             productID: productID,
             specific: dict["category_specific"] as? String,
             modelURL: dict["model_url"] as! String,

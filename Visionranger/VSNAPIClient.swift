@@ -305,6 +305,30 @@ extension VSNAPIClient {
             completion(shared_Configurations, shared_lastError)
         }
     }
+    
+    /// Creates a new ``VSNConfiguration`` object
+    /// - Parameters:
+    ///   - parameters: The object's properties
+    ///   - completion: Returns the newly created object when successful and an error when not
+    ///
+    /// - Note: Your application's environment determins whether the object will only be available in Testmode or publically available to all users.
+    /// - Requires: The following parameters must be provided:
+    ///  ```
+    ///   "product_id": String
+    ///   "price": Double
+    ///   "model_url": String
+    ///   "image_url": String
+    ///   "sku": String
+    ///  ```
+    public func createConfiguration(withParameters parameters: [String: Any], _ completion: @escaping VSNConfigurationCompletionBlock) {
+        VSNRequest<VSNConfiguration>.post(
+            with: self,
+            endpoint: .configurations,
+            parameters: parameters
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
 }
 
 private let APIVersion = "2021-09-23"
