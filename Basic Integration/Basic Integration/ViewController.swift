@@ -34,15 +34,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let client = VSNAPIClient.shared
-
-        client.listConfigurations(forProduct: "3") { object, error in
-            guard let object = object else {
+        
+        client.retrieveConfiguration(with: "2") { config, error in
+            guard let config = config else {
                 return
             }
             if let error = error {
                 print(error.localizedDescription)
             }
-            if let value = object[0].price {
+            if let value = config.modelURL {
                 print(value)
             }
         }
