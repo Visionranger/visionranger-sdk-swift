@@ -53,7 +53,7 @@ public class VSNConfiguration: NSObject {
     /// An estimate of how long it takes from ordering to delivering the product in this configuration
     public var estimatedDelivery: VSNEstimatedDelivery?
     /// Boolean value indicating whether this configuration is visible to the general public
-    public var active: Bool?
+    public var live: Bool?
     
     public var allResponseFields: [AnyHashable : Any]
     
@@ -74,7 +74,7 @@ public class VSNConfiguration: NSObject {
             dimensions: nil,
             price: 0,
             estimatedDelivery: .unknown,
-            active: false,
+            live: false,
             allResponseFields: [:]
         )
     }
@@ -91,7 +91,7 @@ public class VSNConfiguration: NSObject {
         dimensions: VSNConfigurationDimensions?,
         price: Double,
         estimatedDelivery: VSNEstimatedDelivery?,
-        active: Bool,
+        live: Bool,
         allResponseFields: [AnyHashable: Any]
     ) {
         self.configID = configID
@@ -101,7 +101,7 @@ public class VSNConfiguration: NSObject {
         self.price = price
         self.material = material
         self.estimatedDelivery = estimatedDelivery
-        self.active = active
+        self.live = live
         self.allResponseFields = allResponseFields
     }
     
@@ -118,7 +118,7 @@ public class VSNConfiguration: NSObject {
             dimensions: nil,
             price: 0,
             estimatedDelivery: .unknown,
-            active: false,
+            live: false,
             allResponseFields: [:]
         )
     }
@@ -172,7 +172,7 @@ extension VSNConfiguration: VSNAPIResponseDecodable {
             dimensions: dimensions,
             price: dict["price"] as! Double,
             estimatedDelivery: delivery,
-            active: dict["active"] as! Bool,
+            live: dict["live"] as! Bool,
             allResponseFields: dict
         ) as? Self
     }

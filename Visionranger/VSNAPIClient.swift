@@ -329,6 +329,25 @@ extension VSNAPIClient {
             completion(response, error)
         }
     }
+    
+    /// Updates a specified ``VSNConfiguration`` object with the given parameters.
+    /// - Parameters:
+    ///   - parameters: Properties to be changed
+    ///   - completion: Returns the updated object when successful and an error when not
+    ///
+    /// - Requires: The following parameters must be provided:
+    /// ```
+    ///  "id": String
+    /// ```
+    public func updateConfiguration(withParameters parameters: [String: Any], _ completion: @escaping VSNConfigurationCompletionBlock) {
+        VSNRequest<VSNConfiguration>.put(
+            with: self,
+            endpoint: .configurations,
+            parameters: parameters
+        ) { reponse, _, error in
+            completion(reponse, error)
+        }
+    }
 }
 
 private let APIVersion = "2021-09-23"
