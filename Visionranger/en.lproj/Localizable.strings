@@ -453,3 +453,32 @@
 "Structure Ash" = "Structure Ash";
 /* Product component's major material */
 "Unknown" = "Unknown";
+
+// MARK: VSNEstimatedDelivery
+
+/* Estimated time between order and delivery */
+"3 - 5 days" = "3 - 5 days";
+/* Estimated time between order and delivery */
+"1 week" = "1 week";
+/* Estimated time between order and delivery */
+"1 - 2 weeks" = "1 - 2 weeks";
+/* Estimated time between order and delivery */
+"2 weeks" = "2 weeks";
+/* Estimated time between order and delivery */
+"2 - 3 weeks" = "2 - 3 weeks";
+/* Estimated time between order and delivery */
+"3 weeks" = "3 weeks";
+/* Estimated time between order and delivery */
+"3 - 4 weeks" = "3 - 4 weeks";
+/* Estimated time between order and delivery */
+"4 - 6 weeks" = "4 - 6 weeks";
+/* Estimated time between order and delivery */
+"6 - 8 weeks" = "6 - 8 weeks";
+/* Estimated time between order and delivery */
+"2 months" = "2 months";
+/* Estimated time between order and delivery */
+"2 - 3 months" = "2 - 3 months";
+/* Estimated time between order and delivery */
+"more than 3 months" = "more than 3 months";
+/* Estimated time between order and delivery */
+"Unknown" = "Unknown";

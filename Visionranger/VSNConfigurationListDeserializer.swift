@@ -1,8 +1,8 @@
 //
-//  VSNConfigurationDeliveryRange.swift
+//  VSNConfigurationListDeserializer.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 24.09.21.
+//  Created by Colin Tessarzick on 23.10.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -23,20 +23,36 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+//
 
 import Foundation
 
-public enum VSNConfigurationDeliveryRange: Int {
-    case threeToFiveDays
-    case upToOneWeek
-    case oneToTwoWeeks
-    case twoWeeks
-    case twoToThreeWeeks
-    case threeWeeks
-    case threeToFourWeeks
-    case fourToSixWeeks
-    case sixWeeksToTwoMonths
-    case twoMonths
-    case twoToThreeMonths
-    case moreThanThreeMonths
+class VSNConfigurationListDeserializer: NSObject, VSNAPIResponseDecodable {
+    private(set) var configurations: [VSNConfiguration]?
+    private(set) var allResponseFields: [AnyHashable : Any] = [:]
+    
+    override required init() {
+        super.init()
+    }
+    
+    class func decodedObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
+        guard let response = response else {
+            return nil
+        }
+        let dict = (response as NSDictionary).vsn_dictionaryByRemovingNulls() as NSDictionary
+        
+        guard let data = dict.vsn_array(forKey: "data") as? [[AnyHashable: Any]] else {
+            return nil
+        }
+        let configurationsDeserializer = self.init()
+        var configurations: [VSNConfiguration] = []
+        for confiJSON in data {
+            let config = VSNConfiguration.decodedObject(fromAPIResponse: confiJSON)
+            if let config = config {
+                configurations.append(config)
+            }
+        }
+        configurationsDeserializer.configurations = configurations
+        return configurationsDeserializer
+    }
 }

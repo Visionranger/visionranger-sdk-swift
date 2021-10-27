@@ -81,7 +81,7 @@ extension VSNConfigurationDimensions: VSNAPIResponseDecodable {
         let dimensions = VSNConfigurationDimensions()
         dimensions.allResponseFields = dict
         // All propertes are nullable
-        dimensions.length = dict["length"] as? Double
+        dimensions.length = dict["depth"] as? Double
         dimensions.width = dict["width"] as? Double
         dimensions.height = dict["height"] as? Double
         

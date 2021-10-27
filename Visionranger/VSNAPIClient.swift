@@ -245,5 +245,124 @@ extension VSNAPIClient {
     }
 }
 
+// MARK: Configurations
+extension VSNAPIClient {
+    /// Returns a ``VSNConfiguration`` object with the specified unique identifier.
+    /// - Parameters:
+    ///   - id: The object's unique identifier
+    ///   - completion: Returns the ``VSNConfiguration`` object when successful or an error when not.
+    ///
+    /// - Requires: `id` of the configuration
+    public func retrieveConfiguration(with id: String, _ completion: @escaping VSNConfigurationCompletionBlock) {
+        VSNRequest<VSNConfiguration>.getWith(
+            self,
+            endpoint: .configurations,
+            parameters: ["id": id]
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+    
+    /// Lists all ``VSNConfiguration`` objects for a specified product.
+    /// - Parameters:
+    ///   - id: The unique identifier of the ``VSNProduct``
+    ///   - completion: Returns metadata and an array of ``VSNConfiguration`` objects when successful or an error when not.
+    ///
+    /// - Requires: `id` of the product
+    ///
+    /// The output of this function depends on your application's current environment.
+    /// When your app is in **test Mode**, this function will return only those configurations whose `active` property is set to `false`.
+    /// This function returns the following structure:
+    /// ```
+    ///   "count": Int
+    ///   "data": [VSNConfiguration]
+    /// ```
+    public func listConfigurations(forProduct id: String, _ completion: @escaping VSNConfigurationsCompletionBlock) {
+        var shared_Configurations = [VSNConfiguration]()
+        var shared_lastError: Error? = nil
+        let group = DispatchGroup()
+        
+        group.enter()
+        
+        VSNRequest<VSNConfigurationListDeserializer>.getWith(
+            self,
+            endpoint: .listConfigurations,
+            parameters: ["id": id]
+        ) { deserializer, _, error in
+            DispatchQueue.global(qos: .userInteractive).async(flags: .barrier) {
+                // .barrier ensures we're the only thing writing to shared_ vars
+                if let error = error {
+                    shared_lastError = error
+                }
+                if let configurations = deserializer?.configurations {
+                    shared_Configurations.append(contentsOf: configurations)
+                }
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            completion(shared_Configurations, shared_lastError)
+        }
+    }
+    
+    /// Creates a new ``VSNConfiguration`` object
+    /// - Parameters:
+    ///   - parameters: The object's properties
+    ///   - completion: Returns the newly created object when successful and an error when not
+    ///
+    /// - Note: Your application's environment determins whether the object will only be available in Testmode or publically available to all users.
+    /// - Requires: The following parameters must be provided:
+    ///  ```
+    ///   "product_id": String
+    ///   "price": Double
+    ///   "model_url": String
+    ///   "image_url": String
+    ///   "sku": String
+    ///  ```
+    public func createConfiguration(withParameters parameters: [String: Any], _ completion: @escaping VSNConfigurationCompletionBlock) {
+        VSNRequest<VSNConfiguration>.post(
+            with: self,
+            endpoint: .configurations,
+            parameters: parameters
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+    
+    /// Updates a specified ``VSNConfiguration`` object with the given parameters.
+    /// - Parameters:
+    ///   - parameters: Properties to be changed
+    ///   - completion: Returns the updated object when successful and an error when not
+    ///
+    /// - Requires: The following parameters must be provided:
+    /// ```
+    ///  "id": String
+    /// ```
+    public func updateConfiguration(withParameters parameters: [String: Any], _ completion: @escaping VSNConfigurationCompletionBlock) {
+        VSNRequest<VSNConfiguration>.put(
+            with: self,
+            endpoint: .configurations,
+            parameters: parameters
+        ) { reponse, _, error in
+            completion(reponse, error)
+        }
+    }
+    
+    /// Archives a specified ``VSNConfiguration`` object. This function will not delete the object, but disable it for future purchases.
+    /// - Parameters:
+    ///   - id: The unique identifier of the ``VSNConfiguration`` object
+    ///   - completion: Returns the default ``VSNDeletion`` object when successful and an error if not.
+    public func deleteConfiguration(withID id: String, _ completion: @escaping VSNDeleteCompletionBlock) {
+        VSNRequest<VSNDeletion>.delete(
+            with: self,
+            endpoint: .configurations,
+            parameters: ["id": id]
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+}
+
 private let APIVersion = "2021-09-23"
 private let APIBaseURL: String = "https://api.visionranger.com"
