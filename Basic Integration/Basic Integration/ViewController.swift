@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let client = VSNAPIClient.shared
-        
+
         client.retrieveConfiguration(with: "2") { config, error in
             guard let config = config else {
                 return

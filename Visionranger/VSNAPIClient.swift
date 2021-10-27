@@ -348,6 +348,20 @@ extension VSNAPIClient {
             completion(reponse, error)
         }
     }
+    
+    /// Archives a specified ``VSNConfiguration`` object. This function will not delete the object, but disable it for future purchases.
+    /// - Parameters:
+    ///   - id: The unique identifier of the ``VSNConfiguration`` object
+    ///   - completion: Returns the default ``VSNDeletion`` object when successful and an error if not.
+    public func deleteConfiguration(withID id: String, _ completion: @escaping VSNDeleteCompletionBlock) {
+        VSNRequest<VSNDeletion>.delete(
+            with: self,
+            endpoint: .configurations,
+            parameters: ["id": id]
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
 }
 
 private let APIVersion = "2021-09-23"
