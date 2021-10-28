@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                          = 'VisionrangerSDK'
-    s.version                       = '0.1.0'
+    s.version                       = '0.1.2'
 
     s.summary                       = 'Manage your product portfolio and gain operational insights.'
     s.license                       = { :type => 'Apache Public 2.0', :file => 'LICENSE' }
