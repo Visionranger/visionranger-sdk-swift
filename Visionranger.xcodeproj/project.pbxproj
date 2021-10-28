@@ -132,6 +132,7 @@
 		5016A5EA26FA8A0200CC731B /* Visionranger */ = {
 			isa = PBXGroup;
 			children = (
+				50DEB9E4272AF699005178BD /* Resources */,
 				50AAC5FB26FB377B0084E41B /* Source */,
 				5016A5EB26FA8A0200CC731B /* Visionranger.h */,
 				5016A5EC26FA8A0200CC731B /* Visionranger.docc */,
@@ -224,12 +225,27 @@
 		50AAC5FB26FB377B0084E41B /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				50D5BF4127086E180000BE52 /* Localizable.strings */,
 				5096B88B26FF4DA40064B603 /* Networking */,
 				5096B88C26FF4DD80064B603 /* Helpers */,
 				5096B88A26FF4D420064B603 /* Internal */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		50DEB9E4272AF699005178BD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50DEB9E5272AF6D5005178BD /* Localizations */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		50DEB9E5272AF6D5005178BD /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				50D5BF4127086E180000BE52 /* Localizable.strings */,
+			);
+			path = Localizations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
