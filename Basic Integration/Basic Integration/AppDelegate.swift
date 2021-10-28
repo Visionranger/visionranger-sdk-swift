@@ -26,7 +26,7 @@
 //
 
 import UIKit
-import Visionranger
+import VisionrangerSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

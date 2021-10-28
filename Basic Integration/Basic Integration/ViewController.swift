@@ -26,7 +26,7 @@
 //
 
 import UIKit
-import Visionranger
+import VisionrangerSDK
 
 class ViewController: UIViewController {
 

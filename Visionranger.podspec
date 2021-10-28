@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-    s.name                          = 'Visionranger'
+    s.name                          = 'VisionrangerSDK'
     s.version                       = '0.1.0'
 
     s.summary                       = 'Manage your product portfolio and gain operational insights.'
