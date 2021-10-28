@@ -34,6 +34,8 @@ public class VSNProduct: NSObject {
     
     public var catalogization: VSNProductCatalogization?
     
+    public var imageURL: String?
+    
     public var allResponseFields: [AnyHashable : Any]
     
     public convenience init(id: String, name: String) {
@@ -41,6 +43,7 @@ public class VSNProduct: NSObject {
             productID: id,
             name: name,
             catalogization: nil,
+            imageURL: nil,
             allResponseFields: [:]
         )
     }
@@ -49,11 +52,13 @@ public class VSNProduct: NSObject {
         productID: String,
         name: String,
         catalogization: VSNProductCatalogization?,
+        imageURL: String?,
         allResponseFields: [AnyHashable : Any]
     ) {
         self.productID = productID
         self.name = name
         self.catalogization = catalogization
+        self.imageURL = imageURL
         self.allResponseFields = allResponseFields
     }
     
@@ -62,6 +67,7 @@ public class VSNProduct: NSObject {
             productID: "",
             name: "",
             catalogization: nil,
+            imageURL: nil,
             allResponseFields: [:]
         )
     }
@@ -104,6 +110,7 @@ extension VSNProduct: VSNAPIResponseDecodable {
             productID: productID,
             name: name,
             catalogization: catalogization,
+            imageURL: dict["preview_image_url"] as? String,
             allResponseFields: dict
         ) as? Self
     }
