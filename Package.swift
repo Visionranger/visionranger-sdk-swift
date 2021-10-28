@@ -3,26 +3,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "Visionranger",
+    name: "VisionrangerSDK",
     defaultLocalization: "en",
     platforms: [
         .iOS(.v12)
     ],
     products: [
         .library(
-            name: "Visionranger",
-            targets: ["Visionranger"]
+            name: "VisionrangerSDK",
+            targets: ["VisionrangerSDK"]
         ),
     ],
     targets: [
         .target(
-            name: "Visionranger",
+            name: "VisionrangerSDK",
             dependencies: [],
-            path: "Visionranger"
+            path: "VisionrangerSDK"
         ),
         .testTarget(
             name: "VisionrangerTests",
-            dependencies: ["Visionranger"],
+            dependencies: ["VisionrangerSDK"],
             path: "VisionrangerTests"
         ),
     ]
