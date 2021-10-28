@@ -10,19 +10,19 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "VisionrangerSDK",
-            targets: ["VisionrangerSDK"]
+            name: "Visionranger",
+            targets: ["Visionranger"]
         ),
     ],
     targets: [
         .target(
-            name: "VisionrangerSDK",
+            name: "Visionranger",
             dependencies: [],
-            path: "VisionrangerSDK"
+            path: "Visionranger"
         ),
         .testTarget(
             name: "VisionrangerTests",
-            dependencies: ["VisionrangerSDK"],
+            dependencies: ["Visionranger"],
             path: "VisionrangerTests"
         ),
     ]

@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
     s.swift_version                 = '5.3'
     s.weak_framework                = 'SwiftUI'
     s.source_files                  = 'Visionranger/*.swift'
-    s.ios.resource_bundle           = { 'VisionrangerSDK' => 'Visionranger/Resources/**/*.{lproj, json, png, xcassets}' }
+    s.ios.resource_bundle           = { 'Visionranger' => 'Visionranger/Resources/**/*.{lproj, json, png, xcassets}' }
 end

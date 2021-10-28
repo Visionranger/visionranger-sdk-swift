@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5016A5F126FA8A0200CC731B"
-               BuildableName = "VisionrangerTests.xctest"
+               BuildableName = "VisionrangerSDKTests.xctest"
                BlueprintName = "VisionrangerSDKTests"
                ReferencedContainer = "container:VisionrangerSDK.xcodeproj">
             </BuildableReference>
