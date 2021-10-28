@@ -6,7 +6,7 @@ let package = Package(
     name: "Visionranger",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v12)
     ],
     products: [
         .library(
