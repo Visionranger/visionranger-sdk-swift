@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5016A5E726FA8A0200CC731B"
                BuildableName = "VisionrangerSDK.framework"
-               BlueprintName = "VisionrangerSDK"
-               ReferencedContainer = "container:VisionrangerSDK.xcodeproj">
+               BlueprintName = "Visionranger"
+               ReferencedContainer = "container:Visionranger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5016A5F126FA8A0200CC731B"
                BuildableName = "VisionrangerSDKTests.xctest"
-               BlueprintName = "VisionrangerSDKTests"
-               ReferencedContainer = "container:VisionrangerSDK.xcodeproj">
+               BlueprintName = "VisionrangerTests"
+               ReferencedContainer = "container:Visionranger.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -72,8 +72,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5016A5E726FA8A0200CC731B"
             BuildableName = "VisionrangerSDK.framework"
-            BlueprintName = "VisionrangerSDK"
-            ReferencedContainer = "container:VisionrangerSDK.xcodeproj">
+            BlueprintName = "Visionranger"
+            ReferencedContainer = "container:Visionranger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

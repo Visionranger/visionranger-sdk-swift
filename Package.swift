@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "VisionrangerSDK",
+    name: "Visionranger",
     defaultLocalization: "en",
     platforms: [
         .iOS(.v12)

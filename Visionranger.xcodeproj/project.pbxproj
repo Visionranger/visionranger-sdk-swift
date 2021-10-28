@@ -10,7 +10,7 @@
 		50140FBC2715D8B600C6ED9B /* VSNAnnouncement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50140FBB2715D8B600C6ED9B /* VSNAnnouncement.swift */; };
 		50140FBE2715EB1600C6ED9B /* VSNCollectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50140FBD2715EB1600C6ED9B /* VSNCollectionFilter.swift */; };
 		5016A5ED26FA8A0200CC731B /* Visionranger.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5016A5EC26FA8A0200CC731B /* Visionranger.docc */; };
-		5016A5F326FA8A0200CC731B /* VisionrangerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5016A5E826FA8A0200CC731B /* VisionrangerSDK.framework */; };
+		5016A5F326FA8A0200CC731B /* Visionranger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5016A5E826FA8A0200CC731B /* Visionranger.framework */; };
 		5016A5F826FA8A0200CC731B /* VisionrangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016A5F726FA8A0200CC731B /* VisionrangerTests.swift */; };
 		5016A5F926FA8A0200CC731B /* Visionranger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5016A5EB26FA8A0200CC731B /* Visionranger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5018405026FD298100342BE4 /* VSNConfigurationDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018404F26FD298100342BE4 /* VSNConfigurationDimensions.swift */; };
@@ -56,10 +56,10 @@
 /* Begin PBXFileReference section */
 		50140FBB2715D8B600C6ED9B /* VSNAnnouncement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAnnouncement.swift; sourceTree = "<group>"; };
 		50140FBD2715EB1600C6ED9B /* VSNCollectionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNCollectionFilter.swift; sourceTree = "<group>"; };
-		5016A5E826FA8A0200CC731B /* VisionrangerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VisionrangerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5016A5E826FA8A0200CC731B /* Visionranger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Visionranger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5016A5EB26FA8A0200CC731B /* Visionranger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Visionranger.h; sourceTree = "<group>"; };
 		5016A5EC26FA8A0200CC731B /* Visionranger.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Visionranger.docc; sourceTree = "<group>"; };
-		5016A5F226FA8A0200CC731B /* VisionrangerSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionrangerSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5016A5F226FA8A0200CC731B /* VisionrangerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionrangerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5016A5F726FA8A0200CC731B /* VisionrangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionrangerTests.swift; sourceTree = "<group>"; };
 		5018404F26FD298100342BE4 /* VSNConfigurationDimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNConfigurationDimensions.swift; sourceTree = "<group>"; };
 		504C11AB2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisionrangerAPIConfiguration+Version.swift"; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5016A5F326FA8A0200CC731B /* VisionrangerSDK.framework in Frameworks */,
+				5016A5F326FA8A0200CC731B /* Visionranger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +123,8 @@
 		5016A5E926FA8A0200CC731B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5016A5E826FA8A0200CC731B /* VisionrangerSDK.framework */,
-				5016A5F226FA8A0200CC731B /* VisionrangerSDKTests.xctest */,
+				5016A5E826FA8A0200CC731B /* Visionranger.framework */,
+				5016A5F226FA8A0200CC731B /* VisionrangerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -262,9 +262,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5016A5E726FA8A0200CC731B /* VisionrangerSDK */ = {
+		5016A5E726FA8A0200CC731B /* Visionranger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5016A5FC26FA8A0200CC731B /* Build configuration list for PBXNativeTarget "VisionrangerSDK" */;
+			buildConfigurationList = 5016A5FC26FA8A0200CC731B /* Build configuration list for PBXNativeTarget "Visionranger" */;
 			buildPhases = (
 				5016A5E326FA8A0200CC731B /* Headers */,
 				5016A5E426FA8A0200CC731B /* Sources */,
@@ -275,14 +275,14 @@
 			);
 			dependencies = (
 			);
-			name = VisionrangerSDK;
+			name = Visionranger;
 			productName = Visionranger;
-			productReference = 5016A5E826FA8A0200CC731B /* VisionrangerSDK.framework */;
+			productReference = 5016A5E826FA8A0200CC731B /* Visionranger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5016A5F126FA8A0200CC731B /* VisionrangerSDKTests */ = {
+		5016A5F126FA8A0200CC731B /* VisionrangerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5016A5FF26FA8A0200CC731B /* Build configuration list for PBXNativeTarget "VisionrangerSDKTests" */;
+			buildConfigurationList = 5016A5FF26FA8A0200CC731B /* Build configuration list for PBXNativeTarget "VisionrangerTests" */;
 			buildPhases = (
 				5016A5EE26FA8A0200CC731B /* Sources */,
 				5016A5EF26FA8A0200CC731B /* Frameworks */,
@@ -293,9 +293,9 @@
 			dependencies = (
 				5016A5F526FA8A0200CC731B /* PBXTargetDependency */,
 			);
-			name = VisionrangerSDKTests;
+			name = VisionrangerTests;
 			productName = VisionrangerTests;
-			productReference = 5016A5F226FA8A0200CC731B /* VisionrangerSDKTests.xctest */;
+			productReference = 5016A5F226FA8A0200CC731B /* VisionrangerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -316,7 +316,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5016A5E226FA8A0200CC731B /* Build configuration list for PBXProject "VisionrangerSDK" */;
+			buildConfigurationList = 5016A5E226FA8A0200CC731B /* Build configuration list for PBXProject "Visionranger" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -330,8 +330,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5016A5E726FA8A0200CC731B /* VisionrangerSDK */,
-				5016A5F126FA8A0200CC731B /* VisionrangerSDKTests */,
+				5016A5E726FA8A0200CC731B /* Visionranger */,
+				5016A5F126FA8A0200CC731B /* VisionrangerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -405,7 +405,7 @@
 /* Begin PBXTargetDependency section */
 		5016A5F526FA8A0200CC731B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5016A5E726FA8A0200CC731B /* VisionrangerSDK */;
+			target = 5016A5E726FA8A0200CC731B /* Visionranger */;
 			targetProxy = 5016A5F426FA8A0200CC731B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -563,9 +563,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.2;
+				MARKETING_VERSION = 0.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.visionranger.Visionranger-SDK-Swift";
-				PRODUCT_NAME = VisionrangerSDK;
+				PRODUCT_NAME = Visionranger;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -592,9 +592,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.2;
+				MARKETING_VERSION = 0.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.visionranger.Visionranger-SDK-Swift";
-				PRODUCT_NAME = VisionrangerSDK;
+				PRODUCT_NAME = Visionranger;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -650,7 +650,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5016A5E226FA8A0200CC731B /* Build configuration list for PBXProject "VisionrangerSDK" */ = {
+		5016A5E226FA8A0200CC731B /* Build configuration list for PBXProject "Visionranger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5016A5FA26FA8A0200CC731B /* Debug */,
@@ -659,7 +659,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5016A5FC26FA8A0200CC731B /* Build configuration list for PBXNativeTarget "VisionrangerSDK" */ = {
+		5016A5FC26FA8A0200CC731B /* Build configuration list for PBXNativeTarget "Visionranger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5016A5FD26FA8A0200CC731B /* Debug */,
@@ -668,7 +668,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5016A5FF26FA8A0200CC731B /* Build configuration list for PBXNativeTarget "VisionrangerSDKTests" */ = {
+		5016A5FF26FA8A0200CC731B /* Build configuration list for PBXNativeTarget "VisionrangerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5016A60026FA8A0200CC731B /* Debug */,
