@@ -1,0 +1,16 @@
+changelog:
+  exclude:
+    labels:
+      - no-release
+  categories:
+    - title: Important Security Changes
+      labels:
+        - security-vulnerability
+    - title: New Features
+      labels:
+        - enhancement
+    - title: Resolved Issues
+        - bug
+    - title: Other Changes
+      labels:
+        - "*"
