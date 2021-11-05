@@ -453,6 +453,10 @@
 "Structure Ash" = "Structure Ash";
 /* Product component's major material */
 "Unknown" = "Unknown";
+/* Product component's major material */
+"Sheepskin" = "Sheepskin";
+/* Product component's major material */
+"Marble" = "Marble";
 
 // MARK: VSNEstimatedDelivery
 
