@@ -809,6 +809,10 @@ public enum VSNFurnitureMaterial: Int {
     case structure_ash
     /// A product's component major material is not specified or the value is unknown
     case unknown
+    /// Hide of a sheep, sometimes also called lambskin
+    case sheepskin
+    /// Metamorphic rock composed of recrystallized carbonate minerals, most commonly calcite or dolomite
+    case marble
     
     public var localizedDescription: String {
         switch self {
@@ -956,6 +960,10 @@ public enum VSNFurnitureMaterial: Int {
             return NSLocalizedString("Red Heart Beech", comment: "Product component's major material")
         case .structure_ash:
             return NSLocalizedString("Structure Ash", comment: "Product component's major material")
+        case .sheepskin:
+            return NSLocalizedString("Sheepskin", comment: "Product component's major material")
+        case .marble:
+            return NSLocalizedString("Marble", comment: "Product component's major material")
         case .unknown:
             fallthrough
         default:
