@@ -33,17 +33,123 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .blue
+        
         let client = VSNAPIClient.shared
-
-        client.retrieveConfiguration(with: "2") { config, error in
-            guard let config = config else {
+        
+//        client.createConfiguration(withParameters: [
+//            "color": "Umber",
+//            "color_code": "685548",
+//            "delivery_index": VSNEstimatedDelivery.twoToThreeMonths.rawValue,
+//            "depth": 68,
+//            "height": 91.5,
+//            "width": 90,
+//            "image_url": "https://catalog.visionranger.com/products/vipp466_1_preview.png",
+//            "material": VSNFurnitureMaterial.unknown.rawValue,
+//            "model_url": "https://catalog.visionranger.com/products/v466-Lodge-Lounge-Chair-CURLY07.usdz",
+//            "price": 4508.9,
+//            "product_id": "7",
+//            "sku": "N/A",
+//            "specific": "Dark Oak Legs"
+//        ]) { config, error in
+//            guard let config = config else {
+//                return
+//            }
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }
+//            if let value = config.price {
+//                print(value)
+//            }
+//        }
+//
+//        client.createConfiguration(withParameters: [
+//            "color": "Beaver",
+//            "color_code": "A58574",
+//            "delivery_index": VSNEstimatedDelivery.twoToThreeMonths.rawValue,
+//            "depth": 68,
+//            "height": 91.5,
+//            "width": 90,
+//            "image_url": "https://catalog.visionranger.com/products/vipp466_2_preview.png",
+//            "material": VSNFurnitureMaterial.aniline_leather.rawValue,
+//            "model_url": "https://catalog.visionranger.com/products/v466-Lodge-Lounge-Chair-CLOUD258.usdz",
+//            "price": 3463.9,
+//            "product_id": "7",
+//            "sku": "N/A",
+//            "specific": "Dark Oak Legs"
+//        ]) { config, error in
+//            guard let config = config else {
+//                return
+//            }
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }
+//            if let value = config.price {
+//                print(value)
+//            }
+//        }
+//
+//        client.createConfiguration(withParameters: [
+//            "color": "Timberwolf",
+//            "color_code": "D6D0C7",
+//            "delivery_index": VSNEstimatedDelivery.twoToThreeMonths.rawValue,
+//            "depth": 68,
+//            "height": 91.5,
+//            "width": 90,
+//            "image_url": "https://catalog.visionranger.com/products/vipp466_3_preview.png",
+//            "material": VSNFurnitureMaterial.cotton.rawValue,
+//            "model_url": "https://catalog.visionranger.com/products/v466-Lodge-Lounge-Chair-BARNUM03.usdz",
+//            "price": 2143.9,
+//            "product_id": "7",
+//            "sku": "N/A",
+//            "specific": "Light Oak Legs"
+//        ]) { config, error in
+//            guard let config = config else {
+//                return
+//            }
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }
+//            if let value = config.price {
+//                print(value)
+//            }
+//        }
+//
+//        client.createConfiguration(withParameters: [
+//            "color": "Light French Beige",
+//            "color_code": "C5A781",
+//            "delivery_index": VSNEstimatedDelivery.threeToFourWeeks.rawValue,
+//            "depth": 130,
+//            "height": 73,
+//            "width": 130,
+//            "image_url": "https://catalog.visionranger.com/products/vipp494_preview.png",
+//            "material": VSNFurnitureMaterial.oak.rawValue,
+//            "model_url": "https://catalog.visionranger.com/products/v494_cabin_table_round.usdz",
+//            "price": 5091.9,
+//            "product_id": "6",
+//            "sku": "VIPP 49430",
+//            "specific": "Light Beige Jura Marble"
+//        ]) { config, error in
+//            guard let config = config else {
+//                return
+//            }
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }
+//            if let value = config.price {
+//                print(value)
+//            }
+//        }
+        
+        client.retrieveProduct(id: "1") { product, error in
+            guard let product = product else {
                 return
             }
             if let error = error {
                 print(error.localizedDescription)
             }
-            if let value = config.modelURL {
-                print(value)
+            if let value = product.catalogization?.category {
+                print(value.localizedDescription)
             }
         }
     }
