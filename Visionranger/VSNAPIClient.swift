@@ -381,5 +381,5 @@ extension VSNAPIClient {
     }
 }
 
-private let APIVersion = "2021-09-23"
+private let APIVersion = "2021-11-09"
 private let APIBaseURL: String = "https://api.visionranger.com"
