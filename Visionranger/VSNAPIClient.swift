@@ -364,5 +364,22 @@ extension VSNAPIClient {
     }
 }
 
+// MARK: Designers
+extension VSNAPIClient {
+    /// Returns a ``VSNDesigner`` with the specified unique identifier.
+    /// - Parameters:
+    ///   - id: The unique identifier of he object
+    ///   - completion: Returns a ``VSNDesigner`` object when successful and an error if not
+    public func retrieveDesigner(withID id: String, _ completion: @escaping VSNDesignerCompletionBlock) {
+        VSNRequest<VSNDesigner>.getWith(
+            self,
+            endpoint: .designers,
+            parameters: ["id": id]
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+}
+
 private let APIVersion = "2021-09-23"
 private let APIBaseURL: String = "https://api.visionranger.com"

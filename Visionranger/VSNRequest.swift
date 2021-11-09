@@ -215,4 +215,5 @@ public enum VSNAPIPath: String {
     case configurations = "/configurations"
     case listConfigurations = "/configurations/list"
     case announcements = "/announcements"
+    case designers = "/designers"
 }
