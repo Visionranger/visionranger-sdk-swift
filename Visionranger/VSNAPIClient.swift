@@ -435,4 +435,11 @@ extension VSNAPIClient {
 }
 
 private let APIVersion = "2021-11-09"
-private let APIBaseURL: String = "https://api.visionranger.com"
+private var APIBaseURL: String {
+    switch VisionrangerAPI.environment {
+    case .live:
+        return "https://api.visionranger.com"
+    case .test:
+        return "https://k9abld85t0.execute-api.eu-central-1.amazonaws.com/dev"
+    }
+}

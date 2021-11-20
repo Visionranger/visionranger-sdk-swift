@@ -63,14 +63,14 @@ class ViewController: UIViewController {
 //            }
 //        }
         
-        client.retrieveDesigner(withID: "1") { designer, error in
-            guard let designer = designer else {
+        client.retrieveProduct(id: "5") { product, error in
+            guard let object = product else {
                 return
             }
             if let error = error {
                 print(error.localizedDescription)
             }
-            if let value = designer.marketingTitle {
+            if let value = object.allResponseFields["designer"] {
                 print(value)
             } else {
                 print("something is not right")
