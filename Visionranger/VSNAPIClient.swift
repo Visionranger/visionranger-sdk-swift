@@ -379,6 +379,59 @@ extension VSNAPIClient {
             completion(response, error)
         }
     }
+    
+    /// Creates a new ``VSNDesigner`` object
+    /// - Parameters:
+    ///   - parameters: The object's properties
+    ///   - completion: Returns the newly created object when successful and an error when not
+    /// - Requires: The following parameters must be provided:
+    ///  ```
+    ///   "marketing_title": String
+    ///  ```
+    public func createDesigner(withParameters parameters: [String: Any], _ completion: @escaping VSNDesignerCompletionBlock) {
+        VSNRequest<VSNDesigner>.post(
+            with: self,
+            endpoint: .designers,
+            parameters: parameters
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+    
+    /// Updates a specified ``VSNDesigner`` object with the given parameters.
+    /// - Parameters:
+    ///   - parameters: Properties to be changed
+    ///   - completion: Returns the updated object when successful and an error when not
+    ///
+    /// - Requires: The following parameters must be provided:
+    /// ```
+    ///  "id": String
+    /// ```
+    public func updateDesigner(withParameters parameters: [String: Any], _ completion: @escaping VSNDesignerCompletionBlock) {
+        VSNRequest<VSNDesigner>.put(
+            with: self,
+            endpoint: .designers,
+            parameters: parameters
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+    
+    /// Deletes the specified ``VSNDesigner`` object.
+    /// - Parameters:
+    ///   - id: The unique identifier of the ``VSNDesigner`` object
+    ///   - completion: Returns the default ``VSNDeletion`` object when successful and an error if not.
+    ///
+    /// - Warning: Deleting a designer is a final operation and the designer cannot be restored once deleted.
+    public func deleteDesigner(withID id: String, _ completion: @escaping VSNDeleteCompletionBlock) {
+        VSNRequest<VSNDeletion>.delete(
+            with: self,
+            endpoint: .designers,
+            parameters: ["id": id]
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
 }
 
 private let APIVersion = "2021-11-09"
