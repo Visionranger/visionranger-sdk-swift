@@ -1,8 +1,8 @@
 //
-//  VSNBundleLocator.swift
+//  BundleIdentifier+Visionranger.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 06.11.21.
+//  Created by Colin Tessarzick on 21.11.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -27,11 +27,19 @@
 
 import Foundation
 
-final class VSNBundleLocator: BundleLocatorProtocol {
-    static let internalClass: AnyClass = VSNBundleLocator.self
-    static let bundleName = "com.visionranger.Visionranger-SDK-Swift"
-    #if SWIFT_PACKAGE
-    static let spmResourcesBundle = Bundle.module
-    #endif
-    static let resourcesBundle = VSNBundleLocator.computeResourcesBundle()
+extension Bundle {
+    static var localizationFramework: Bundle {
+        guard let localizationBundle = Bundle(identifier: "com.visionranger.Visionranger-SDK-Swift") else { return .main }
+
+        guard
+            let bundlePath = localizationBundle.path(forResource: currentLanguage(of: localizationBundle),
+                                                     ofType: "lproj"),
+            let bundle = Bundle(path: bundlePath) else { return .main }
+
+        return bundle
+    }
+
+    static func currentLanguage(of bundle: Bundle) -> String {
+        return String(Locale.current.identifier.prefix(2))
+    }
 }

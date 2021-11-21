@@ -63,20 +63,20 @@ class ViewController: UIViewController {
 //            }
 //        }
         
-//        client.retrieveProduct(id: "5") { product, error in
-//            guard let object = product else {
-//                return
-//            }
-//            if let error = error {
-//                print(error.localizedDescription)
-//            }
-//            if let value = object.allResponseFields["designer"] {
-//                print(value)
-//            } else {
-//                print("something is not right")
-//            }
-//        }
-        
+        client.retrieveProduct(id: "5") { product, error in
+            guard let object = product else {
+                return
+            }
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            if let value = object.allResponseFields["designer"] {
+                print(value)
+            } else {
+                print("something is not right")
+            }
+        }
+
         print(VSNRoom.bathroom.localizedDescription)
     }
 }
