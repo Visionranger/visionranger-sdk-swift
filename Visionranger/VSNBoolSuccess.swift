@@ -1,8 +1,8 @@
 //
-//  VSNConfigurationListDeserializer.swift
+//  VSNBoolSuccess.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 23.10.21.
+//  Created by Colin Tessarzick on 21.11.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -27,32 +27,44 @@
 
 import Foundation
 
-class VSNConfigurationListDeserializer: NSObject, VSNAPIResponseDecodable {
-    private(set) var configurations: [VSNConfiguration]?
-    private(set) var allResponseFields: [AnyHashable : Any] = [:]
+public class VSNBoolSuccess: NSObject {
     
-    override required init() {
-        super.init()
+    /// Returns `true` when at least one entity got deleted and `false` if none or the entity was not found.
+    public let success: Bool?
+    
+    public var allResponseFields: [AnyHashable : Any]
+    
+    public convenience init(_ success: Bool) {
+        self.init(success, allResponseFields: [:])
     }
     
-    class func decodedObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
-        guard let response = response else {
+    internal init(
+        _ success: Bool,
+        allResponseFields: [AnyHashable: Any]
+    ) {
+        self.success = success
+        self.allResponseFields = allResponseFields
+    }
+    
+    convenience override init() {
+        self.init(
+            false,
+            allResponseFields: [:]
+        )
+    }
+}
+
+extension VSNBoolSuccess: VSNAPIResponseDecodable {
+    
+    public static func decodedObject(fromAPIResponse response: [AnyHashable : Any]?) -> Self? {
+        guard let dict = response,
+        let success = dict["success"] as? Bool else {
             return nil
         }
-        let dict = (response as NSDictionary).vsn_dictionaryByRemovingNulls() as NSDictionary
         
-        guard let data = dict.vsn_array(forKey: "data") as? [[AnyHashable: Any]] else {
-            return nil
-        }
-        let configurationsDeserializer = self.init()
-        var configurations: [VSNConfiguration] = []
-        for configJSON in data {
-            let config = VSNConfiguration.decodedObject(fromAPIResponse: configJSON)
-            if let config = config {
-                configurations.append(config)
-            }
-        }
-        configurationsDeserializer.configurations = configurations
-        return configurationsDeserializer
+        return VSNBoolSuccess(
+            success,
+            allResponseFields: dict
+        ) as? Self
     }
 }
