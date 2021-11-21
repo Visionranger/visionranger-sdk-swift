@@ -434,7 +434,85 @@ extension VSNAPIClient {
     }
 }
 
-private let APIVersion = "2021-11-09"
+// MARK: Designer Career Milestones
+extension VSNAPIClient {
+    /// Lists all milestones for a specified ``VSNDesigner``
+    /// - Parameters:
+    ///   - id: The unique identifier of the designer
+    ///   - completion: Returns an array of ``VSNDesignerCareerMilestone`` objects when successfull and an error when not.
+    ///
+    /// - Requires: The following parameters must be provided:
+    /// ```
+    ///  "id": String
+    /// ```
+    public func listDesignerCareerMilestones(forDesigner id: String, _ completion: @escaping VSNDesignerCareerMilestonesCompletionBlock) {
+        var shared_Milestones = [VSNDesignerCareerMilestone]()
+        var shared_lastError: Error? = nil
+        let group = DispatchGroup()
+        
+        group.enter()
+        
+        VSNRequest<VSNDesignerCareerMilestoneListDeserializer>.getWith(
+            self,
+            endpoint: .designerCareerMilestones,
+            parameters: ["id": id]
+        ) { deserializer, _, error in
+            DispatchQueue.global(qos: .userInteractive).async(flags: .barrier) {
+                // .barrier ensures we're the only thing writing to shared_ vars
+                if let error = error {
+                    shared_lastError = error
+                }
+                if let milestones = deserializer?.milestones {
+                    shared_Milestones.append(contentsOf: milestones)
+                }
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            completion(shared_Milestones, shared_lastError)
+        }
+    }
+    
+    /// Creates a new milestone for a specified ``VSNDesigner`` object
+    /// - Parameters:
+    ///   - parameters: The object's properties
+    ///   - completion: Returns a ``VSNBoolSuccess`` object. The `success`property will be `true`when successfull and `false`when not.
+    ///
+    /// - Requires: The following parameters must be provided:
+    /// ```
+    ///  "designer_id": String,
+    ///  "description": String,
+    ///  "timestamp": Double,
+    ///  "image_url": String
+    public func createDesignerCareerMilestone(withParameters parameters: [String: Any], _ completion: @escaping VSNBooleanSuccessBlock) {
+        VSNRequest<VSNBoolSuccess>.post(
+            with: self,
+            endpoint: .designerCareerMilestones,
+            parameters: parameters
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+    
+    /// Deletes the specified ``VSNDesignerCareerMilestone`` object.
+    /// - Parameters:
+    ///   - id: The unique identifier of the ``VSNDesignerCareerMilestone`` object
+    ///   - completion: Returns the default ``VSNDeletion`` object when successful and an error if not.
+    ///
+    /// - Warning: Deleting a career milestone is a final operation and the milestone cannot be restored once deleted.
+    public func deleteDesignerCareerMilestone(withID id: String, _ completion: @escaping VSNDeleteCompletionBlock) {
+        VSNRequest<VSNDeletion>.delete(
+            with: self,
+            endpoint: .designerCareerMilestones,
+            parameters: ["id": id]
+        ) { response, _, error in
+            completion(response, error)
+        }
+    }
+}
+
+private let APIVersion = "2021-11-21"
 private var APIBaseURL: String {
     switch VisionrangerAPI.environment {
     case .live:

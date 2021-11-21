@@ -30,7 +30,7 @@ public typealias VSNVoidBlock = () -> Void
 
 public typealias VSNErrorBlock = (Error?) -> Void
 
-public typealias VSNBooleanSuccessBlock = (Bool?, Error?) -> Void
+public typealias VSNBooleanSuccessBlock = (VSNBoolSuccess?, Error?) -> Void
 
 public typealias VSNJSONResponseCompletionBlock = (String?, Error?) -> Void
 
@@ -47,3 +47,7 @@ public typealias VSNConfigurationCompletionBlock = (VSNConfiguration?, Error?) -
 public typealias VSNConfigurationsCompletionBlock = ([VSNConfiguration]?, Error?) -> Void
 
 public typealias VSNDesignerCompletionBlock = (VSNDesigner?, Error?) -> Void
+
+public typealias VSNDesignerCareerMilestoneCompletionBlock = (VSNDesignerCareerMilestone?, Error?) -> Void
+
+public typealias VSNDesignerCareerMilestonesCompletionBlock = ([VSNDesignerCareerMilestone]?, Error?) -> Void

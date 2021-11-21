@@ -1,8 +1,8 @@
 //
-//  VSNConfigurationListDeserializer.swift
+//  VSNDesignerCareerMilestoneListDeserializer.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 23.10.21.
+//  Created by Colin Tessarzick on 21.11.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -27,8 +27,8 @@
 
 import Foundation
 
-class VSNConfigurationListDeserializer: NSObject, VSNAPIResponseDecodable {
-    private(set) var configurations: [VSNConfiguration]?
+class VSNDesignerCareerMilestoneListDeserializer: NSObject, VSNAPIResponseDecodable {
+    private(set) var milestones: [VSNDesignerCareerMilestone]?
     private(set) var allResponseFields: [AnyHashable : Any] = [:]
     
     override required init() {
@@ -44,15 +44,15 @@ class VSNConfigurationListDeserializer: NSObject, VSNAPIResponseDecodable {
         guard let data = dict.vsn_array(forKey: "data") as? [[AnyHashable: Any]] else {
             return nil
         }
-        let configurationsDeserializer = self.init()
-        var configurations: [VSNConfiguration] = []
-        for configJSON in data {
-            let config = VSNConfiguration.decodedObject(fromAPIResponse: configJSON)
-            if let config = config {
-                configurations.append(config)
+        let milestonesDeserializer = self.init()
+        var milestones: [VSNDesignerCareerMilestone] = []
+        for milestoneJSON in data {
+            let milestone = VSNDesignerCareerMilestone.decodedObject(fromAPIResponse: milestoneJSON)
+            if let milestone = milestone {
+                milestones.append(milestone)
             }
         }
-        configurationsDeserializer.configurations = configurations
-        return configurationsDeserializer
+        milestonesDeserializer.milestones = milestones
+        return milestonesDeserializer
     }
 }
