@@ -29,7 +29,7 @@ import Foundation
 
 final class VSNBundleLocator: BundleLocatorProtocol {
     static let internalClass: AnyClass = VSNBundleLocator.self
-    static let bundleName = "VisionrangerSDK"
+    static let bundleName = "com.visionranger.Visionranger-SDK-Swift"
     #if SWIFT_PACKAGE
     static let spmResourcesBundle = Bundle.module
     #endif

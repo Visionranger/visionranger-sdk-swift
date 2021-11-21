@@ -50,9 +50,9 @@ public final class VSNLocalizationUtils {
         }
         return false
     }
-    
+
     static let unknownString = "VSNStringNotFound"
-    
+
     public class func localizedVisionrangerString(forKey key: String, bundleLocator: BundleLocatorProtocol.Type) -> String {
         if languageOverride != nil {
             return testing_localizedVisionrangerString(forKey: key, bundleLocator: bundleLocator)
@@ -72,7 +72,7 @@ public final class VSNLocalizationUtils {
         return bundleLocator.resourcesBundle.localizedString(
             forKey: key, value: nil, table: nil)
     }
-    
+
     // MARK: - Testing
     static var languageOverride: String?
     static func overrideLanguage(to string: String?) {
