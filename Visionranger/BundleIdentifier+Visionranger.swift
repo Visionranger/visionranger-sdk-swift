@@ -1,8 +1,8 @@
 //
-//  VSNBlocks.swift
+//  BundleIdentifier+Visionranger.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 22.09.21.
+//  Created by Colin Tessarzick on 21.11.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -23,27 +23,23 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+//
 
 import Foundation
 
-public typealias VSNVoidBlock = () -> Void
+extension Bundle {
+    static var localizationFramework: Bundle {
+        guard let localizationBundle = Bundle(identifier: "com.visionranger.Visionranger-SDK-Swift") else { return .main }
 
-public typealias VSNErrorBlock = (Error?) -> Void
+        guard
+            let bundlePath = localizationBundle.path(forResource: currentLanguage(of: localizationBundle),
+                                                     ofType: "lproj"),
+            let bundle = Bundle(path: bundlePath) else { return .main }
 
-public typealias VSNBooleanSuccessBlock = (Bool?, Error?) -> Void
+        return bundle
+    }
 
-public typealias VSNJSONResponseCompletionBlock = (String?, Error?) -> Void
-
-public typealias VSNDeleteCompletionBlock = (VSNDeletion?, Error?) -> Void
-
-public typealias VSNProductCompletionBlock = (VSNProduct?, Error?) -> Void
-
-public typealias VSNProductsCompletionBlock = ([VSNProduct]?, Error?) -> Void
-
-public typealias VSNAnnouncementCompletionBlock = (VSNAnnouncement?, Error?) -> Void
-
-public typealias VSNConfigurationCompletionBlock = (VSNConfiguration?, Error?) -> Void
-
-public typealias VSNConfigurationsCompletionBlock = ([VSNConfiguration]?, Error?) -> Void
-
-public typealias VSNDesignerCompletionBlock = (VSNDesigner?, Error?) -> Void
+    static func currentLanguage(of bundle: Bundle) -> String {
+        return String(Locale.current.identifier.prefix(2))
+    }
+}

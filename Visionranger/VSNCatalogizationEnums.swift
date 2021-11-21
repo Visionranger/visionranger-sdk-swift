@@ -77,47 +77,47 @@ public enum VSNRoom: Int {
     public var localizedDescription: String {
         switch self {
         case .balcony:
-            return NSLocalizedString("Balcony", comment: "Associated Room to a product")
+            return VSNLocalizedString("Balcony", comment: "Associated Room to a product")
         case .basement:
-            return NSLocalizedString("Basement", comment: "Associated Room to a product")
+            return VSNLocalizedString("Basement", comment: "Associated Room to a product")
         case .bathroom:
-            return NSLocalizedString("Bathroom", comment: "Associated Room to a product")
+            return VSNLocalizedString("Bathroom", comment: "Associated Room to a product")
         case .powder_room:
-            return NSLocalizedString("Powder Room", comment: "Associated Room to a product")
+            return VSNLocalizedString("Powder Room", comment: "Associated Room to a product")
         case .hallway:
-            return NSLocalizedString("Hallway", comment: "Associated Room to a product")
+            return VSNLocalizedString("Hallway", comment: "Associated Room to a product")
         case .garden:
-            return NSLocalizedString("Garden", comment: "Associated Room to a product")
+            return VSNLocalizedString("Garden", comment: "Associated Room to a product")
         case .guest_room:
-            return NSLocalizedString("Guest Room", comment: "Associated Room to a product")
+            return VSNLocalizedString("Guest Room", comment: "Associated Room to a product")
         case .entrance_hall:
-            return NSLocalizedString("Entrance Hall", comment: "Associated Room to a product")
+            return VSNLocalizedString("Entrance Hall", comment: "Associated Room to a product")
         case .kitchen:
-            return NSLocalizedString("Kitchen", comment: "Associated Room to a product")
+            return VSNLocalizedString("Kitchen", comment: "Associated Room to a product")
         case .library:
-            return NSLocalizedString("Library", comment: "Associated Room to a product")
+            return VSNLocalizedString("Library", comment: "Associated Room to a product")
         case .childrens_room:
-            return NSLocalizedString("Childrens Room", comment: "Associated Room to a product")
+            return VSNLocalizedString("Childrens Room", comment: "Associated Room to a product")
         case .dining_room:
-            return NSLocalizedString("Dining Room", comment: "Associated Room to a product")
+            return VSNLocalizedString("Dining Room", comment: "Associated Room to a product")
         case .wine_cellar:
-            return NSLocalizedString("Wine Cellar", comment: "Associated Room to a product")
+            return VSNLocalizedString("Wine Cellar", comment: "Associated Room to a product")
         case .bedroom:
-            return NSLocalizedString("Bedroom", comment: "Associated Room to a product")
+            return VSNLocalizedString("Bedroom", comment: "Associated Room to a product")
         case .pantry:
-            return NSLocalizedString("Pantry", comment: "Associated Room to a product")
+            return VSNLocalizedString("Pantry", comment: "Associated Room to a product")
         case .study:
-            return NSLocalizedString("Study Room", comment: "Associated Room to a product")
+            return VSNLocalizedString("Study Room", comment: "Associated Room to a product")
         case .wardrobe:
-            return NSLocalizedString("Wardrobe", comment: "Associated Room to a product")
+            return VSNLocalizedString("Wardrobe", comment: "Associated Room to a product")
         case .attic:
-            return NSLocalizedString("Attic", comment: "Associated Room to a product")
+            return VSNLocalizedString("Attic", comment: "Associated Room to a product")
         case .laundry_room:
-            return NSLocalizedString("Laundry Room", comment: "Associated Room to a product")
+            return VSNLocalizedString("Laundry Room", comment: "Associated Room to a product")
         case .unknown:
             fallthrough
         default:
-            return NSLocalizedString("Unknown", comment: "Default missing room index label")
+            return VSNLocalizedString("Unknown", comment: "Default missing room index label")
         }
     }
 }
@@ -176,47 +176,47 @@ public enum VSNDesignStyle: Int {
     public var localizedDescription: String {
         switch self {
         case .japandi:
-            return NSLocalizedString("Japandi", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Japandi", comment: "Interior Design Style associated to a product")
         case .lagom:
-            return NSLocalizedString("Lagom", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Lagom", comment: "Interior Design Style associated to a product")
         case .wabi_sabi:
-            return NSLocalizedString("Wabi Sabi", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Wabi Sabi", comment: "Interior Design Style associated to a product")
         case .minimalism:
-            return NSLocalizedString("Minimalism", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Minimalism", comment: "Interior Design Style associated to a product")
         case .modern_country:
-            return NSLocalizedString("Modern Country", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Modern Country", comment: "Interior Design Style associated to a product")
         case .scandinavian:
-            return NSLocalizedString("Scandinavian", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Scandinavian", comment: "Interior Design Style associated to a product")
         case .shabby_chic:
-            return NSLocalizedString("Shabby Chic", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Shabby Chic", comment: "Interior Design Style associated to a product")
         case .hygge:
-            return NSLocalizedString("Hygge", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Hygge", comment: "Interior Design Style associated to a product")
         case .modern:
-            return NSLocalizedString("Modern", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Modern", comment: "Interior Design Style associated to a product")
         case .colonial:
-            return NSLocalizedString("Colonial", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Colonial", comment: "Interior Design Style associated to a product")
         case .retro:
-            return NSLocalizedString("Retro", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Retro", comment: "Interior Design Style associated to a product")
         case .maritime:
-            return NSLocalizedString("Maritime", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Maritime", comment: "Interior Design Style associated to a product")
         case .mid_century_modern:
-            return NSLocalizedString("Mid-Century Modern", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Mid-Century Modern", comment: "Interior Design Style associated to a product")
         case .mediterranean:
-            return NSLocalizedString("Mediterranean", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Mediterranean", comment: "Interior Design Style associated to a product")
         case .bohemian:
-            return NSLocalizedString("Bohemian", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Bohemian", comment: "Interior Design Style associated to a product")
         case .urban_modern:
-            return NSLocalizedString("Urban Modern", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Urban Modern", comment: "Interior Design Style associated to a product")
         case .glam:
-            return NSLocalizedString("Modern Glamour", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Modern Glamour", comment: "Interior Design Style associated to a product")
         case .industrial:
-            return NSLocalizedString("Industrial", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Industrial", comment: "Interior Design Style associated to a product")
         case .chalet_chic:
-            return NSLocalizedString("Chalet Chic", comment: "Interior Design Style associated to a product")
+            return VSNLocalizedString("Chalet Chic", comment: "Interior Design Style associated to a product")
         case .unknown:
             fallthrough
         default:
-            return NSLocalizedString("Unknown", comment: "Default missing design style index label")
+            return VSNLocalizedString("Unknown", comment: "Default missing design style index label")
         }
     }
 }
@@ -245,23 +245,23 @@ public enum VSNHouseArea: Int {
     public var localizedDescription: String {
         switch self {
         case .dining_area:
-            return NSLocalizedString("Dining Area", comment: "Associated group of furnitre or purpose specific area")
+            return VSNLocalizedString("Dining Area", comment: "Associated group of furnitre or purpose specific area")
         case .living_area:
-            return NSLocalizedString("Living Area", comment: "Associated group of furnitre or purpose specific area")
+            return VSNLocalizedString("Living Area", comment: "Associated group of furnitre or purpose specific area")
         case .kitchen:
-            return NSLocalizedString("Kitchen", comment: "Associated group of furnitre or purpose specific area")
+            return VSNLocalizedString("Kitchen", comment: "Associated group of furnitre or purpose specific area")
         case .bedroom:
-            return NSLocalizedString("Bedroom", comment: "Associated group of furnitre or purpose specific area")
+            return VSNLocalizedString("Bedroom", comment: "Associated group of furnitre or purpose specific area")
         case .bathroom:
-            return NSLocalizedString("Bathroom", comment: "Associated group of furnitre or purpose specific area")
+            return VSNLocalizedString("Bathroom", comment: "Associated group of furnitre or purpose specific area")
         case .hallway:
-            return NSLocalizedString("Corridor", comment: "Associated group of furnitre or purpose specific area")
+            return VSNLocalizedString("Corridor", comment: "Associated group of furnitre or purpose specific area")
         case .entrance:
-            return NSLocalizedString("Entrance", comment: "Associated group of furnitre or purpose specific area")
+            return VSNLocalizedString("Entrance", comment: "Associated group of furnitre or purpose specific area")
         case .unknown:
             fallthrough
         default:
-            return NSLocalizedString("Unknown", comment: "Default missing product type index label")
+            return VSNLocalizedString("Unknown", comment: "Default missing product type index label")
         }
     }
 }
@@ -287,35 +287,35 @@ public enum VSNFurnitureType: Int {
     public var localizedDescription: String {
         switch self {
         case .sofa:
-            return NSLocalizedString("Sofa", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Sofa", comment: "A distinct type of furniture or decor")
         case .seating:
-            return NSLocalizedString("Seating", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Seating", comment: "A distinct type of furniture or decor")
         case .shelf:
-            return NSLocalizedString("Shelf", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Shelf", comment: "A distinct type of furniture or decor")
         case .cabinet:
-            return NSLocalizedString("Cabinet", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Cabinet", comment: "A distinct type of furniture or decor")
         case .table:
-            return NSLocalizedString("Table", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Table", comment: "A distinct type of furniture or decor")
         case .side_table:
-            return NSLocalizedString("Side Table", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Side Table", comment: "A distinct type of furniture or decor")
         case .bed:
-            return NSLocalizedString("Bed", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Bed", comment: "A distinct type of furniture or decor")
         case .rug:
-            return NSLocalizedString("Rug", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Rug", comment: "A distinct type of furniture or decor")
         case .commode:
-            return NSLocalizedString("Commode", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Commode", comment: "A distinct type of furniture or decor")
         case .lamp:
-            return NSLocalizedString("Lamp", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Lamp", comment: "A distinct type of furniture or decor")
         case .mirror:
-            return NSLocalizedString("Mirror", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Mirror", comment: "A distinct type of furniture or decor")
         case .wardrobe:
-            return NSLocalizedString("Wardrobe", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Wardrobe", comment: "A distinct type of furniture or decor")
         case .baby_furniture:
-            return NSLocalizedString("Baby Furniture", comment: "A distinct type of furniture or decor")
+            return VSNLocalizedString("Baby Furniture", comment: "A distinct type of furniture or decor")
         case .unknown:
             fallthrough
         default:
-            return NSLocalizedString("Unknown", comment: "Default missing product type index label")
+            return VSNLocalizedString("Unknown", comment: "Default missing product type index label")
         }
     }
 }
@@ -490,169 +490,169 @@ public enum VSNFurnitureCategory: Int {
     public var localizedDescription: String {
         switch self {
         case .sofa_bed:
-            return NSLocalizedString("Sofa Bed", comment: "A product's category")
+            return VSNLocalizedString("Sofa Bed", comment: "A product's category")
         case .coffee_table:
-            return NSLocalizedString("Coffee Table", comment: "A product's category")
+            return VSNLocalizedString("Coffee Table", comment: "A product's category")
         case .nightstand:
-            return NSLocalizedString("Nightstand", comment: "A product's category")
+            return VSNLocalizedString("Nightstand", comment: "A product's category")
         case .chest:
-            return NSLocalizedString("Chest", comment: "A product's category")
+            return VSNLocalizedString("Chest", comment: "A product's category")
         case .beanbag:
-            return NSLocalizedString("Beanbag", comment: "A product's category")
+            return VSNLocalizedString("Beanbag", comment: "A product's category")
         case .couch:
-            return NSLocalizedString("Couch", comment: "A product's category")
+            return VSNLocalizedString("Couch", comment: "A product's category")
         case .bigsofa:
-            return NSLocalizedString("Bigsofa", comment: "A product's category")
+            return VSNLocalizedString("Bigsofa", comment: "A product's category")
         case .living_landscape:
-            return NSLocalizedString("Living Landscape", comment: "A product's category")
+            return VSNLocalizedString("Living Landscape", comment: "A product's category")
         case .sofa_element:
-            return NSLocalizedString("Sofa Element", comment: "A product's category")
+            return VSNLocalizedString("Sofa Element", comment: "A product's category")
         case .wall_unit:
-            return NSLocalizedString("Wall Unit", comment: "A product's category")
+            return VSNLocalizedString("Wall Unit", comment: "A product's category")
         case .lowboard:
-            return NSLocalizedString("Lowboard", comment: "A product's category")
+            return VSNLocalizedString("Lowboard", comment: "A product's category")
         case .armchair_with_sleep_function:
-            return NSLocalizedString("Armchair with sleep function", comment: "A product's category")
+            return VSNLocalizedString("Armchair with sleep function", comment: "A product's category")
         case .corner_sofa_with_sleep_function:
-            return NSLocalizedString("Corner Sofa with sleep function", comment: "A product's category")
+            return VSNLocalizedString("Corner Sofa with sleep function", comment: "A product's category")
         case .lounger:
-            return NSLocalizedString("Lounger", comment: "A product's category")
+            return VSNLocalizedString("Lounger", comment: "A product's category")
         case .relax_armchair:
-            return NSLocalizedString("Relax Armchair", comment: "A product's category")
+            return VSNLocalizedString("Relax Armchair", comment: "A product's category")
         case .armchair:
-            return NSLocalizedString("Armchair", comment: "A product's category")
+            return VSNLocalizedString("Armchair", comment: "A product's category")
         case .bench:
-            return NSLocalizedString("Bench", comment: "A product's category")
+            return VSNLocalizedString("Bench", comment: "A product's category")
         case .stool:
-            return NSLocalizedString("Stool", comment: "A product's category")
+            return VSNLocalizedString("Stool", comment: "A product's category")
         case .bookshelf:
-            return NSLocalizedString("Bookshelf", comment: "A product's category")
+            return VSNLocalizedString("Bookshelf", comment: "A product's category")
         case .wall_shelf:
-            return NSLocalizedString("Wall Shelf", comment: "A product's category")
+            return VSNLocalizedString("Wall Shelf", comment: "A product's category")
         case .room_divider:
-            return NSLocalizedString("Room Divider", comment: "A product's category")
+            return VSNLocalizedString("Room Divider", comment: "A product's category")
         case .shelf:
-            return NSLocalizedString("Shelf", comment: "A product's category")
+            return VSNLocalizedString("Shelf", comment: "A product's category")
         case .sideboard:
-            return NSLocalizedString("Sideboard", comment: "A product's category")
+            return VSNLocalizedString("Sideboard", comment: "A product's category")
         case .cabinet:
-            return NSLocalizedString("Cabinet", comment: "A product's category")
+            return VSNLocalizedString("Cabinet", comment: "A product's category")
         case .highboard:
-            return NSLocalizedString("Highboard", comment: "A product's category")
+            return VSNLocalizedString("Highboard", comment: "A product's category")
         case .boxspring:
-            return NSLocalizedString("Boxspring Bed", comment: "A product's category")
+            return VSNLocalizedString("Boxspring Bed", comment: "A product's category")
         case .solid_wood_bed:
-            return NSLocalizedString("Solid Wood Bed", comment: "A product's category")
+            return VSNLocalizedString("Solid Wood Bed", comment: "A product's category")
         case .upholstered_bed:
-            return NSLocalizedString("Upholstered Bed", comment: "A product's category")
+            return VSNLocalizedString("Upholstered Bed", comment: "A product's category")
         case .futon:
-            return NSLocalizedString("Futon Bed", comment: "A product's category")
+            return VSNLocalizedString("Futon Bed", comment: "A product's category")
         case .metal_bed:
-            return NSLocalizedString("Metal Bed", comment: "A product's category")
+            return VSNLocalizedString("Metal Bed", comment: "A product's category")
         case .functional_bed:
-            return NSLocalizedString("Functional Bed", comment: "A product's category")
+            return VSNLocalizedString("Functional Bed", comment: "A product's category")
         case .floating_door_wardrobe:
-            return NSLocalizedString("Floating-Door Wardrobe", comment: "A product's category")
+            return VSNLocalizedString("Floating-Door Wardrobe", comment: "A product's category")
         case .hinged_door_wardrobe:
-            return NSLocalizedString("Hinged-Door Wardrobe", comment: "A product's category")
+            return VSNLocalizedString("Hinged-Door Wardrobe", comment: "A product's category")
         case .dressing_table:
-            return NSLocalizedString("Dressing Table", comment: "A product's category")
+            return VSNLocalizedString("Dressing Table", comment: "A product's category")
         case .closet:
-            return NSLocalizedString("Closet", comment: "A product's category")
+            return VSNLocalizedString("Closet", comment: "A product's category")
         case .bassinet:
-            return NSLocalizedString("Bassinet", comment: "A product's category")
+            return VSNLocalizedString("Bassinet", comment: "A product's category")
         case .changing_table:
-            return NSLocalizedString("Changing Table", comment: "A product's category")
+            return VSNLocalizedString("Changing Table", comment: "A product's category")
         case .infant_bed:
-            return NSLocalizedString("Baby Crib", comment: "A product's category")
+            return VSNLocalizedString("Baby Crib", comment: "A product's category")
         case .wardrobe_bench:
-            return NSLocalizedString("Wardrobe Bench", comment: "A product's category")
+            return VSNLocalizedString("Wardrobe Bench", comment: "A product's category")
         case .doormat:
-            return NSLocalizedString("Doormat", comment: "A product's category")
+            return VSNLocalizedString("Doormat", comment: "A product's category")
         case .coat_mirror:
-            return NSLocalizedString("Coat Mirror", comment: "A product's category")
+            return VSNLocalizedString("Coat Mirror", comment: "A product's category")
         case .console_table:
-            return NSLocalizedString("Console Table", comment: "A product's category")
+            return VSNLocalizedString("Console Table", comment: "A product's category")
         case .coat_rack:
-            return NSLocalizedString("Coat Rack", comment: "A product's category")
+            return VSNLocalizedString("Coat Rack", comment: "A product's category")
         case .shoe_cabinet:
-            return NSLocalizedString("Shoe Cabinet", comment: "A product's category")
+            return VSNLocalizedString("Shoe Cabinet", comment: "A product's category")
         case .wardrobe_cabinet:
-            return NSLocalizedString("Wardrobe Cabinet", comment: "A product's category")
+            return VSNLocalizedString("Wardrobe Cabinet", comment: "A product's category")
         case .dining_table:
-            return NSLocalizedString("Dining Table", comment: "A product's category")
+            return VSNLocalizedString("Dining Table", comment: "A product's category")
         case .chair:
-            return NSLocalizedString("Chair", comment: "A product's category")
+            return VSNLocalizedString("Chair", comment: "A product's category")
         case .plate_foot:
-            return NSLocalizedString("Plate-Foot Chair", comment: "A product's category")
+            return VSNLocalizedString("Plate-Foot Chair", comment: "A product's category")
         case .four_feet_chair:
-            return NSLocalizedString("4 Feet Chair", comment: "A product's category")
+            return VSNLocalizedString("4 Feet Chair", comment: "A product's category")
         case .cantilever:
-            return NSLocalizedString("Cantilever", comment: "A product's category")
+            return VSNLocalizedString("Cantilever", comment: "A product's category")
         case .chair_armchair:
-            return NSLocalizedString("Chair Armchair", comment: "A product's category")
+            return VSNLocalizedString("Chair Armchair", comment: "A product's category")
         case .skid_chair:
-            return NSLocalizedString("Skid Chair", comment: "A product's category")
+            return VSNLocalizedString("Skid Chair", comment: "A product's category")
         case .bar_stool:
-            return NSLocalizedString("Bar Stool", comment: "A product's category")
+            return VSNLocalizedString("Bar Stool", comment: "A product's category")
         case .bar_table:
-            return NSLocalizedString("Bar Table", comment: "A product's category")
+            return VSNLocalizedString("Bar Table", comment: "A product's category")
         case .serving_trolley:
-            return NSLocalizedString("Serving Trolley", comment: "A product's category")
+            return VSNLocalizedString("Serving Trolley", comment: "A product's category")
         case .bunk_bed:
-            return NSLocalizedString("Bunk Bed", comment: "A product's category")
+            return VSNLocalizedString("Bunk Bed", comment: "A product's category")
         case .childrens_bed:
-            return NSLocalizedString("Children's Bed", comment: "A product's category")
+            return VSNLocalizedString("Children's Bed", comment: "A product's category")
         case .desk:
-            return NSLocalizedString("Desk", comment: "A product's category")
+            return VSNLocalizedString("Desk", comment: "A product's category")
         case .desk_chair:
-            return NSLocalizedString("Desk Chair", comment: "A product's category")
+            return VSNLocalizedString("Desk Chair", comment: "A product's category")
         case .secretary:
-            return NSLocalizedString("Secretary", comment: "A product's category")
+            return VSNLocalizedString("Secretary", comment: "A product's category")
         case .office_chair:
-            return NSLocalizedString("Office Chair", comment: "A product's category")
+            return VSNLocalizedString("Office Chair", comment: "A product's category")
         case .filing_cabinet:
-            return NSLocalizedString("Filing Cabinet", comment: "A product's category")
+            return VSNLocalizedString("Filing Cabinet", comment: "A product's category")
         case .office_shelf:
-            return NSLocalizedString("Office Shelf", comment: "A product's category")
+            return VSNLocalizedString("Office Shelf", comment: "A product's category")
         case .office_wall:
-            return NSLocalizedString("Office Wall", comment: "A product's category")
+            return VSNLocalizedString("Office Wall", comment: "A product's category")
         case .high_pile_rug:
-            return NSLocalizedString("High Pile Rug", comment: "A product's category")
+            return VSNLocalizedString("High Pile Rug", comment: "A product's category")
         case .velour_rug:
-            return NSLocalizedString("Velour Rug", comment: "A product's category")
+            return VSNLocalizedString("Velour Rug", comment: "A product's category")
         case .flokati_rug:
-            return NSLocalizedString("Flokati Rug", comment: "A product's category")
+            return VSNLocalizedString("Flokati Rug", comment: "A product's category")
         case .sisal_rug:
-            return NSLocalizedString("Sisal Rug", comment: "A product's category")
+            return VSNLocalizedString("Sisal Rug", comment: "A product's category")
         case .tufted_rug:
-            return NSLocalizedString("Tufted Rug", comment: "A product's category")
+            return VSNLocalizedString("Tufted Rug", comment: "A product's category")
         case .shaggy_rug:
-            return NSLocalizedString("Shaggy Rug", comment: "A product's category")
+            return VSNLocalizedString("Shaggy Rug", comment: "A product's category")
         case .country_pile_rug:
-            return NSLocalizedString("Country Pile Rug", comment: "A product's category")
+            return VSNLocalizedString("Country Pile Rug", comment: "A product's category")
         case .mudflap_rug:
-            return NSLocalizedString("Mudflap Rug", comment: "A product's category")
+            return VSNLocalizedString("Mudflap Rug", comment: "A product's category")
         case .oriental_rug:
-            return NSLocalizedString("Oriental Rug", comment: "A product's category")
+            return VSNLocalizedString("Oriental Rug", comment: "A product's category")
         case .berber_carpet:
-            return NSLocalizedString("Berber Carpet", comment: "A product's category")
+            return VSNLocalizedString("Berber Carpet", comment: "A product's category")
         case .nepali_rug:
-            return NSLocalizedString("Nepal/Tibet Rug", comment: "A product's category")
+            return VSNLocalizedString("Nepal/Tibet Rug", comment: "A product's category")
         case .design_rug:
-            return NSLocalizedString("Design Rug", comment: "A product's category")
+            return VSNLocalizedString("Design Rug", comment: "A product's category")
         case .sheepskin_rug:
-            return NSLocalizedString("Sheepskin Rug", comment: "A product's category")
+            return VSNLocalizedString("Sheepskin Rug", comment: "A product's category")
         case .lampskin_rug:
-            return NSLocalizedString("Lampskin Rug", comment: "A product's category")
+            return VSNLocalizedString("Lampskin Rug", comment: "A product's category")
         case .art_silk_rug:
-            return NSLocalizedString("Art Silk Rug", comment: "A product's category")
+            return VSNLocalizedString("Art Silk Rug", comment: "A product's category")
         case .silk_rug:
-            return NSLocalizedString("Silk Rug", comment: "A product's category")
+            return VSNLocalizedString("Silk Rug", comment: "A product's category")
         case .unknown:
             fallthrough
         default:
-            return NSLocalizedString("Unknown", comment: "Default missing product category index label")
+            return VSNLocalizedString("Unknown", comment: "Default missing product category index label")
         }
     }
 }
@@ -817,157 +817,157 @@ public enum VSNFurnitureMaterial: Int {
     public var localizedDescription: String {
         switch self {
         case .alcantara:
-            return NSLocalizedString("Alcantara", comment: "Product component's major material")
+            return VSNLocalizedString("Alcantara", comment: "Product component's major material")
         case .aniline_leather:
-            return NSLocalizedString("Aniline Leather", comment: "Product component's major material")
+            return VSNLocalizedString("Aniline Leather", comment: "Product component's major material")
         case .cotton:
-            return NSLocalizedString("Cotton", comment: "Product component's major material")
+            return VSNLocalizedString("Cotton", comment: "Product component's major material")
         case .boucle_robusta:
-            return NSLocalizedString("Bouclé Robusta", comment: "Product component's major material")
+            return VSNLocalizedString("Bouclé Robusta", comment: "Product component's major material")
         case .brocade:
-            return NSLocalizedString("Brocade", comment: "Product component's major material")
+            return VSNLocalizedString("Brocade", comment: "Product component's major material")
         case .canvas:
-            return NSLocalizedString("Canvas", comment: "Product component's major material")
+            return VSNLocalizedString("Canvas", comment: "Product component's major material")
         case .chenille:
-            return NSLocalizedString("Chenille", comment: "Product component's major material")
+            return VSNLocalizedString("Chenille", comment: "Product component's major material")
         case .chintz:
-            return NSLocalizedString("Chintz", comment: "Product component's major material")
+            return VSNLocalizedString("Chintz", comment: "Product component's major material")
         case .corduroy:
-            return NSLocalizedString("Corduroy", comment: "Product component's major material")
+            return VSNLocalizedString("Corduroy", comment: "Product component's major material")
         case .dralon:
-            return NSLocalizedString("Dralon", comment: "Product component's major material")
+            return VSNLocalizedString("Dralon", comment: "Product component's major material")
         case .drell:
-            return NSLocalizedString("Drell", comment: "Product component's major material")
+            return VSNLocalizedString("Drell", comment: "Product component's major material")
         case .ecru:
-            return NSLocalizedString("Ecru", comment: "Product component's major material")
+            return VSNLocalizedString("Ecru", comment: "Product component's major material")
         case .epingle:
-            return NSLocalizedString("Epinglé", comment: "Product component's major material")
+            return VSNLocalizedString("Epinglé", comment: "Product component's major material")
         case .flat_fabric:
-            return NSLocalizedString("Flat Fabric", comment: "Product component's major material")
+            return VSNLocalizedString("Flat Fabric", comment: "Product component's major material")
         case .flat_knitted_fabric:
-            return NSLocalizedString("Flat Knitted Fabric", comment: "Product component's major material")
+            return VSNLocalizedString("Flat Knitted Fabric", comment: "Product component's major material")
         case .flor:
-            return NSLocalizedString("Flor", comment: "Product component's major material")
+            return VSNLocalizedString("Flor", comment: "Product component's major material")
         case .goblin:
-            return NSLocalizedString("Goblin", comment: "Product component's major material")
+            return VSNLocalizedString("Goblin", comment: "Product component's major material")
         case .jacquard:
-            return NSLocalizedString("Jacquard", comment: "Product component's major material")
+            return VSNLocalizedString("Jacquard", comment: "Product component's major material")
         case .denim:
-            return NSLocalizedString("Denim", comment: "Product component's major material")
+            return VSNLocalizedString("Denim", comment: "Product component's major material")
         case .freton:
-            return NSLocalizedString("Freton", comment: "Product component's major material")
+            return VSNLocalizedString("Freton", comment: "Product component's major material")
         case .faux_leather:
-            return NSLocalizedString("Faux Leather", comment: "Product component's major material")
+            return VSNLocalizedString("Faux Leather", comment: "Product component's major material")
         case .nappa_leather:
-            return NSLocalizedString("Nappa Leather", comment: "Product component's major material")
+            return VSNLocalizedString("Nappa Leather", comment: "Product component's major material")
         case .linen:
-            return NSLocalizedString("Linen", comment: "Product component's major material")
+            return VSNLocalizedString("Linen", comment: "Product component's major material")
         case .microfiber:
-            return NSLocalizedString("Microfiber", comment: "Product component's major material")
+            return VSNLocalizedString("Microfiber", comment: "Product component's major material")
         case .mohair:
-            return NSLocalizedString("Mohair", comment: "Product component's major material")
+            return VSNLocalizedString("Mohair", comment: "Product component's major material")
         case .moire:
-            return NSLocalizedString("Moiré", comment: "Product component's major material")
+            return VSNLocalizedString("Moiré", comment: "Product component's major material")
         case .nanova:
-            return NSLocalizedString("Nanova", comment: "Product component's major material")
+            return VSNLocalizedString("Nanova", comment: "Product component's major material")
         case .nylon:
-            return NSLocalizedString("Nylon", comment: "Product component's major material")
+            return VSNLocalizedString("Nylon", comment: "Product component's major material")
         case .oxford_fabric:
-            return NSLocalizedString("Oxford Fabric", comment: "Product component's major material")
+            return VSNLocalizedString("Oxford Fabric", comment: "Product component's major material")
         case .pique:
-            return NSLocalizedString("Piqué", comment: "Product component's major material")
+            return VSNLocalizedString("Piqué", comment: "Product component's major material")
         case .plush:
-            return NSLocalizedString("Plush", comment: "Product component's major material")
+            return VSNLocalizedString("Plush", comment: "Product component's major material")
         case .polyester:
-            return NSLocalizedString("Polyester", comment: "Product component's major material")
+            return VSNLocalizedString("Polyester", comment: "Product component's major material")
         case .ripstop:
-            return NSLocalizedString("Ripstop", comment: "Product component's major material")
+            return VSNLocalizedString("Ripstop", comment: "Product component's major material")
         case .velvet:
-            return NSLocalizedString("Velvet", comment: "Product component's major material")
+            return VSNLocalizedString("Velvet", comment: "Product component's major material")
         case .satin:
-            return NSLocalizedString("Satin", comment: "Product component's major material")
+            return VSNLocalizedString("Satin", comment: "Product component's major material")
         case .silk:
-            return NSLocalizedString("Silk", comment: "Product component's major material")
+            return VSNLocalizedString("Silk", comment: "Product component's major material")
         case .velour:
-            return NSLocalizedString("Velour", comment: "Product component's major material")
+            return VSNLocalizedString("Velour", comment: "Product component's major material")
         case .suede_leather:
-            return NSLocalizedString("Suede Leather", comment: "Product component's major material")
+            return VSNLocalizedString("Suede Leather", comment: "Product component's major material")
         case .viscose:
-            return NSLocalizedString("Viscose", comment: "Product component's major material")
+            return VSNLocalizedString("Viscose", comment: "Product component's major material")
         case .knitted_velour:
-            return NSLocalizedString("Knitted Velour", comment: "Product component's major material")
+            return VSNLocalizedString("Knitted Velour", comment: "Product component's major material")
         case .nubuck:
-            return NSLocalizedString("Nubuck", comment: "Product component's major material")
+            return VSNLocalizedString("Nubuck", comment: "Product component's major material")
         case .buffalo_leather:
-            return NSLocalizedString("Buffalo Leather", comment: "Product component's major material")
+            return VSNLocalizedString("Buffalo Leather", comment: "Product component's major material")
         case .brushed_aluminum:
-            return NSLocalizedString("Brushed Aluminum", comment: "Product component's major material")
+            return VSNLocalizedString("Brushed Aluminum", comment: "Product component's major material")
         case .polished_aluminum:
-            return NSLocalizedString("Polished Aluminum", comment: "Product component's major material")
+            return VSNLocalizedString("Polished Aluminum", comment: "Product component's major material")
         case .bronze:
-            return NSLocalizedString("Bronze", comment: "Product component's major material")
+            return VSNLocalizedString("Bronze", comment: "Product component's major material")
         case .chrome:
-            return NSLocalizedString("Chrome", comment: "Product component's major material")
+            return VSNLocalizedString("Chrome", comment: "Product component's major material")
         case .stainless_steel:
-            return NSLocalizedString("Stainless Steel", comment: "Product component's major material")
+            return VSNLocalizedString("Stainless Steel", comment: "Product component's major material")
         case .iron:
-            return NSLocalizedString("Iron", comment: "Product component's major material")
+            return VSNLocalizedString("Iron", comment: "Product component's major material")
         case .gold:
-            return NSLocalizedString("Gold", comment: "Product component's major material")
+            return VSNLocalizedString("Gold", comment: "Product component's major material")
         case .copper:
-            return NSLocalizedString("Copper", comment: "Product component's major material")
+            return VSNLocalizedString("Copper", comment: "Product component's major material")
         case .brass:
-            return NSLocalizedString("Brass", comment: "Product component's major material")
+            return VSNLocalizedString("Brass", comment: "Product component's major material")
         case .nickel:
-            return NSLocalizedString("Nickel", comment: "Product component's major material")
+            return VSNLocalizedString("Nickel", comment: "Product component's major material")
         case .silver:
-            return NSLocalizedString("Silver", comment: "Product component's major material")
+            return VSNLocalizedString("Silver", comment: "Product component's major material")
         case .oak:
-            return NSLocalizedString("Oak", comment: "Product component's major material")
+            return VSNLocalizedString("Oak", comment: "Product component's major material")
         case .beech:
-            return NSLocalizedString("Beech", comment: "Product component's major material")
+            return VSNLocalizedString("Beech", comment: "Product component's major material")
         case .european_walnut:
-            return NSLocalizedString("European Walnut", comment: "Product component's major material")
+            return VSNLocalizedString("European Walnut", comment: "Product component's major material")
         case .maple:
-            return NSLocalizedString("Maple", comment: "Product component's major material")
+            return VSNLocalizedString("Maple", comment: "Product component's major material")
         case .birch:
-            return NSLocalizedString("Birch", comment: "Product component's major material")
+            return VSNLocalizedString("Birch", comment: "Product component's major material")
         case .pine:
-            return NSLocalizedString("Pine", comment: "Product component's major material")
+            return VSNLocalizedString("Pine", comment: "Product component's major material")
         case .spruce:
-            return NSLocalizedString("Spruce", comment: "Product component's major material")
+            return VSNLocalizedString("Spruce", comment: "Product component's major material")
         case .alder:
-            return NSLocalizedString("Alder", comment: "Product component's major material")
+            return VSNLocalizedString("Alder", comment: "Product component's major material")
         case .cherry_tree:
-            return NSLocalizedString("Cherry Tree", comment: "Product component's major material")
+            return VSNLocalizedString("Cherry Tree", comment: "Product component's major material")
         case .larch:
-            return NSLocalizedString("Larch", comment: "Product component's major material")
+            return VSNLocalizedString("Larch", comment: "Product component's major material")
         case .mahogany:
-            return NSLocalizedString("Mahogany", comment: "Product component's major material")
+            return VSNLocalizedString("Mahogany", comment: "Product component's major material")
         case .heartwood_beech:
-            return NSLocalizedString("Heartwood Beech", comment: "Product component's major material")
+            return VSNLocalizedString("Heartwood Beech", comment: "Product component's major material")
         case .wild_oak:
-            return NSLocalizedString("Wild Oak", comment: "Product component's major material")
+            return VSNLocalizedString("Wild Oak", comment: "Product component's major material")
         case .ash:
-            return NSLocalizedString("Ash", comment: "Product component's major material")
+            return VSNLocalizedString("Ash", comment: "Product component's major material")
         case .heartwood_ash:
-            return NSLocalizedString("Heartwood Ash", comment: "Product component's major material")
+            return VSNLocalizedString("Heartwood Ash", comment: "Product component's major material")
         case .heartwood_walnut:
-            return NSLocalizedString("Heartwood Walnut", comment: "Product component's major material")
+            return VSNLocalizedString("Heartwood Walnut", comment: "Product component's major material")
         case .satin_walnut:
-            return NSLocalizedString("Satin Walnut", comment: "Product component's major material")
+            return VSNLocalizedString("Satin Walnut", comment: "Product component's major material")
         case .red_heart_beech:
-            return NSLocalizedString("Red Heart Beech", comment: "Product component's major material")
+            return VSNLocalizedString("Red Heart Beech", comment: "Product component's major material")
         case .structure_ash:
-            return NSLocalizedString("Structure Ash", comment: "Product component's major material")
+            return VSNLocalizedString("Structure Ash", comment: "Product component's major material")
         case .sheepskin:
-            return NSLocalizedString("Sheepskin", comment: "Product component's major material")
+            return VSNLocalizedString("Sheepskin", comment: "Product component's major material")
         case .marble:
-            return NSLocalizedString("Marble", comment: "Product component's major material")
+            return VSNLocalizedString("Marble", comment: "Product component's major material")
         case .unknown:
             fallthrough
         default:
-            return NSLocalizedString("Unknown", comment: "Default missing product component material index label")
+            return VSNLocalizedString("Unknown", comment: "Default missing product component material index label")
         }
     }
 }

@@ -1,8 +1,8 @@
 //
-//  VSNBlocks.swift
+//  LocalizationTests.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 22.09.21.
+//  Created by Colin Tessarzick on 06.11.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -23,27 +23,30 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+//
 
-import Foundation
+import XCTest
 
-public typealias VSNVoidBlock = () -> Void
+class LocalizationTests: XCTestCase {
 
-public typealias VSNErrorBlock = (Error?) -> Void
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
 
-public typealias VSNBooleanSuccessBlock = (Bool?, Error?) -> Void
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
 
-public typealias VSNJSONResponseCompletionBlock = (String?, Error?) -> Void
+    func testExample() throws {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
 
-public typealias VSNDeleteCompletionBlock = (VSNDeletion?, Error?) -> Void
+    func testPerformanceExample() throws {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
+    }
 
-public typealias VSNProductCompletionBlock = (VSNProduct?, Error?) -> Void
-
-public typealias VSNProductsCompletionBlock = ([VSNProduct]?, Error?) -> Void
-
-public typealias VSNAnnouncementCompletionBlock = (VSNAnnouncement?, Error?) -> Void
-
-public typealias VSNConfigurationCompletionBlock = (VSNConfiguration?, Error?) -> Void
-
-public typealias VSNConfigurationsCompletionBlock = ([VSNConfiguration]?, Error?) -> Void
-
-public typealias VSNDesignerCompletionBlock = (VSNDesigner?, Error?) -> Void
+}

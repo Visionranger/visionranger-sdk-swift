@@ -6,6 +6,12 @@
   
 */
 
+/* Text for close button */
+"Close" = "Close";
+
+/* Unexpected error, such as a 500 from Stripe or a JSON parse error */
+"There was an unexpected error -- try again in a few seconds" = "There was an unexpected error -- try again in a few seconds";
+
 /* Associated Room to a product */
 "Balcony" = "Balcony";
 /* Associated Room to a product */

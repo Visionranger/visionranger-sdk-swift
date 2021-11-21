@@ -20,6 +20,7 @@
 		5078115526FCD9D900323EE4 /* NSMutableURLRequest+Visionranger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078115426FCD9D900323EE4 /* NSMutableURLRequest+Visionranger.swift */; };
 		5078115726FCDA4700323EE4 /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078115626FCDA4700323EE4 /* URLEncoder.swift */; };
 		5078115926FCF95900323EE4 /* VSNConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078115826FCF95900323EE4 /* VSNConfiguration.swift */; };
+		507D3412274A3D2E008C9CA9 /* BundleIdentifier+Visionranger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D3411274A3D2E008C9CA9 /* BundleIdentifier+Visionranger.swift */; };
 		508B278E26FC7F72007CBCF3 /* VSNParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B278D26FC7F72007CBCF3 /* VSNParameters.swift */; };
 		508B279026FC9AAA007CBCF3 /* VSNDevelopmentEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B278F26FC9AAA007CBCF3 /* VSNDevelopmentEnvironment.swift */; };
 		5092169B270B0CFE00B260DD /* VSNDeletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092169A270B0CFE00B260DD /* VSNDeletion.swift */; };
@@ -38,9 +39,13 @@
 		50AD2B8326FBC5E400E03205 /* VSNBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2B8226FBC5E400E03205 /* VSNBlocks.swift */; };
 		50AD2B8526FBC71D00E03205 /* VSNProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2B8426FBC71D00E03205 /* VSNProduct.swift */; };
 		50AD2B8726FBCE2E00E03205 /* VSNAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD2B8626FBCE2E00E03205 /* VSNAPIClient.swift */; };
+		50C89574273AFCE500A5896E /* VSNDesigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C89573273AFCE500A5896E /* VSNDesigner.swift */; };
 		50D1A947270A2193005718CA /* VSNError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D1A946270A2193005718CA /* VSNError.swift */; };
 		50D5BF3F27086E180000BE52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50D5BF4127086E180000BE52 /* Localizable.strings */; };
 		50F8FFD9270725A300FAE7D5 /* VSNCatalogizationEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F8FFD8270725A300FAE7D5 /* VSNCatalogizationEnums.swift */; };
+		50F942C627369FF500BB801F /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F942C527369FF500BB801F /* String+Localized.swift */; };
+		50F942C82736A00B00BB801F /* VSNLocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F942C72736A00B00BB801F /* VSNLocalizedString.swift */; };
+		50F942CC2736B4D400BB801F /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F942CB2736B4D400BB801F /* LocalizationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,7 @@
 		5078115426FCD9D900323EE4 /* NSMutableURLRequest+Visionranger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+Visionranger.swift"; sourceTree = "<group>"; };
 		5078115626FCDA4700323EE4 /* URLEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncoder.swift; sourceTree = "<group>"; };
 		5078115826FCF95900323EE4 /* VSNConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNConfiguration.swift; sourceTree = "<group>"; };
+		507D3411274A3D2E008C9CA9 /* BundleIdentifier+Visionranger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BundleIdentifier+Visionranger.swift"; sourceTree = "<group>"; };
 		508B278D26FC7F72007CBCF3 /* VSNParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNParameters.swift; sourceTree = "<group>"; };
 		508B278F26FC9AAA007CBCF3 /* VSNDevelopmentEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNDevelopmentEnvironment.swift; sourceTree = "<group>"; };
 		5092169A270B0CFE00B260DD /* VSNDeletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNDeletion.swift; sourceTree = "<group>"; };
@@ -86,10 +92,14 @@
 		50AD2B8226FBC5E400E03205 /* VSNBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNBlocks.swift; sourceTree = "<group>"; };
 		50AD2B8426FBC71D00E03205 /* VSNProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNProduct.swift; sourceTree = "<group>"; };
 		50AD2B8626FBCE2E00E03205 /* VSNAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAPIClient.swift; sourceTree = "<group>"; };
+		50C89573273AFCE500A5896E /* VSNDesigner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNDesigner.swift; sourceTree = "<group>"; };
 		50D1A946270A2193005718CA /* VSNError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNError.swift; sourceTree = "<group>"; };
 		50D5BF4027086E180000BE52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50D5BF4227086E1D0000BE52 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50F8FFD8270725A300FAE7D5 /* VSNCatalogizationEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNCatalogizationEnums.swift; sourceTree = "<group>"; };
+		50F942C527369FF500BB801F /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		50F942C72736A00B00BB801F /* VSNLocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNLocalizedString.swift; sourceTree = "<group>"; };
+		50F942CB2736B4D400BB801F /* LocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				5016A5F726FA8A0200CC731B /* VisionrangerTests.swift */,
+				50F942CB2736B4D400BB801F /* LocalizationTests.swift */,
 			);
 			path = VisionrangerTests;
 			sourceTree = "<group>";
@@ -196,6 +207,7 @@
 				50140FBB2715D8B600C6ED9B /* VSNAnnouncement.swift */,
 				5092169A270B0CFE00B260DD /* VSNDeletion.swift */,
 				50140FBD2715EB1600C6ED9B /* VSNCollectionFilter.swift */,
+				50C89573273AFCE500A5896E /* VSNDesigner.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -225,6 +237,7 @@
 		50AAC5FB26FB377B0084E41B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				50F942C027369A3400BB801F /* Localization */,
 				5096B88B26FF4DA40064B603 /* Networking */,
 				5096B88C26FF4DD80064B603 /* Helpers */,
 				5096B88A26FF4D420064B603 /* Internal */,
@@ -246,6 +259,16 @@
 				50D5BF4127086E180000BE52 /* Localizable.strings */,
 			);
 			path = Localizations;
+			sourceTree = "<group>";
+		};
+		50F942C027369A3400BB801F /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				50F942C527369FF500BB801F /* String+Localized.swift */,
+				507D3411274A3D2E008C9CA9 /* BundleIdentifier+Visionranger.swift */,
+				50F942C72736A00B00BB801F /* VSNLocalizedString.swift */,
+			);
+			name = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +329,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					5016A5E726FA8A0200CC731B = {
 						CreatedOnToolsVersion = 13.0;
@@ -364,16 +387,19 @@
 				50140FBC2715D8B600C6ED9B /* VSNAnnouncement.swift in Sources */,
 				506A4EA7272425BF0089EDFB /* VSNConfigurationListDeserializer.swift in Sources */,
 				5078115326FCBDE600323EE4 /* VSNAPIResponseDecodable.swift in Sources */,
+				507D3412274A3D2E008C9CA9 /* BundleIdentifier+Visionranger.swift in Sources */,
 				5096B88926FF447B0064B603 /* VSNDispatchFunctions.swift in Sources */,
 				50140FBE2715EB1600C6ED9B /* VSNCollectionFilter.swift in Sources */,
 				50AD2B8526FBC71D00E03205 /* VSNProduct.swift in Sources */,
 				50A0B97326FDC5C4001A6782 /* VSNEstimatedDelivery.swift in Sources */,
+				50F942C627369FF500BB801F /* String+Localized.swift in Sources */,
 				5078115926FCF95900323EE4 /* VSNConfiguration.swift in Sources */,
 				5092169B270B0CFE00B260DD /* VSNDeletion.swift in Sources */,
 				50AD2B7F26FBC10200E03205 /* VisionrangerAPI.swift in Sources */,
 				508B279026FC9AAA007CBCF3 /* VSNDevelopmentEnvironment.swift in Sources */,
 				50F8FFD9270725A300FAE7D5 /* VSNCatalogizationEnums.swift in Sources */,
 				504C11AC2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift in Sources */,
+				50F942C82736A00B00BB801F /* VSNLocalizedString.swift in Sources */,
 				5096B88F26FF6DDB0064B603 /* NSError+Visionranger.swift in Sources */,
 				5099D9D92705ED8900EBC08A /* NSDictionary+Visionranger.swift in Sources */,
 				5096B89126FF76700064B603 /* VSNProductCatalogization.swift in Sources */,
@@ -386,6 +412,7 @@
 				50AD2B8726FBCE2E00E03205 /* VSNAPIClient.swift in Sources */,
 				50AD2B8326FBC5E400E03205 /* VSNBlocks.swift in Sources */,
 				50D1A947270A2193005718CA /* VSNError.swift in Sources */,
+				50C89574273AFCE500A5896E /* VSNDesigner.swift in Sources */,
 				508B278E26FC7F72007CBCF3 /* VSNParameters.swift in Sources */,
 				50AD2B8126FBC2B600E03205 /* VSNRequest.swift in Sources */,
 				5099D9DB2705EEB300EBC08A /* NSArray+Visionranger.swift in Sources */,
@@ -396,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F942CC2736B4D400BB801F /* LocalizationTests.swift in Sources */,
 				5016A5F826FA8A0200CC731B /* VisionrangerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -491,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

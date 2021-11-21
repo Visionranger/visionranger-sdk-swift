@@ -33,19 +33,51 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .blue
+        
         let client = VSNAPIClient.shared
-
-        client.retrieveConfiguration(with: "2") { config, error in
-            guard let config = config else {
+//
+//        client.createConfiguration(withParameters: [
+//            "color": "Timberwolf",
+//            "color_code": "D6D0C7",
+//            "delivery_index": VSNEstimatedDelivery.twoToThreeMonths.rawValue,
+//            "depth": 68,
+//            "height": 91.5,
+//            "width": 90,
+//            "image_url": "https://catalog.visionranger.com/products/vipp466_3_preview.png",
+//            "material": VSNFurnitureMaterial.cotton.rawValue,
+//            "model_url": "https://catalog.visionranger.com/products/v466-Lodge-Lounge-Chair-BARNUM03.usdz",
+//            "price": 2143.9,
+//            "product_id": "7",
+//            "sku": "N/A",
+//            "specific": "Light Oak Legs"
+//        ]) { config, error in
+//            guard let config = config else {
+//                return
+//            }
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }
+//            if let value = config.price {
+//                print(value)
+//            }
+//        }
+        
+        client.retrieveProduct(id: "5") { product, error in
+            guard let object = product else {
                 return
             }
             if let error = error {
                 print(error.localizedDescription)
             }
-            if let value = config.modelURL {
+            if let value = object.allResponseFields["designer"] {
                 print(value)
+            } else {
+                print("something is not right")
             }
         }
+
+        print(VSNRoom.bathroom.localizedDescription)
     }
 }
 

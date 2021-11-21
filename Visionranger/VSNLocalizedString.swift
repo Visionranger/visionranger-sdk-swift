@@ -1,8 +1,8 @@
 //
-//  VSNBlocks.swift
+//  VSNLocalizedString.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 22.09.21.
+//  Created by Colin Tessarzick on 06.11.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -23,27 +23,10 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+//
 
 import Foundation
 
-public typealias VSNVoidBlock = () -> Void
-
-public typealias VSNErrorBlock = (Error?) -> Void
-
-public typealias VSNBooleanSuccessBlock = (Bool?, Error?) -> Void
-
-public typealias VSNJSONResponseCompletionBlock = (String?, Error?) -> Void
-
-public typealias VSNDeleteCompletionBlock = (VSNDeletion?, Error?) -> Void
-
-public typealias VSNProductCompletionBlock = (VSNProduct?, Error?) -> Void
-
-public typealias VSNProductsCompletionBlock = ([VSNProduct]?, Error?) -> Void
-
-public typealias VSNAnnouncementCompletionBlock = (VSNAnnouncement?, Error?) -> Void
-
-public typealias VSNConfigurationCompletionBlock = (VSNConfiguration?, Error?) -> Void
-
-public typealias VSNConfigurationsCompletionBlock = ([VSNConfiguration]?, Error?) -> Void
-
-public typealias VSNDesignerCompletionBlock = (VSNDesigner?, Error?) -> Void
+@inline(__always) func VSNLocalizedString(_ key: String, comment: String?) -> String {
+    return Bundle.localizationFramework.localizedString(forKey: key, value: "**\(key)**", table: nil)
+}
