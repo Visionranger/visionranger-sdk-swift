@@ -1,8 +1,8 @@
 //
-//  VSNLocalizedString.swift
+//  NSBundle+Visionranger_AppName.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 06.11.21.
+//  Created by Colin Tessarzick on 22.11.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -27,7 +27,17 @@
 
 import Foundation
 
-@inline(__always) func VSNLocalizedString(_ key: String, comment: String?) -> String {
-//    return Bundle.localizationFramework.localizedString(forKey: key, value: "**\(key)**", table: nil)
-    return VSNLocalizationUtils.localizedVisionrangerString(forKey: key, bundleLocator: VisionrangerBundleLocator.self)
+extension Bundle {
+    public class func vsn_applicationName() -> String? {
+        return self.main.infoDictionary?[kCFBundleNameKey as String] as? String
+    }
+
+    public class func vsn_applicationVersion() -> String? {
+        return self.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+
+    public class var displayName: String? {
+        return self.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? self.main
+            .object(forInfoDictionaryKey: "CFBundleName") as? String
+    }
 }
