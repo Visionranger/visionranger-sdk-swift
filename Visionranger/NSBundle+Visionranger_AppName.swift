@@ -1,8 +1,8 @@
 //
-//  BundleIdentifier+Visionranger.swift
+//  NSBundle+Visionranger_AppName.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 21.11.21.
+//  Created by Colin Tessarzick on 22.11.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -28,20 +28,16 @@
 import Foundation
 
 extension Bundle {
-    static var localizationFramework: Bundle {
-        guard let localizationBundle = Bundle(identifier: "com.visionranger.Visionranger-SDK-Swift") else { return .main }
-
-        guard
-            let bundlePath = localizationBundle.path(forResource: currentLanguage(of: localizationBundle),
-                                                     ofType: "lproj"),
-            let bundle = Bundle(path: bundlePath) else { return .main }
-        
-        print(localizationBundle.bundleIdentifier ?? "N/A")
-
-        return bundle
+    public class func vsn_applicationName() -> String? {
+        return self.main.infoDictionary?[kCFBundleNameKey as String] as? String
     }
 
-    static func currentLanguage(of bundle: Bundle) -> String {
-        return String(Locale.current.identifier.prefix(2))
+    public class func vsn_applicationVersion() -> String? {
+        return self.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+
+    public class var displayName: String? {
+        return self.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? self.main
+            .object(forInfoDictionaryKey: "CFBundleName") as? String
     }
 }
