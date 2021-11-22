@@ -70,13 +70,13 @@ public extension BundleLocatorProtocol {
         #endif
 
         if ourBundle == nil {
-            ourBundle = Bundle(path: "\(bundleName).bundle")
+            ourBundle = Bundle(path: "\(bundleName).framework")
         }
 
         if ourBundle == nil {
             // This might be the same as the previous check if not using a dynamic framework
             if let path = Bundle(for: internalClass).path(
-                forResource: bundleName, ofType: "bundle")
+                forResource: bundleName, ofType: "framework")
             {
                 ourBundle = Bundle(path: path)
             }
@@ -88,6 +88,7 @@ public extension BundleLocatorProtocol {
         }
 
         if let ourBundle = ourBundle {
+            print(ourBundle.bundlePath)
             return ourBundle
         } else {
             return Bundle.main
