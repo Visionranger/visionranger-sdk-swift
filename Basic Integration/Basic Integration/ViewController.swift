@@ -70,14 +70,12 @@ class ViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
             }
-            if let value = object.allResponseFields["designer"] {
-                print(value)
+            if let value = object.catalogization?.category {
+                print(value.localizedDescription)
             } else {
                 print("something is not right")
             }
         }
-
-        print(VSNRoom.bathroom.localizedDescription)
     }
 }
 

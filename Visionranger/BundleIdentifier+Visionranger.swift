@@ -35,6 +35,8 @@ extension Bundle {
             let bundlePath = localizationBundle.path(forResource: currentLanguage(of: localizationBundle),
                                                      ofType: "lproj"),
             let bundle = Bundle(path: bundlePath) else { return .main }
+        
+        print(bundle)
 
         return bundle
     }
