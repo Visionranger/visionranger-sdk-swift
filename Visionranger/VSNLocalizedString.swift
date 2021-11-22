@@ -28,6 +28,5 @@
 import Foundation
 
 @inline(__always) func VSNLocalizedString(_ key: String, comment: String?) -> String {
-//    return Bundle.localizationFramework.localizedString(forKey: key, value: "**\(key)**", table: nil)
     return VSNLocalizationUtils.localizedVisionrangerString(forKey: key, bundleLocator: VisionrangerBundleLocator.self)
 }
