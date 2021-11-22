@@ -36,7 +36,7 @@ extension Bundle {
                                                      ofType: "lproj"),
             let bundle = Bundle(path: bundlePath) else { return .main }
         
-        print(bundle)
+        print(localizationBundle.bundleIdentifier ?? "N/A")
 
         return bundle
     }
