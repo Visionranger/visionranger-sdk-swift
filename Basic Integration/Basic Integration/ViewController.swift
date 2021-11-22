@@ -72,7 +72,6 @@ class ViewController: UIViewController {
             }
             if let value = object.catalogization?.category {
                 print(value.localizedDescription)
-                print(Bundle.main.bundleIdentifier ?? "N/A")
             } else {
                 print("something is not right")
             }

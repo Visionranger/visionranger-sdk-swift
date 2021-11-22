@@ -1,8 +1,8 @@
 //
-//  VSNLocalizedString.swift
+//  BundleIdentifier+Visionranger.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 06.11.21.
+//  Created by Colin Tessarzick on 22.11.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -27,7 +27,27 @@
 
 import Foundation
 
-@inline(__always) func VSNLocalizedString(_ key: String, comment: String?) -> String {
-//    return VSNLocalizationUtils.localizedVisionrangerString(forKey: key, bundleLocator: VisionrangerBundleLocator.self)
-    return Bundle.localizationFramework.localizedString(forKey: key, value: "=>\(key)<=", table: nil)
+extension Bundle {
+    static var localizationFramework: Bundle {
+        guard
+            let localizationBundle = Bundle(identifier: "com.visionranger.Visionranger-SDK-Swift") else { return .main }
+
+        guard
+            let bundlePath = localizationBundle.path(forResource: currentLanguage(of: localizationBundle),
+                                                     ofType: "lproj"),
+            let bundle = Bundle(path: bundlePath) else { return .main }
+
+        return bundle
+    }
+
+    static func currentLanguage(of bundle: Bundle) -> String {
+        var currentLanguage = String(Locale.current.identifier.prefix(2))
+        let supportedLanguages = bundle.localizations
+
+        if !supportedLanguages.contains(currentLanguage) {
+            currentLanguage = bundle.preferredLocalizations[0]
+        }
+
+        return currentLanguage
+    }
 }
