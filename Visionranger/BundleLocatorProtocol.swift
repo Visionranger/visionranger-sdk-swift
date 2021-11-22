@@ -27,7 +27,7 @@
 
 import Foundation
 
-public protocol BundleLocatorProtocol {
+@_spi(VSN) public protocol BundleLocatorProtocol {
     /**
      A final class that is internal to the bundle implementing this protocol.
      
@@ -43,7 +43,7 @@ public protocol BundleLocatorProtocol {
     static var resourcesBundle: Bundle { get }
     
     #if SWIFT_PACKAGE
-    /// SPM Bundle, if available. Implementation should be should be `Bundle.module`.
+    /// SPM Bundle, if available. Implementation should be `Bundle.module`.
     static var spmResourcesBundle: Bundle { get }
     #endif
 }
@@ -57,9 +57,9 @@ public extension BundleLocatorProtocol {
      - Description:
      Places to check:
      1. Swift Package Manager bundle
-     2. Stripe.bundle (for manual static installations and framework-less Cocoapods)
-     3. Stripe.framework/Stripe.bundle (for framework-based Cocoapods)
-     4. Stripe.framework (for Carthage, manual dynamic installations)
+     2. Visionranger.bundle (for manual static installations and framework-less Cocoapods)
+     3. Visionranger.framework/Visionranger.bundle (for framework-based Cocoapods)
+     4. Visionranger.framework (for Carthage, manual dynamic installations)
      5. main bundle (for people dragging all our files into their project)
      */
     static func computeResourcesBundle() -> Bundle {

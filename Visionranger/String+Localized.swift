@@ -27,7 +27,7 @@
 
 import Foundation
 
-public extension String {
+@_spi(VSN) public extension String {
     enum Localized {
         public static var close: String {
             return VSNLocalizedString("Close", comment: "Text for close button")

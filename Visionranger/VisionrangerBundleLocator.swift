@@ -27,11 +27,12 @@
 
 import Foundation
 
-final class VisionrangerBundleLocator: BundleLocatorProtocol {
-    static let internalClass: AnyClass = VisionrangerBundleLocator.self
-    static let bundleName = "Visionranger"
+/// :nodoc:
+@_spi(VSN) public final class VisionrangerBundleLocator: BundleLocatorProtocol {
+    public static let internalClass: AnyClass = VisionrangerBundleLocator.self
+    public static let bundleName = "Visionranger"
     #if SWIFT_PACKAGE
-    static let spmResourcesBundle = Bundle.module
+    public static let spmResourcesBundle = Bundle.module
     #endif
-    static let resourcesBundle = VisionrangerBundleLocator.computeResourcesBundle()
+    public static let resourcesBundle = VisionrangerBundleLocator.computeResourcesBundle()
 }

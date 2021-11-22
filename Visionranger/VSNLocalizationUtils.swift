@@ -27,8 +27,8 @@
 
 import Foundation
 
-public final class VSNLocalizationUtils {
-    /// Acts like NSLocalizedString but tries to find the string in the Stripe
+@_spi(VSN) public final class VSNLocalizationUtils {
+    /// Acts like NSLocalizedString but tries to find the string in the Visionranger
     /// bundle first if possible.
     /// If the main app has a localization that we do not support, we want to switch
     /// to pulling strings from the main bundle instead of our own bundle so that
@@ -43,7 +43,7 @@ public final class VSNLocalizationUtils {
     /// strings are in pt, but we support spanish so our bundle marks es as our
     /// preferred language and our strings are in es.
     /// If the main bundle doesn't have the correct string, we'll always fall back to
-    /// using the Stripe bundle so we don't inadvertently show an untranslated string.
+    /// using the Visionranger bundle so we don't inadvertently show an untranslated string.
 
     static func localizedVisionrangerStringUseMainBundle(bundleLocator: BundleLocatorProtocol.Type) -> Bool {
         if bundleLocator.resourcesBundle.preferredLocalizations.first
@@ -96,6 +96,6 @@ public final class VSNLocalizationUtils {
 }
 
 /// Use to explicitly ignore static analyzer warning: "User-facing text should use localized string macro"
-@inline(__always) public func VSNNonLocalizedString(_ string: String) -> String {
+@inline(__always) @_spi(VSN) public func VSNNonLocalizedString(_ string: String) -> String {
     return string
 }
