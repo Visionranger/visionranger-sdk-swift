@@ -28,5 +28,5 @@ import Foundation
 
 extension VisionrangerAPIConfiguration {
     
-    static let VSNSDKVersion = "0.5.2"
+    static let VSNSDKVersion = "0.5.4"
 }
