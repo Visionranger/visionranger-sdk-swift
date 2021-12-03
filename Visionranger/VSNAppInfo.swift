@@ -46,6 +46,7 @@ public class VSNAppInfo {
         self.partnerId = partnerId
         self.version = version
         self.url = url
+        self.launchConfiguration = VSNAppLaunchConfiguration.appConfiguration
     }
     
     /// The name of your library (e.g. "MyAwesomeLibrary").
@@ -56,4 +57,6 @@ public class VSNAppInfo {
     public private(set) var version: String?
     /// The website for your library (e.g. "https://myawesomelibrary.info").
     public private(set) var url: String?
+    /// The configuration through which your library is launched from (e.g. App Store, TestFlight or Debug)
+    var launchConfiguration: VSNAppConfiguration?
 }

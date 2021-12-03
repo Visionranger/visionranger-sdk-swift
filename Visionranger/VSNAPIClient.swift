@@ -112,6 +112,7 @@ public class VSNAPIClient: NSObject {
             if appInfo.url != nil {
                 details["url"] = appInfo.url
             }
+            details["launch_configuration"] = appInfo.launchConfiguration?.rawValue
         }
         let data = try? JSONSerialization.data(withJSONObject: details, options: [])
         return String(data: data ?? Data(), encoding: .utf8) ?? ""

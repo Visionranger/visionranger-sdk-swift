@@ -1,8 +1,8 @@
 //
-//  VisionrangerAPIConfiguration+Version.swift
+//  VSNAppLaunchConfiguration.swift
 //  Visionranger
 //
-//  Created by Colin Tessarzick on 27.09.21.
+//  Created by Colin Tessarzick on 03.12.21.
 //
 //  Copyright © 2020-2021 Visionranger e.K. All rights reserved.
 //
@@ -23,10 +23,34 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+//
 
 import Foundation
 
-extension VisionrangerAPIConfiguration {
+enum VSNAppConfiguration: String {
+    case debug = "debug"
+    case testflight = "test_flight"
+    case appStore = "app_store"
+}
+
+struct VSNAppLaunchConfiguration {
+    private static let isTestFlight = Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
     
-    static let VSNSDKVersion = "0.6.0"
+    static var isDebug: Bool {
+        #if DEBUG
+        return true
+        #else
+        return false
+        #endif
+    }
+    
+    static var appConfiguration: VSNAppConfiguration {
+        if isDebug {
+            return .debug
+        } else if isTestFlight {
+            return .testflight
+        } else {
+            return .appStore
+        }
+    }
 }
