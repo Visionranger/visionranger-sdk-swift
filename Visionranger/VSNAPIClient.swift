@@ -25,9 +25,7 @@
 //  THE SOFTWARE.
 
 import Foundation
-#if os(iOS)
 import UIKit
-#endif
 
 /// A shared client, used to making network requests to the Visionranger API
 public class VSNAPIClient: NSObject {
