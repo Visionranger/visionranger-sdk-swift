@@ -31,7 +31,7 @@ public extension VisionrangerAPIConfiguration {
 }
 EOF
 
-echo "Successfully updated 'StripeAPIConfiguration+Version.swift'"
+echo "Successfully updated 'VisionrangerAPIConfiguration+Version.swift'"
 
 
 # Replace the version in Visionranger.podspec
