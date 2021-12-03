@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5042B27D275A80930042028D /* Visionranger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5042B27C275A80930042028D /* Visionranger.framework */; };
 		50DA32E027071F8300444C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA32DF27071F8300444C29 /* AppDelegate.swift */; };
 		50DA32E227071F8300444C29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA32E127071F8300444C29 /* SceneDelegate.swift */; };
 		50DA32E427071F8300444C29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA32E327071F8300444C29 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5042B27C275A80930042028D /* Visionranger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Visionranger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A4FA93275A79480053C6F7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		50A4FA94275A79490053C6F7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		50DA32DC27071F8300444C29 /* Basic Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basic Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,17 +35,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5042B27D275A80930042028D /* Visionranger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5042B27B275A80930042028D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5042B27C275A80930042028D /* Visionranger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		50DA32D327071F8300444C29 = {
 			isa = PBXGroup;
 			children = (
 				50DA32DE27071F8300444C29 /* Basic Integration */,
 				50DA32DD27071F8300444C29 /* Products */,
+				5042B27B275A80930042028D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
