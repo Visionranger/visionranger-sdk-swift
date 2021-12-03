@@ -78,6 +78,8 @@
 		5018404F26FD298100342BE4 /* VSNConfigurationDimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNConfigurationDimensions.swift; sourceTree = "<group>"; };
 		501B65D2275A3DDD00D503A7 /* VSNAppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAppInfo.swift; sourceTree = "<group>"; };
 		501B65D4275A492A00D503A7 /* VSNAppLaunchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAppLaunchConfiguration.swift; sourceTree = "<group>"; };
+		501B65D7275A59D800D503A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		501B65D9275A59E000D503A7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5020603F274BD58300961DDD /* BundleIdentifier+Visionranger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BundleIdentifier+Visionranger.swift"; sourceTree = "<group>"; };
 		504C11AB2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisionrangerAPIConfiguration+Version.swift"; sourceTree = "<group>"; };
 		506A4EA6272425BF0089EDFB /* VSNConfigurationListDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNConfigurationListDeserializer.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				5016A5EA26FA8A0200CC731B /* Visionranger */,
 				5016A5F626FA8A0200CC731B /* VisionrangerTests */,
 				5016A5E926FA8A0200CC731B /* Products */,
+				501B65D6275A59D800D503A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +178,15 @@
 				50F942CB2736B4D400BB801F /* LocalizationTests.swift */,
 			);
 			path = VisionrangerTests;
+			sourceTree = "<group>";
+		};
+		501B65D6275A59D800D503A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				501B65D9275A59E000D503A7 /* UIKit.framework */,
+				501B65D7275A59D800D503A7 /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5096B88A26FF4D420064B603 /* Internal */ = {
