@@ -14,6 +14,10 @@
 		5016A5F826FA8A0200CC731B /* VisionrangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016A5F726FA8A0200CC731B /* VisionrangerTests.swift */; };
 		5016A5F926FA8A0200CC731B /* Visionranger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5016A5EB26FA8A0200CC731B /* Visionranger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5018405026FD298100342BE4 /* VSNConfigurationDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018404F26FD298100342BE4 /* VSNConfigurationDimensions.swift */; };
+		501B65D3275A3DDD00D503A7 /* VSNAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B65D2275A3DDD00D503A7 /* VSNAppInfo.swift */; };
+		501B65D5275A492A00D503A7 /* VSNAppLaunchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B65D4275A492A00D503A7 /* VSNAppLaunchConfiguration.swift */; };
+		501B65DB275A6B6200D503A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501B65D7275A59D800D503A7 /* Foundation.framework */; };
+		501B65DC275A6B6900D503A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501B65D9275A59E000D503A7 /* UIKit.framework */; };
 		50206040274BD58300961DDD /* BundleIdentifier+Visionranger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5020603F274BD58300961DDD /* BundleIdentifier+Visionranger.swift */; };
 		504C11AC2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C11AB2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift */; };
 		506A4EA7272425BF0089EDFB /* VSNConfigurationListDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A4EA6272425BF0089EDFB /* VSNConfigurationListDeserializer.swift */; };
@@ -74,6 +78,10 @@
 		5016A5F226FA8A0200CC731B /* VisionrangerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionrangerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5016A5F726FA8A0200CC731B /* VisionrangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionrangerTests.swift; sourceTree = "<group>"; };
 		5018404F26FD298100342BE4 /* VSNConfigurationDimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNConfigurationDimensions.swift; sourceTree = "<group>"; };
+		501B65D2275A3DDD00D503A7 /* VSNAppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAppInfo.swift; sourceTree = "<group>"; };
+		501B65D4275A492A00D503A7 /* VSNAppLaunchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAppLaunchConfiguration.swift; sourceTree = "<group>"; };
+		501B65D7275A59D800D503A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		501B65D9275A59E000D503A7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5020603F274BD58300961DDD /* BundleIdentifier+Visionranger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BundleIdentifier+Visionranger.swift"; sourceTree = "<group>"; };
 		504C11AB2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisionrangerAPIConfiguration+Version.swift"; sourceTree = "<group>"; };
 		506A4EA6272425BF0089EDFB /* VSNConfigurationListDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNConfigurationListDeserializer.swift; sourceTree = "<group>"; };
@@ -121,6 +129,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501B65DC275A6B6900D503A7 /* UIKit.framework in Frameworks */,
+				501B65DB275A6B6200D503A7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +151,7 @@
 				5016A5EA26FA8A0200CC731B /* Visionranger */,
 				5016A5F626FA8A0200CC731B /* VisionrangerTests */,
 				5016A5E926FA8A0200CC731B /* Products */,
+				501B65D6275A59D800D503A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +184,15 @@
 			path = VisionrangerTests;
 			sourceTree = "<group>";
 		};
+		501B65D6275A59D800D503A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				501B65D9275A59E000D503A7 /* UIKit.framework */,
+				501B65D7275A59D800D503A7 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5096B88A26FF4D420064B603 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +209,9 @@
 			children = (
 				5096B88D26FF4E0E0064B603 /* Models */,
 				50AD2B8626FBCE2E00E03205 /* VSNAPIClient.swift */,
+				501B65D4275A492A00D503A7 /* VSNAppLaunchConfiguration.swift */,
 				5078115426FCD9D900323EE4 /* NSMutableURLRequest+Visionranger.swift */,
+				501B65D2275A3DDD00D503A7 /* VSNAppInfo.swift */,
 				50AD2B7E26FBC10200E03205 /* VisionrangerAPI.swift */,
 				5096B89226FF84520064B603 /* VisionrangerAPIConfiguration.swift */,
 				5078115226FCBDE600323EE4 /* VSNAPIResponseDecodable.swift */,
@@ -423,6 +445,7 @@
 				50140FBE2715EB1600C6ED9B /* VSNCollectionFilter.swift in Sources */,
 				50AD2B8526FBC71D00E03205 /* VSNProduct.swift in Sources */,
 				50A0B97326FDC5C4001A6782 /* VSNEstimatedDelivery.swift in Sources */,
+				501B65D5275A492A00D503A7 /* VSNAppLaunchConfiguration.swift in Sources */,
 				50F942C627369FF500BB801F /* String+Localized.swift in Sources */,
 				5078115926FCF95900323EE4 /* VSNConfiguration.swift in Sources */,
 				5092169B270B0CFE00B260DD /* VSNDeletion.swift in Sources */,
@@ -450,6 +473,7 @@
 				508B278E26FC7F72007CBCF3 /* VSNParameters.swift in Sources */,
 				50AD2B8126FBC2B600E03205 /* VSNRequest.swift in Sources */,
 				5099D9DB2705EEB300EBC08A /* NSArray+Visionranger.swift in Sources */,
+				501B65D3275A3DDD00D503A7 /* VSNAppInfo.swift in Sources */,
 				50AEEEB0274A5D5400170416 /* VSNBoolSuccess.swift in Sources */,
 				50A6698C274BB1A100CD44CB /* VisionrangerBundleLocator.swift in Sources */,
 			);
@@ -629,7 +653,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.4;
+				MARKETING_VERSION = 0.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.visionranger.Visionranger-SDK-Swift";
 				PRODUCT_NAME = Visionranger;
 				SKIP_INSTALL = YES;
@@ -658,7 +682,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.4;
+				MARKETING_VERSION = 0.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.visionranger.Visionranger-SDK-Swift";
 				PRODUCT_NAME = Visionranger;
 				SKIP_INSTALL = YES;
