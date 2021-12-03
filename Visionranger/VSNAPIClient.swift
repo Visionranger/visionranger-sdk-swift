@@ -52,7 +52,6 @@ public class VSNAPIClient: NSObject {
     func configuredRequest(for url: URL, additionalHeaders: [String : String]) -> NSMutableURLRequest {
         let request = NSMutableURLRequest(url: url)
         var headers = defaultheaders
-        print(VSNAPIClient.visionrangerUserAgentDetails(with: appInfo))
         for (k, v) in additionalHeaders { headers[k] = v }
         headers.forEach { key, value in
             request.setValue(value, forHTTPHeaderField: key)
