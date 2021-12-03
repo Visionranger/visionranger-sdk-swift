@@ -14,6 +14,7 @@
 		5016A5F826FA8A0200CC731B /* VisionrangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016A5F726FA8A0200CC731B /* VisionrangerTests.swift */; };
 		5016A5F926FA8A0200CC731B /* Visionranger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5016A5EB26FA8A0200CC731B /* Visionranger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5018405026FD298100342BE4 /* VSNConfigurationDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018404F26FD298100342BE4 /* VSNConfigurationDimensions.swift */; };
+		501B65D3275A3DDD00D503A7 /* VSNAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B65D2275A3DDD00D503A7 /* VSNAppInfo.swift */; };
 		50206040274BD58300961DDD /* BundleIdentifier+Visionranger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5020603F274BD58300961DDD /* BundleIdentifier+Visionranger.swift */; };
 		504C11AC2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C11AB2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift */; };
 		506A4EA7272425BF0089EDFB /* VSNConfigurationListDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A4EA6272425BF0089EDFB /* VSNConfigurationListDeserializer.swift */; };
@@ -74,6 +75,7 @@
 		5016A5F226FA8A0200CC731B /* VisionrangerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionrangerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5016A5F726FA8A0200CC731B /* VisionrangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionrangerTests.swift; sourceTree = "<group>"; };
 		5018404F26FD298100342BE4 /* VSNConfigurationDimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNConfigurationDimensions.swift; sourceTree = "<group>"; };
+		501B65D2275A3DDD00D503A7 /* VSNAppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAppInfo.swift; sourceTree = "<group>"; };
 		5020603F274BD58300961DDD /* BundleIdentifier+Visionranger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BundleIdentifier+Visionranger.swift"; sourceTree = "<group>"; };
 		504C11AB2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisionrangerAPIConfiguration+Version.swift"; sourceTree = "<group>"; };
 		506A4EA6272425BF0089EDFB /* VSNConfigurationListDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNConfigurationListDeserializer.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				5096B88D26FF4E0E0064B603 /* Models */,
 				50AD2B8626FBCE2E00E03205 /* VSNAPIClient.swift */,
 				5078115426FCD9D900323EE4 /* NSMutableURLRequest+Visionranger.swift */,
+				501B65D2275A3DDD00D503A7 /* VSNAppInfo.swift */,
 				50AD2B7E26FBC10200E03205 /* VisionrangerAPI.swift */,
 				5096B89226FF84520064B603 /* VisionrangerAPIConfiguration.swift */,
 				5078115226FCBDE600323EE4 /* VSNAPIResponseDecodable.swift */,
@@ -450,6 +453,7 @@
 				508B278E26FC7F72007CBCF3 /* VSNParameters.swift in Sources */,
 				50AD2B8126FBC2B600E03205 /* VSNRequest.swift in Sources */,
 				5099D9DB2705EEB300EBC08A /* NSArray+Visionranger.swift in Sources */,
+				501B65D3275A3DDD00D503A7 /* VSNAppInfo.swift in Sources */,
 				50AEEEB0274A5D5400170416 /* VSNBoolSuccess.swift in Sources */,
 				50A6698C274BB1A100CD44CB /* VisionrangerBundleLocator.swift in Sources */,
 			);

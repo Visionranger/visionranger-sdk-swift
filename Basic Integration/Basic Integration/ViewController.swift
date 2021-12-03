@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .blue
         
         let client = VSNAPIClient.shared
+        client.appInfo = VSNAppInfo(name: "Basic Integration", partnerId: nil, version: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, url: Bundle.main.bundleIdentifier)
 //
 //        client.createConfiguration(withParameters: [
 //            "color": "Timberwolf",
