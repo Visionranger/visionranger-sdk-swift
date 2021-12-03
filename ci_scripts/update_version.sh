@@ -45,6 +45,6 @@ done
 
 
 # Update marketing version of project bundle
-bundle exec fastlane run increment_version_number version_number ${release_version}
+agvtool new-marketing-version $release_version
   
 echo "Successfully updated bundle version"

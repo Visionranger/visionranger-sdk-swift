@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -113,6 +113,7 @@
 		50AEEEAC274A59BD00170416 /* VSNDesignerCareerMilestoneListDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNDesignerCareerMilestoneListDeserializer.swift; sourceTree = "<group>"; };
 		50AEEEAF274A5D5400170416 /* VSNBoolSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNBoolSuccess.swift; sourceTree = "<group>"; };
 		50C89573273AFCE500A5896E /* VSNDesigner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNDesigner.swift; sourceTree = "<group>"; };
+		50CAB7D5275AD07B0081AE1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50D1A946270A2193005718CA /* VSNError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNError.swift; sourceTree = "<group>"; };
 		50D5BF4027086E180000BE52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50D5BF4227086E1D0000BE52 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 				50AAC5FB26FB377B0084E41B /* Source */,
 				5016A5EB26FA8A0200CC731B /* Visionranger.h */,
 				5016A5EC26FA8A0200CC731B /* Visionranger.docc */,
+				50CAB7D5275AD07B0081AE1C /* Info.plist */,
 			);
 			path = Visionranger;
 			sourceTree = "<group>";
@@ -387,7 +389,7 @@
 				};
 			};
 			buildConfigurationList = 5016A5E226FA8A0200CC731B /* Build configuration list for PBXProject "Visionranger" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -641,8 +643,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "/Users/colintessarzick/Desktop/SDKs/visionranger-sdk-swift/Visionranger/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -671,8 +673,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "/Users/colintessarzick/Desktop/SDKs/visionranger-sdk-swift/Visionranger/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
