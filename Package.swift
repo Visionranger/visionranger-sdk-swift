@@ -5,6 +5,9 @@ import PackageDescription
 let package = Package(
     name: "Visionranger",
     defaultLocalization: "en",
+    platforms: [
+        .iOS(.v12)
+    ],
     products: [
         .library(
             name: "Visionranger",
