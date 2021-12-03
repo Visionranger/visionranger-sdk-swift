@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        VisionrangerAPI.defaultAccessKey = "pm5I7eUkgw3T3WBK5LkRb3nAGFAWV6cC2r7dV1uA"
+        VisionrangerAPI.defaultAccessKey = ""
         VisionrangerAPI.environment = .test
         
         return true
