@@ -16,8 +16,6 @@
 		5018405026FD298100342BE4 /* VSNConfigurationDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018404F26FD298100342BE4 /* VSNConfigurationDimensions.swift */; };
 		501B65D3275A3DDD00D503A7 /* VSNAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B65D2275A3DDD00D503A7 /* VSNAppInfo.swift */; };
 		501B65D5275A492A00D503A7 /* VSNAppLaunchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B65D4275A492A00D503A7 /* VSNAppLaunchConfiguration.swift */; };
-		501B65DB275A6B6200D503A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501B65D7275A59D800D503A7 /* Foundation.framework */; };
-		501B65DC275A6B6900D503A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501B65D9275A59E000D503A7 /* UIKit.framework */; };
 		50206040274BD58300961DDD /* BundleIdentifier+Visionranger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5020603F274BD58300961DDD /* BundleIdentifier+Visionranger.swift */; };
 		504C11AC2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C11AB2702405000C1E313 /* VisionrangerAPIConfiguration+Version.swift */; };
 		506A4EA7272425BF0089EDFB /* VSNConfigurationListDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A4EA6272425BF0089EDFB /* VSNConfigurationListDeserializer.swift */; };
@@ -129,8 +127,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				501B65DC275A6B6900D503A7 /* UIKit.framework in Frameworks */,
-				501B65DB275A6B6200D503A7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
