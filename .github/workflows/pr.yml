@@ -16,3 +16,5 @@ jobs:
       run: xcodebuild clean build -scheme Visionranger -sdk iphoneos CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
     - name: Run tests
       run: xcodebuild test -scheme Visionranger -destination 'name=iPhone 11' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+    - name: Validate CocoaPod
+      run: pod lib lint
