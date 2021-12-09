@@ -492,3 +492,14 @@
 "more than 3 months" = "more than 3 months";
 /* Estimated time between order and delivery */
 "Unknown" = "Unknown";
+
+// MARK: VSNAssociatedPlaneAnchor
+
+/* Associated planar surface anchor of the product */
+"Floor" = "Floor";
+/* Associated planar surface anchor of the product */
+"Wall" = "Wall";
+/* Associated planar surface anchor of the product */
+"Ceiling" = "Ceiling";
+/* Default missing associated plane anchor label */
+"Unknown" = "Unknown";

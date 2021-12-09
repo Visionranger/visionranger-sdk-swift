@@ -493,3 +493,13 @@
 /* Estimated time between order and delivery */
 "Unknown" = "Unbekannt";
 
+// MARK: VSNAssociatedPlaneAnchor
+
+/* Associated planar surface anchor of the product */
+"Floor" = "Fußboden";
+/* Associated planar surface anchor of the product */
+"Wall" = "Wand";
+/* Associated planar surface anchor of the product */
+"Ceiling" = "Decke";
+/* Default missing associated plane anchor label */
+"Unknown" = "Unbekannt";

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5000AF7727625139001987C5 /* VSNAssociatedPlaneAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5000AF7627625139001987C5 /* VSNAssociatedPlaneAnchor.swift */; };
 		50140FBC2715D8B600C6ED9B /* VSNAnnouncement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50140FBB2715D8B600C6ED9B /* VSNAnnouncement.swift */; };
 		50140FBE2715EB1600C6ED9B /* VSNCollectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50140FBD2715EB1600C6ED9B /* VSNCollectionFilter.swift */; };
 		5016A5ED26FA8A0200CC731B /* Visionranger.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5016A5EC26FA8A0200CC731B /* Visionranger.docc */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5000AF7627625139001987C5 /* VSNAssociatedPlaneAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAssociatedPlaneAnchor.swift; sourceTree = "<group>"; };
 		50140FBB2715D8B600C6ED9B /* VSNAnnouncement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNAnnouncement.swift; sourceTree = "<group>"; };
 		50140FBD2715EB1600C6ED9B /* VSNCollectionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSNCollectionFilter.swift; sourceTree = "<group>"; };
 		5016A5E826FA8A0200CC731B /* Visionranger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Visionranger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +256,7 @@
 				50AD2B8426FBC71D00E03205 /* VSNProduct.swift */,
 				5096B89026FF76700064B603 /* VSNProductCatalogization.swift */,
 				5099D9D62705EC3000EBC08A /* VSNProductListDeserializer.swift */,
+				5000AF7627625139001987C5 /* VSNAssociatedPlaneAnchor.swift */,
 			);
 			name = Product;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				50C89574273AFCE500A5896E /* VSNDesigner.swift in Sources */,
 				508B278E26FC7F72007CBCF3 /* VSNParameters.swift in Sources */,
 				50AD2B8126FBC2B600E03205 /* VSNRequest.swift in Sources */,
+				5000AF7727625139001987C5 /* VSNAssociatedPlaneAnchor.swift in Sources */,
 				5099D9DB2705EEB300EBC08A /* NSArray+Visionranger.swift in Sources */,
 				501B65D3275A3DDD00D503A7 /* VSNAppInfo.swift in Sources */,
 				50AEEEB0274A5D5400170416 /* VSNBoolSuccess.swift in Sources */,
