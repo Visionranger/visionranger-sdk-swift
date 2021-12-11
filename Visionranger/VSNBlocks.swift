@@ -38,7 +38,7 @@ public typealias VSNDeleteCompletionBlock = (VSNDeletion?, Error?) -> Void
 
 public typealias VSNProductCompletionBlock = (VSNProduct?, Error?) -> Void
 
-public typealias VSNProductsCompletionBlock = ([VSNProduct]?, Error?) -> Void
+public typealias VSNProductsCompletionBlock = ([VSNProductListItem]?, Error?) -> Void
 
 public typealias VSNAnnouncementCompletionBlock = (VSNAnnouncement?, Error?) -> Void
 
