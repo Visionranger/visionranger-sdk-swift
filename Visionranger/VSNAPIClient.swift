@@ -643,7 +643,7 @@ extension VSNAPIClient {
     }
 }
 
-private let APIVersion = "2021-11-21"
+private let APIVersion = "2021-12-11"
 private var APIBaseURL: String {
     switch VisionrangerAPI.environment {
     case .live:
