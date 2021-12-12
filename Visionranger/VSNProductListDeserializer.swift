@@ -27,7 +27,7 @@
 import Foundation
 
 class VSNProductListDeserializer: NSObject, VSNAPIResponseDecodable {
-    private(set) var products: [VSNProduct]?
+    private(set) var products: [VSNProductListItem]?
     private(set) var allResponseFields: [AnyHashable : Any] = [:]
     
     override required init() {
@@ -44,9 +44,9 @@ class VSNProductListDeserializer: NSObject, VSNAPIResponseDecodable {
             return nil
         }
         let productsDeserializer = self.init()
-        var products: [VSNProduct] = []
+        var products: [VSNProductListItem] = []
         for productJSON in data {
-            let product = VSNProduct.decodedObject(fromAPIResponse: productJSON)
+            let product = VSNProductListItem.decodedObject(fromAPIResponse: productJSON)
             if let product = product {
                 products.append(product)
             }

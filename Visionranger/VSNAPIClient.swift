@@ -221,7 +221,7 @@ extension VSNAPIClient {
     ///   - paramters: The object's properties that should be changed
     ///   - completion: Returns an array of product objects when successful and an error when not
     public func listProducts(withParameters parameters: VSNParameters, _ completion: @escaping VSNProductsCompletionBlock) {
-        var shared_Products = [VSNProduct]()
+        var shared_Products = [VSNProductListItem]()
         var shared_lastError: Error? = nil
         let group = DispatchGroup()
         
@@ -643,7 +643,7 @@ extension VSNAPIClient {
     }
 }
 
-private let APIVersion = "2021-11-21"
+private let APIVersion = "2021-12-11"
 private var APIBaseURL: String {
     switch VisionrangerAPI.environment {
     case .live:
