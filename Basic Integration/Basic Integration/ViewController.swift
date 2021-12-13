@@ -77,6 +77,22 @@ class ViewController: UIViewController {
                 print("something is not right")
             }
         }
+        
+        client.listProducts(withParameters: ["type": 1]) { products, error in
+            guard let products = products else {
+                return
+            }
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            if let value = products[1].configurationPreviewSet {
+                for item in value {
+                    print(item.context!)
+                }
+            } else {
+                print("something is not right")
+            }
+        }
     }
 }
 
