@@ -9,7 +9,7 @@ import Foundation
 
 public extension VisionrangerAPIConfiguration {
     /// The current version of this library.
-    static let VSNSDKVersion = "0.7.0"
+    static let VSNSDKVersion = "0.7.1"
     
     /*
      NOTE: `VSNSDKVersion` must be a hard-coded static string instead of
