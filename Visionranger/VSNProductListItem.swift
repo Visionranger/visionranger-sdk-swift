@@ -102,7 +102,7 @@ extension VSNProductListItem: VSNAPIResponseDecodable {
                     if let url = dict["material_image"] as? String {
                         previewDetails.materialImageURL = url
                     }
-                    if let context = dict["description"] as? String {
+                    if let context = configDict["description"] as? String {
                         previewDetails.context = context
                     }
                     if let color = dict["color"] as? String {
